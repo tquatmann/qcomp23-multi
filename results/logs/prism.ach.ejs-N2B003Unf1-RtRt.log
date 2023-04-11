@@ -1,0 +1,85 @@
+Command:	~/prism/prism/bin/prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs2.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N2B003Unf1-RtRtachievability.props -const B=3,Unf=1 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+Wallclock time:	2.490424394607544
+Return code:	0
+Output:
+java -Xmx30g -Xss1g -Djava.awt.headless=true -Djava.library.path=/home/tq429871/prism/prism/lib -classpath /home/tq429871/prism/prism/lib/prism.jar:/home/tq429871/prism/prism/classes:/home/tq429871/prism/prism:/home/tq429871/prism/prism/lib/pepa.zip:/home/tq429871/prism/prism/lib/* prism.PrismCL /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs2.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N2B003Unf1-RtRtachievability.props -const B=3,Unf=1 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+PRISM
+=====
+
+Version: 4.7.dev
+Date: Sat Dec 17 03:29:26 GMT+01:00 2022
+Hostname: nihm022.hpc.itc.rwth-aachen.de
+Memory limits: cudd=4g, java(heap)=30g
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs2.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N2B003Unf1-RtRtachievability.props -const 'B=3,Unf=1' -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs2.prism"...
+
+Type:        MDP
+Modules:     Process_1 Resources Process_2 energyGlobal energyLocal utilityGlobal utilityLocal unfold 
+Variables:   failure_1 loc_1 t_1 boost_1 user_1 loc_2 t_2 failure_2 r4 r2 r3 r1 
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N2B003Unf1-RtRtachievability.props"...
+
+1 property:
+(1) "RtRt": multi(R{"energyGlobal"}<=112.76642113 [ C ], R{"ticks"}<=21.646913585000004 [ C ])
+
+---------------------------------------------------------------------
+
+Model checking: "RtRt": multi(R{"energyGlobal"}<=112.76642113 [ C ], R{"ticks"}<=21.646913585000004 [ C ])
+Model constants: Unf=1,B=3
+
+Building model...
+Model constants: Unf=1,B=3
+
+Computing reachable states...
+
+Reachability (BFS): 29 iterations in 0.01 seconds (average 0.000276, setup 0.00)
+
+Time for model construction: 0.079 seconds.
+
+Warning: Deadlocks detected and fixed in 68 states
+
+Type:        MDP
+States:      953 (1 initial)
+Transitions: 1736
+Choices:     1107
+
+Transition matrix: 2259 nodes (7 terminal), 1736 minterms, vars: 23r/23c/3nd
+Total time for product construction: 0.0 seconds.
+
+States:      953 (1 initial)
+Transitions: 1736
+Choices:     1107
+
+Transition matrix: 2259 nodes (7 terminal), 1736 minterms, vars: 23r/23c/3nd
+
+Prob0A: 1 iterations in 0.00 seconds (average 0.001000, setup 0.00)
+
+yes = 0, no = 0, maybe = 953
+
+Computing remaining probabilities...
+Engine: Sparse
+Iterative method: 8 iterations in 0.00 seconds (average 0.000125, setup 0.00)
+Iterative method: 8 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+Iterative method: 8 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+The value iteration(s) took 0.028 seconds altogether.
+Number of weight vectors used: 3
+Multi-objective value iterations took 0.029 s.
+
+Property satisfied in 1 of 1 initial states.
+
+Time for model checking: 0.111 seconds.
+
+Result: true
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+
+
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+
+
+############################## Notes ##############################
+Prism.. Achievability queries. Gauss-Seidl VI.

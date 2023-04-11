@@ -1,0 +1,19 @@
+{
+	"id": "epmc.ach.uav-B0750Unf1-PfRt",
+	"benchmark-id": "uav-B0750Unf1-PfRt",
+	"tool": "epmc",
+	"configuration-id": "ach",
+	"invocation-note": "EPMC default settings. Check achievability objectives.",
+	"commands": [
+		"java -jar ~/ePMC/epmc-standard.jar  check --model-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav.prism --property-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav-B0750Unf1-PfRtachievability.props --const B=750,Unf=1,COUNTER=0 --graphsolver-iterative-stop-criterion absolute --graphsolver-iterative-tolerance 1e-6"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "epmc.ach.uav-B0750Unf1-PfRt.log",
+	"wallclock-time": 12.546934366226196,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	]
+}

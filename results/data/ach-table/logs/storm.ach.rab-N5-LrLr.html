@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>storm.ach - rab-N5-LrLr</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>storm.ach</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>id:</td><td>rab-N5-LrLr (MDP)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ach)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab5.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab-N5-LrLrachievability.props --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute</pre>
+	Storm. check achievability objectives using sound value iteration
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">1703.9060583114624s</td></tr>
+		<tr><td>Model Checking Walltime:</td><td style="tt">1596.056s</td></tr>
+		<tr><td>Return code:</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Storm. check achievability objectives using sound value iteration</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.7.1 (dev)
+
+Date: Sat Dec 17 18:55:10 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab5.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab-N5-LrLrachievability.props --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.005s.
+
+Time for model construction: 107.618s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	14348966
+Transitions: 	82381930
+Choices: 	26091220
+Reward Models:  trying, critical
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "LrLr": multi(R[exp]{"trying"}>=10826136009/2500000000 [LRA], R[exp]{"critical"}>=8047834795800001/10000000000000000 [LRA]) ...
+Preprocessing done in 24.627s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"trying"}>=10826136009/2500000000 [LRA], R[exp]{"critical"}>=8047834795800001/10000000000000000 [LRA])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"trying"}>=10826136009/2500000000 [LRA] 	Preprocessed: R[exp]{"trying"}max>=10826136009/2500000000 [LRA] 	result bounds: >=0
+Original: R[exp]{"critical"}>=8047834795800001/10000000000000000 [LRA] 	Preprocessed: R[exp]{"critical"}max>=8047834795800001/10000000000000000 [LRA] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 2.
+Number of Total Reward Objectives (after preprocessing): 0.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	14348966
+Transitions: 	82381930
+Choices: 	26091220
+Reward Models:  trying, critical
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	14348966
+Transitions: 	82381930
+Choices: 	26091220
+Reward Models:  critical, trying
+State Labels: 	2 labels
+   * init -> 1 item(s)
+   * deadlock -> 0 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Weight Vector Checker Statistics:
+Final preprocessed model has 14348966 states.
+Final preprocessed model has 26091220 actions.
+Found 1 end components that are relevant for LRA-analysis.
+14348966 states lie on such an end component.
+
+Pareto Curve Approximation Algorithm terminated after 3 refinement steps.
+Solving multi-objective query took 1596.049s seconds (consisting of 24.627s seconds for preprocessing and 1571.229s seconds for analyzing the preprocessed model).
+Result (for initial states): false
+
+Time for model checking: 1596.056s.
+
+Performance statistics:
+  * peak memory usage: 14678MB
+  * CPU time: 1676.405s
+  * wallclock time: 1703.792s	</pre>
+</div>
+</body>
+</html>

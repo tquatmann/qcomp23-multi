@@ -1,0 +1,139 @@
+// Simplified model of a mars rover
+// Encoding by Tim Quatmann and Sebastian Junges
+// RWTH Aachen University
+
+mdp
+
+
+const int num_tasks = 4;
+
+// time (in minutes)
+const int time_low = 5;
+const int time_medium = 8;
+const int time_high = 10;
+
+// Energy (in percent)
+const int energy_low = 3;
+const int energy_medium = 5;
+const int energy_high = 7; 
+
+// Scientific Value
+const int value_low = 2;
+const int value_medium = 10;
+const int value_high = 30;
+
+// Success probabilities
+const double task1_success_pr = 0.5;
+const double task2_success_pr = 0.6;
+const double task3_success_pr = 0.8;
+const double task4_success_pr = 0.2;
+
+formula low_time_task = (task=2 | task=3);
+formula medium_time_task = false;
+formula high_time_task = (task=1 | task=4);
+
+formula low_energy_task = (task=1 | task=3);
+formula medium_energy_task = (task=2);
+formula high_energy_task = (task=4);
+
+formula low_value_task = (task=3);
+formula medium_value_task = (task=1 | task=2);
+formula high_value_task = (task=4);
+
+module rover
+	// The current task (0 means no task)
+	task : [0..num_tasks] init 0;
+	success : bool init false;
+	done : bool init false;
+	
+	[task1_start] task=0 & !done -> task1_success_pr : (task'=1) & (success'=true) + (1-task1_success_pr) : (task'=1) & (success'=false);
+	[task2_start] task=0 & !done -> task2_success_pr : (task'=2) & (success'=true) + (1-task2_success_pr) : (task'=2) & (success'=false);
+	[task3_start] task=0 & !done -> task3_success_pr : (task'=3) & (success'=true) + (1-task3_success_pr) : (task'=3) & (success'=false);
+	[task4_start] task=0 & !done -> task4_success_pr : (task'=4) & (success'=true) + (1-task4_success_pr) : (task'=4) & (success'=false);
+
+	[task_done] task>0 & !done -> (task'= 0) & (success'=false);
+	
+	[rover_done] Unf != 1 & task=0 -> (done' = true); 
+endmodule
+
+
+
+
+
+module battery
+	increased_energy : bool init false;
+	
+	[task1_start] true -> 0.5 : (increased_energy' = false) + (0.5) : (increased_energy' = true);
+	[task2_start] true -> 0.5 : (increased_energy' = false) + (0.5) : (increased_energy' = true);
+	[task3_start] true -> 0.5 : (increased_energy' = false) + (0.5) : (increased_energy' = true);
+	[task4_start] true -> (increased_energy' = false);
+	[task_done] true -> (increased_energy' = false);
+endmodule
+
+
+const int Unf; // 0: don't unfold any rewards, 1: Unfold the value rewards, 2: Unfold all rewards
+const int B; // magnitude of bounds for global rewards
+
+const int BndVal = B*5;
+const int UnfVal = Unf >= 1 ? BndVal : 0;
+module value_counting_module
+	counter_value : [0..UnfVal + 1] init UnfVal; // add +1 so the range has multiple values. PRISM apparently doesn't like ranges like [0..0]
+	[task_done] low_value_task -> (counter_value'=max(0,counter_value - (success ? value_low : 0)));
+	[task_done] medium_value_task -> (counter_value'=max(0,counter_value - (success ? value_medium : 0)));
+	[task_done] high_value_task -> (counter_value'=max(0,counter_value - (success ? value_high : 0)));
+endmodule
+
+const int BndTime = B*9;
+const int UnfTime = Unf >= 2 ? BndTime+1 : 0;
+module time_counting_module
+	counter_time : [0..UnfTime + 1] init UnfTime; // add +1 so the range has multiple values. PRISM apparently doesn't like ranges like [0..0]
+	[task_done] low_time_task -> (counter_time'=max(0, counter_time-time_low));
+	[task_done] medium_time_task -> (counter_time'=max(0, counter_time-time_medium));
+	[task_done] high_time_task -> (counter_time'=max(0, counter_time-time_high));
+endmodule
+
+
+const int BndEn = B*5;
+const int UnfEn = Unf >= 2 ? BndEn+1 : 0;
+module energy_counting_module
+	counter_energy : [0..UnfEn + 1] init UnfEn; // add +1 so the range has multiple values. PRISM apparently doesn't like ranges like [0..0]
+	[task_done] low_energy_task & !increased_energy -> (counter_energy'=max(0, counter_energy-energy_low));
+	[task_done] low_energy_task &  increased_energy -> (counter_energy'=max(0, counter_energy-energy_medium));
+	[task_done] medium_energy_task & !increased_energy -> (counter_energy'=max(0, counter_energy-energy_medium));
+	[task_done] medium_energy_task &  increased_energy -> (counter_energy'=max(0, counter_energy-energy_high));
+	[task_done] high_energy_task & !increased_energy -> (counter_energy'=max(0, counter_energy-energy_high));
+	[task_done] high_energy_task &  increased_energy -> (counter_energy'=max(0, counter_energy-energy_high));
+endmodule
+
+label "valueCollected" = counter_value = 0;
+label "exceedTime" = counter_time = 0;
+label "exceedEnergy" = counter_energy = 0;
+
+rewards "value"
+	[task_done] low_value_task & success : value_low;
+	[task_done] medium_value_task & success : value_medium;
+	[task_done] high_value_task & success : value_high;
+endrewards
+
+
+rewards "time"
+	[task_done] low_time_task : time_low;
+	[task_done] medium_time_task : time_medium;
+	[task_done] high_time_task : time_high;
+endrewards
+
+rewards "energy"
+	[task_done] low_energy_task & !increased_energy : energy_low;
+	[task_done] low_energy_task &  increased_energy : energy_medium;
+	[task_done] medium_energy_task & !increased_energy : energy_medium;
+	[task_done] medium_energy_task &  increased_energy : energy_high;
+	[task_done] high_energy_task & !increased_energy : energy_high;
+	[task_done] high_energy_task &  increased_energy : energy_high;
+endrewards
+
+module unfold
+	[task1_start] Unf = 0 | !(counter_value = 0 & counter_time = 0 & counter_energy = 0) -> 1: true;
+	[task2_start] Unf = 0 | !(counter_value = 0 & counter_time = 0 & counter_energy = 0) -> 1: true;
+	[task3_start] Unf = 0 | !(counter_value = 0 & counter_time = 0 & counter_energy = 0) -> 1: true;
+	[task4_start] Unf = 0 | !(counter_value = 0 & counter_time = 0 & counter_energy = 0) -> 1: true;
+endmodule

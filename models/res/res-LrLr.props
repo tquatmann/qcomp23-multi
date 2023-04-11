@@ -1,0 +1,1 @@
+"LrLr": multi(R{"rew_gold"}max=? [S], R{"rew_gem"}max=? [S]);

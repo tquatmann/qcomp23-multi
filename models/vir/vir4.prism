@@ -1,0 +1,165 @@
+// virus example
+// gxn/dxp 29/06/2007
+// network is grid of size N
+
+mdp
+
+// probabilities
+const double infect=0.5; // probability virus infects a node
+const double detect1=0.5; // probability virus detected by firewall of high/low node
+const double detect2=0.3; // probability virus detected by firewall of barrier node
+
+// low nodes (those above the ceil(N/2) row)
+
+const double detect11=detect1; 
+const double detect12=detect1; 
+const double detect13=detect1;   
+const double detect14=detect1;   
+
+// barrier nodes (those in the ceil(N/2) row)
+
+const double detect21=detect2;
+const double detect22=detect2;
+const double detect23=detect2;
+const double detect24=detect2;
+
+// high nodes (those below the ceil(N/2) row)
+
+const double detect31=detect1; 
+const double detect32=detect1; 
+const double detect33=detect1;  
+const double detect34=detect1;  
+
+const double detect41=detect1; 
+const double detect42=detect1; 
+const double detect43=detect1;  
+const double detect44=detect1;  
+
+const int UNINFECTED_NODE_INIT_STATE = 0;
+const int INFECTED_NODE_INIT_STATE = 2;
+
+// first column (1..N)
+module n11
+
+	s11 : [0..2] init UNINFECTED_NODE_INIT_STATE; // node uninfected
+	// 0 - node uninfected
+	// 1 - node uninfected but firewall breached
+	// 2 - node infected 
+
+	// firewall attacked (from an infected neighbour)
+	[attack11_21] (s11=0) ->  detect11 : true + (1-detect11) : (s11'=1);
+	[attack11_12] (s11=0) ->  detect11 : true + (1-detect11) : (s11'=1);
+	// if the firewall has been breached tries to infect the node	
+	[] (s11=1) -> infect : (s11'=2) + (1-infect) : (s11'=0);
+	// if the node is infected, then it tries to attack its neighbouring nodes
+	[attack21_11] (s11=2) -> true;
+	[attack12_11] (s11=2) -> true;
+	[clean_11] (s11=2) -> (s11'=0);
+endmodule
+
+module n21
+
+	s21 : [0..2] init UNINFECTED_NODE_INIT_STATE; // node uninfected
+	// 0 - node uninfected
+	// 1 - node uninfected but firewall breached
+	// 2 - node infected 
+
+	// firewall attacked (from an infected neighbour)
+	[attack21_31] (s21=0) -> detect21 : true + (1-detect21) : (s21'=1);
+	[attack21_22] (s21=0) -> detect21 : true + (1-detect21) : (s21'=1);
+	[attack21_11] (s21=0) -> detect21 : true + (1-detect21) : (s21'=1);
+	// if the firewall has been breached tries to infect the node	
+	[] (s21=1) -> infect : (s21'=2) + (1-infect) : (s21'=0);
+	// if the node is infected, then it tries to attack its neighbouring nodes
+	[attack31_21] (s21=2) -> true;
+	[attack22_21] (s21=2) -> true;
+	[attack11_21] (s21=2) -> true;
+	[clean_21] (s21=2) -> (s21'=0);
+endmodule
+module n31=n21[s21=s31,detect21=detect31,attack31_21=attack41_31,attack22_21=attack32_31,attack11_21=attack21_31,attack21_31=attack31_41,attack21_22=attack31_32,attack21_11=attack31_21,clean_21=clean_31] endmodule
+module n41=n11[s11=s41,detect11=detect41,attack21_11=attack42_41,attack12_11=attack31_41,attack11_21=attack41_42,attack11_12=attack41_31,clean_11=clean_41] endmodule
+
+// second column
+module n12=n21[s21=s12,detect21=detect12,attack31_21=attack13_12,attack22_21=attack22_12,attack11_21=attack11_12,attack21_31=attack12_13,attack21_22=attack12_22,attack21_11=attack12_11,clean_21=clean_12] endmodule
+
+module n22
+	
+	s22 : [0..2] init UNINFECTED_NODE_INIT_STATE; // node uninfected
+	// 0 - node uninfected
+	// 1 - node uninfected but firewall breached
+	// 2 - node infected 
+	
+	// firewall attacked (from an infected neighbour)
+	[attack22_32] (s22=0) -> detect22 : true + (1-detect22) : (s22'=1);
+	[attack22_23] (s22=0) -> detect22 : true + (1-detect22) : (s22'=1);
+	[attack22_12] (s22=0) -> detect22 : true + (1-detect22) : (s22'=1);
+	[attack22_21] (s22=0) -> detect22 : true + (1-detect22) : (s22'=1);
+	// if the firewall has been breached tries to infect the node	
+	[] (s22=1) -> infect : (s22'=2) + (1-infect) : (s22'=0);
+	// if the node is infected, then it tries to attack its neighbouring nodes
+	[attack32_22] (s22=2) -> true;
+	[attack23_22] (s22=2) -> true;
+	[attack12_22] (s22=2) -> true;
+	[attack21_22] (s22=2) -> true;
+	[clean_22] (s22=2) -> (s22'=0);
+	
+endmodule
+
+module n32=n22[s22=s32,detect22=detect32,attack32_22=attack42_32,attack23_22=attack33_32,attack12_22=attack22_32,attack21_22=attack31_32,attack22_32=attack32_42,attack22_23=attack32_33,attack22_12=attack32_22,attack22_21=attack32_31,clean_22=clean_32] endmodule
+module n42=n21[s21=s42,detect21=detect42,attack31_21=attack43_42,attack22_21=attack32_42,attack11_21=attack41_42,attack21_31=attack42_43,attack21_22=attack42_32,attack21_11=attack42_41,clean_21=clean_42] endmodule
+// third column
+module n13=n21[s21=s13,detect21=detect13,attack31_21=attack23_13,attack22_21=attack14_13,attack11_21=attack12_13,attack21_31=attack13_23,attack21_22=attack13_14,attack21_11=attack13_12,clean_21=clean_13] endmodule
+module n23=n22[s22=s23,detect22=detect23,attack32_22=attack33_23,attack23_22=attack24_23,attack12_22=attack13_23,attack21_22=attack22_23,attack22_32=attack23_33,attack22_23=attack23_24,attack22_12=attack23_13,attack22_21=attack23_22,clean_22=clean_23] endmodule
+module n33=n22[s22=s33,detect22=detect33,attack32_22=attack43_33,attack23_22=attack34_33,attack12_22=attack23_33,attack21_22=attack32_33,attack22_32=attack33_43,attack22_23=attack33_34,attack22_12=attack33_23,attack22_21=attack33_32,clean_22=clean_33] endmodule
+module n43=n21[s21=s43,detect21=detect43,attack31_21=attack44_43,attack22_21=attack33_43,attack11_21=attack42_43,attack21_31=attack43_44,attack21_22=attack43_33,attack21_11=attack43_42,clean_21=clean_43] endmodule
+// fourth column
+module n14=n11[s11=s14,detect11=detect14,attack21_11=attack24_14,attack12_11=attack13_14,attack11_21=attack14_24,attack11_12=attack14_13,clean_11=clean_14] endmodule
+module n24=n21[s21=s24,detect21=detect24,attack31_21=attack34_24,attack22_21=attack14_24,attack11_21=attack23_24,attack21_31=attack24_34,attack21_22=attack24_14,attack21_11=attack24_23,clean_21=clean_24] endmodule
+module n34=n21[s21=s34,detect21=detect34,attack31_21=attack44_34,attack22_21=attack24_34,attack11_21=attack33_34,attack21_31=attack34_44,attack21_22=attack34_24,attack21_11=attack34_33,clean_21=clean_34] endmodule
+// n44 is initially infected
+module n44=n11[UNINFECTED_NODE_INIT_STATE=INFECTED_NODE_INIT_STATE,s11=s44,detect11=detect44,attack21_11=attack34_44,attack12_11=attack43_44,attack11_21=attack44_34,attack11_12=attack44_43,clean_11=clean_44] endmodule
+
+
+rewards "withvirus"
+
+	 s11=2 : 1;
+	 s12=2 : 1;
+	 s13=2 : 1;
+	 s14=2 : 1;
+	 s21=2 : 1;
+	 s22=2 : 1;
+	 s23=2 : 1;
+	 s24=2 : 1;
+	 s31=2 : 1;
+	 s32=2 : 1;
+	 s33=2 : 1;
+	 s34=2 : 1;
+	 s34=2 : 1;
+	 s41=2 : 1;
+	 s42=2 : 1;
+	 s43=2 : 1;
+	 s44=2 : 1;
+
+endrewards
+
+rewards "clean"
+
+	[clean_11] true : 1;
+	[clean_12] true : 1;
+	[clean_13] true : 1;
+	[clean_14] true : 1;
+	[clean_21] true : 1;
+	[clean_22] true : 1;
+	[clean_23] true : 1;
+	[clean_24] true : 1;
+	[clean_31] true : 1;
+	[clean_32] true : 1;
+	[clean_33] true : 1;
+	[clean_34] true : 1;
+	[clean_41] true : 1;
+	[clean_42] true : 1;
+	[clean_43] true : 1;
+	[clean_44] true : 1;
+
+endrewards
+

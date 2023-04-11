@@ -1,0 +1,16 @@
+Command:	~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir4.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir-N4-LrLrachievability.props --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute
+Wallclock time:	1618.1386651992798
+Return code:	-9
+Output:
+Storm 1.7.1 (dev)
+
+Date: Sun Dec 18 14:33:40 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir4.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir-N4-LrLrachievability.props --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.008s.
+
+
+
+############################## Notes ##############################
+Storm. check achievability objectives using sound value iteration

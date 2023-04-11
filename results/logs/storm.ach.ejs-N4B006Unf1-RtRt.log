@@ -1,0 +1,92 @@
+Command:	~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs4.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N4B006Unf1-RtRtachievability.props -const B=6,Unf=1 --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute
+Wallclock time:	13.750802278518677
+Return code:	0
+Output:
+Storm 1.7.1 (dev)
+
+Date: Sat Dec 17 05:18:55 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs4.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N4B006Unf1-RtRtachievability.props -const 'B=6,Unf=1' --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.009s.
+
+Time for model construction: 6.857s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	457993
+Transitions: 	1299872
+Choices: 	654753
+Reward Models:  ticks, energyGlobal
+State Labels: 	2 labels
+   * deadlock -> 29616 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "RtRt": multi(R[exp]{"energyGlobal"}<=6857616733000001/20000000000000 [C], R[exp]{"ticks"}<=8644841051/250000000 [C]) ...
+Preprocessing done in 0.737s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"energyGlobal"}<=6857616733000001/20000000000000 [C], R[exp]{"ticks"}<=8644841051/250000000 [C])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"energyGlobal"}<=6857616733000001/20000000000000 [C] 	Preprocessed: R[exp]{"energyGlobal"}min<=6857616733000001/20000000000000 [C] 	result bounds: >=0
+Original: R[exp]{"ticks"}<=8644841051/250000000 [C] 	Preprocessed: R[exp]{"ticks"}min<=8644841051/250000000 [C] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 2.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	457993
+Transitions: 	1299872
+Choices: 	654753
+Reward Models:  ticks, energyGlobal
+State Labels: 	2 labels
+   * deadlock -> 29616 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	457993
+Transitions: 	1299872
+Choices: 	654753
+Reward Models:  ticks, energyGlobal
+State Labels: 	3 labels
+   * deadl -> 29616 item(s)
+   * deadlock -> 29616 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Weight Vector Checker Statistics:
+Final preprocessed model has 428378 states.
+Final preprocessed model has 625138 actions.
+
+Pareto Curve Approximation Algorithm terminated after 3 refinement steps.
+Solving multi-objective query took 6.800s seconds (consisting of 0.737s seconds for preprocessing and 6.058s seconds for analyzing the preprocessed model).
+Result (for initial states): true
+
+Time for model checking: 6.801s.
+
+Performance statistics:
+  * peak memory usage: 350MB
+  * CPU time: 13.485s
+  * wallclock time: 13.680s
+
+
+############################## Notes ##############################
+Storm. check achievability objectives using sound value iteration

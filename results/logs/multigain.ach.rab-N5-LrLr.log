@@ -1,0 +1,52 @@
+Command:	~/multigain/bin/prism  /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab5.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab-N5-LrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute
+Wallclock time:	277.95762038230896
+Return code:	137
+Output:
+MultiGain1.0.2
+Date: Mon Dec 19 09:39:58 GMT+01:00 2022
+Hostname: nihm019.hpc.itc.rwth-aachen.de
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab5.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab-N5-LrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab5.prism"...
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab-N5-LrLrachievability.props"...
+
+1 property:
+(1) "LrLr": multi(R{"trying"}>=4.3304544036 [ S ], R{"critical"}>=0.8047834795800001 [ S ])
+
+Type:        MDP
+Modules:     process1 process2 process3 process4 process5 
+Variables:   c b r p1 b1 r1 draw1 p2 b2 r2 draw2 p3 b3 r3 draw3 p4 b4 r4 draw4 p5 b5 r5 draw5 
+
+---------------------------------------------------------------------
+
+Model checking: "LrLr": multi(R{"trying"}>=4.3304544036 [ S ], R{"critical"}>=0.8047834795800001 [ S ])
+
+Building model...
+
+Computing reachable states... 295431 589186 867715 1131998 1394076 1655891 1899767 2146992 2395703 2632338 2879748 3127859 3355118 3567699 3795564 4030385 4239454 4458565 4681436 4918899 5119476 5320290 5528516 5753304 5978816 6203175 6425410 6633736 6850557 7056253 7286007 7500522 7768698 7980689 8185185 8389719 8596752 8802818 9023820 9245300 9473657 9707362 9942750 10159492 10387831 10601803 10821137 11027566 11242103 11463580 11635351 11823169 12054344 12323547 12594198 12843568 13082617 13309732 13530611 13746493 13956807 14178558 14348966Computing end components.
+Finished computing end components.
+ states
+Reachable states exploration and model construction done in 188.552 secs.
+Sorting reachable states list...
+
+Time for model construction: 212.46 seconds.
+
+Type:        MDP
+States:      14348966 (1 initial)
+Transitions: 82381930
+Choices:     26091220
+Max/avg:     5/1.82
+Set parameter TSPort to value 50039
+Set parameter TokenServer to value "license6.itc.rwth-aachen.de"
+Set parameter IntFeasTol to value 1e-08
+Set parameter DualReductions to value 0
+Set parameter Method to value 1
+
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+/home/tq429871/multigain/bin/prism: line 81: 248248 Killed                  "$PRISM_JAVA" $PRISM_JAVA_DEBUG $PRISM_JAVAMAXMEM $PRISM_JAVASTACKSIZE -Djava.awt.headless=$PRISM_HEADLESS -Djava.library.path=$JAVA_LIBRARY_PATH -classpath "$PRISM_CLASSPATH" $PRISM_MAINCLASS "$@"
+
+
+############################## Notes ##############################
+MultiGain default settings.. Achievability queries

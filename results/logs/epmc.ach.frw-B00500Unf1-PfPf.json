@@ -1,0 +1,19 @@
+{
+	"id": "epmc.ach.frw-B00500Unf1-PfPf",
+	"benchmark-id": "frw-B00500Unf1-PfPf",
+	"tool": "epmc",
+	"configuration-id": "ach",
+	"invocation-note": "EPMC default settings. Check achievability objectives.",
+	"commands": [
+		"java -jar ~/ePMC/epmc-standard.jar  check --model-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/frw/frw.prism --property-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/frw/frw-B00500Unf1-PfPfachievability.props --const B=500,Unf=1,delay=36 --graphsolver-iterative-stop-criterion absolute --graphsolver-iterative-tolerance 1e-6"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "epmc.ach.frw-B00500Unf1-PfPf.log",
+	"wallclock-time": 46.347084760665894,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	]
+}

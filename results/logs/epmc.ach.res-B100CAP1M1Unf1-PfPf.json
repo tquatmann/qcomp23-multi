@@ -1,0 +1,19 @@
+{
+	"id": "epmc.ach.res-B100CAP1M1Unf1-PfPf",
+	"benchmark-id": "res-B100CAP1M1Unf1-PfPf",
+	"tool": "epmc",
+	"configuration-id": "ach",
+	"invocation-note": "EPMC default settings. Check achievability objectives.",
+	"commands": [
+		"java -jar ~/ePMC/epmc-standard.jar  check --model-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism --property-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B100CAP1M1Unf1-PfPfachievability.props --const B=100,CAP=1,M=1,Unf=1 --graphsolver-iterative-stop-criterion absolute --graphsolver-iterative-tolerance 1e-6"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "epmc.ach.res-B100CAP1M1Unf1-PfPf.log",
+	"wallclock-time": 2205.7566707134247,
+	"timeout": false,
+	"execution-error": true,
+	"return-codes": [
+		1
+	]
+}

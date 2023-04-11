@@ -1,0 +1,19 @@
+{
+	"id": "storm.ach.vir-N4-LrLr",
+	"benchmark-id": "vir-N4-LrLr",
+	"tool": "storm",
+	"configuration-id": "ach",
+	"invocation-note": "Storm. check achievability objectives using sound value iteration",
+	"commands": [
+		"~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir4.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir-N4-LrLrachievability.props --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "storm.ach.vir-N4-LrLr.log",
+	"wallclock-time": 1618.1386651992798,
+	"timeout": false,
+	"execution-error": true,
+	"return-codes": [
+		-9
+	]
+}

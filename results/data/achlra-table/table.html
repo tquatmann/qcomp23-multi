@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="UTF-8">
+      <title>Benchmark results</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.2/css/fixedHeader.dataTables.min.css">
+
+      <script type="text/javascript" language="javascript" charset="utf8" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script type="text/javascript" language="javascript" charset="utf8" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+      <script type="text/javascript" language="javascript" charset="utf8" src="https://cdn.datatables.net/fixedheader/3.1.2/js/dataTables.fixedHeader.min.js"></script>
+      <script type="text/javascript" language="javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
+      <script type="text/javascript" language="javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.colVis.min.js"></script>
+
+      <script>
+        $(document).ready(function() {
+          // Set correct file
+          $("#content").load("data.html");
+        } );
+
+        function updateBest(table) {
+          // Remove old best ones
+          table.cells().every( function() {
+            $(this.node()).removeClass("best");
+          });
+          table.rows().every( function ( rowIdx, tableLoop, rowLoop ) {
+              var bestValue = -1
+              var bestIndex = -1
+              $.each( this.data(), function( index, value ){
+                if (index >= 9 && table.column(index).visible()) {
+    			    var text = $(value).text()
+    	            if (["TO", "ERR", "INC", "MO", "NS", ""].indexOf(text) < 0) {
+    				    var number = parseFloat(text);
+    	                if (bestValue == -1 || bestValue > number) {
+    	                  // New best value
+    	                  bestValue = number;
+    	                  bestIndex = index;
+    	                }
+    				  }
+    			  }
+              });
+              // Set new best
+              if (bestIndex >= 0) {
+                $(table.cell(rowIdx, bestIndex).node()).addClass("best");
+              }
+          } );
+      }
+      </script>
+    </head>
+    <body>
+<div>
+	<table id="table" class="display">
+		<thead>
+			<tr>
+				<th>name</th>
+				<th>par</th>
+				<th>states</th>
+				<th>choices</th>
+				<th>obj</th>
+				<th>obj-prlb</th>
+				<th>mixed</th>
+				<th>category</th>
+				<th>achievable</th>
+				<th>storm.ach</th>
+				<th>multigain.ach</th>
+			</tr>
+		</thead>
+		<tbody>
+			<td>csn</td>
+			<td>N3</td>
+			<td>183</td>
+			<td>433</td>
+			<td>3</td>
+			<td>(0,0,3,0)</td>
+			<td>False</td>
+			<td>lra</td>
+			<td>False: 2</td>
+			<td><a href='logs/storm.ach.csn-N3-LrLrLr.html' >0.2</a></td>
+			<td><a href='logs/multigain.ach.csn-N3-LrLrLr.html' >1.5</a></td>
+		</tr>
+		<td>csn</td>
+		<td>N4</td>
+		<td>959</td>
+		<td>2767</td>
+		<td>4</td>
+		<td>(0,0,4,0)</td>
+		<td>False</td>
+		<td>lra</td>
+		<td>False: 2</td>
+		<td><a href='logs/storm.ach.csn-N4-LrLrLrLr.html' >0.2</a></td>
+		<td><a href='logs/multigain.ach.csn-N4-LrLrLrLr.html' >2.4</a></td>
+	</tr>
+	<td>csn</td>
+	<td>N5</td>
+	<td>4863</td>
+	<td>16271</td>
+	<td>5</td>
+	<td>(0,0,5,0)</td>
+	<td>False</td>
+	<td>lra</td>
+	<td>False: 2</td>
+	<td><a href='logs/storm.ach.csn-N5-LrLrLrLrLr.html' >0.5</a></td>
+	<td><a href='logs/multigain.ach.csn-N5-LrLrLrLrLr.html' >2.5</a></td>
+</tr>
+<td>phi</td>
+<td>N4</td>
+<td>9440</td>
+<td>35464</td>
+<td>2</td>
+<td>(0,0,2,0)</td>
+<td>False</td>
+<td>lra</td>
+<td>False: 2</td>
+<td><a href='logs/storm.ach.phi-N4-LrLr.html' >1.1</a></td>
+<td><a href='logs/multigain.ach.phi-N4-LrLr.html' >19.7</a></td>
+</tr>
+<td>phi</td>
+<td>N5</td>
+<td>93068</td>
+<td>437050</td>
+<td>2</td>
+<td>(0,0,2,0)</td>
+<td>False</td>
+<td>lra</td>
+<td>False: 2</td>
+<td><a href='logs/storm.ach.phi-N5-LrLr.html' >5.3</a></td>
+<td><a href='logs/multigain.ach.phi-N5-LrLr.html' >2682.3</a></td>
+</tr>
+<td>phi</td>
+<td>N6</td>
+<td>2169805</td>
+<td>12721289</td>
+<td>2</td>
+<td>(0,0,2,0)</td>
+<td>False</td>
+<td>lra</td>
+<td>False: 1</td>
+<td><a href='logs/storm.ach.phi-N6-LrLr.html' >323.7</a></td>
+<td><a href='logs/multigain.ach.phi-N6-LrLr.html' class='memout'>MO</a></td>
+</tr>
+<td>rab</td>
+<td>N3</td>
+<td>27766</td>
+<td>45636</td>
+<td>2</td>
+<td>(0,0,2,0)</td>
+<td>False</td>
+<td>lra</td>
+<td>False: 2</td>
+<td><a href='logs/storm.ach.rab-N3-LrLr.html' >0.9</a></td>
+<td><a href='logs/multigain.ach.rab-N3-LrLr.html' >35.4</a></td>
+</tr>
+<td>rab</td>
+<td>N4</td>
+<td>668836</td>
+<td>1170736</td>
+<td>2</td>
+<td>(0,0,2,0)</td>
+<td>False</td>
+<td>lra</td>
+<td>False: 2</td>
+<td><a href='logs/storm.ach.rab-N4-LrLr.html' >25.9</a></td>
+<td><a href='logs/multigain.ach.rab-N4-LrLr.html' >1218.1</a></td>
+</tr>
+<td>rab</td>
+<td>N5</td>
+<td>14348966</td>
+<td>26091220</td>
+<td>2</td>
+<td>(0,0,2,0)</td>
+<td>False</td>
+<td>lra</td>
+<td>False: 1</td>
+<td><a href='logs/storm.ach.rab-N5-LrLr.html' >1703.9</a></td>
+<td><a href='logs/multigain.ach.rab-N5-LrLr.html' class='memout'>MO</a></td>
+</tr>
+<td>res</td>
+<td>B100CAP5M5Unf0</td>
+<td>2618</td>
+<td>8577</td>
+<td>2</td>
+<td>(0,0,2,0)</td>
+<td>False</td>
+<td>lra</td>
+<td>False: 2</td>
+<td><a href='logs/storm.ach.res-B100CAP5M5Unf0-LrLr.html' >1.1</a></td>
+<td><a href='logs/multigain.ach.res-B100CAP5M5Unf0-LrLr.html' >3.6</a></td>
+</tr>
+<td>res</td>
+<td>B100CAP15M15Unf0</td>
+<td>220001</td>
+<td>714781</td>
+<td>2</td>
+<td>(0,0,2,0)</td>
+<td>False</td>
+<td>lra</td>
+<td>True: 2</td>
+<td><a href='logs/storm.ach.res-B100CAP15M15Unf0-LrLr.html' >1161.1</a></td>
+<td><a href='logs/multigain.ach.res-B100CAP15M15Unf0-LrLr.html' >5957.4</a></td>
+</tr>
+<td>res</td>
+<td>B100CAP20M20Unf0</td>
+<td>751908</td>
+<td>2433877</td>
+<td>2</td>
+<td>(0,0,2,0)</td>
+<td>False</td>
+<td>lra</td>
+<td>True: 1</td>
+<td><a href='logs/storm.ach.res-B100CAP20M20Unf0-LrLr.html' >169.8</a></td>
+<td><a href='logs/multigain.ach.res-B100CAP20M20Unf0-LrLr.html' class='timeout'>TO</a></td>
+</tr>
+<td>sen</td>
+<td>N1</td>
+<td>462</td>
+<td>1079</td>
+<td>3</td>
+<td>(0,0,3,0)</td>
+<td>False</td>
+<td>lra</td>
+<td>False: 2</td>
+<td><a href='logs/storm.ach.sen-N1-LrLrLr.html' >0.2</a></td>
+<td><a href='logs/multigain.ach.sen-N1-LrLrLr.html' >1.9</a></td>
+</tr>
+<td>sen</td>
+<td>N2</td>
+<td>7860</td>
+<td>24578</td>
+<td>3</td>
+<td>(0,0,3,0)</td>
+<td>False</td>
+<td>lra</td>
+<td>False: 2</td>
+<td><a href='logs/storm.ach.sen-N2-LrLrLr.html' >0.6</a></td>
+<td><a href='logs/multigain.ach.sen-N2-LrLrLr.html' >6.0</a></td>
+</tr>
+<td>sen</td>
+<td>N3</td>
+<td>77766</td>
+<td>299871</td>
+<td>3</td>
+<td>(0,0,3,0)</td>
+<td>False</td>
+<td>lra</td>
+<td>False: 2</td>
+<td><a href='logs/storm.ach.sen-N3-LrLrLr.html' >27.3</a></td>
+<td><a href='logs/multigain.ach.sen-N3-LrLrLr.html' >767.1</a></td>
+</tr>
+<td>sen</td>
+<td>N4</td>
+<td>572452</td>
+<td>2611300</td>
+<td>3</td>
+<td>(0,0,3,0)</td>
+<td>False</td>
+<td>lra</td>
+<td>False: 1</td>
+<td><a href='logs/storm.ach.sen-N4-LrLrLr.html' >1472.5</a></td>
+<td><a href='logs/multigain.ach.sen-N4-LrLrLr.html' class='timeout'>TO</a></td>
+</tr>
+<td>sen</td>
+<td>N5</td>
+<td>3565990</td>
+<td>18757470</td>
+<td>3</td>
+<td>(0,0,3,0)</td>
+<td>False</td>
+<td>lra</td>
+<td></td>
+<td><a href='logs/storm.ach.sen-N5-LrLrLr.html' class='timeout'>TO</a></td>
+<td><a href='logs/multigain.ach.sen-N5-LrLrLr.html' class='memout'>MO</a></td>
+</tr>
+<td>vir</td>
+<td>N2</td>
+<td>80</td>
+<td>393</td>
+<td>2</td>
+<td>(0,0,2,0)</td>
+<td>False</td>
+<td>lra</td>
+<td>False: 2</td>
+<td><a href='logs/storm.ach.vir-N2-LrLr.html' >0.2</a></td>
+<td><a href='logs/multigain.ach.vir-N2-LrLr.html' >2.4</a></td>
+</tr>
+<td>vir</td>
+<td>N3</td>
+<td>19682</td>
+<td>170578</td>
+<td>2</td>
+<td>(0,0,2,0)</td>
+<td>False</td>
+<td>lra</td>
+<td>True: 2</td>
+<td><a href='logs/storm.ach.vir-N3-LrLr.html' >1.2</a></td>
+<td><a href='logs/multigain.ach.vir-N3-LrLr.html' >7.3</a></td>
+</tr>
+<td>vir</td>
+<td>N4</td>
+<td></td>
+<td></td>
+<td>2</td>
+<td>(0,0,2,0)</td>
+<td>False</td>
+<td>lra</td>
+<td></td>
+<td><a href='logs/storm.ach.vir-N4-LrLr.html' class='memout'>MO</a></td>
+<td><a href='logs/multigain.ach.vir-N4-LrLr.html' class='memout'>MO</a></td>
+</tr>
+</tbody>
+</table>
+<script>
+var table = $("#table").DataTable( {
+"paging": false,
+"autoWidth": false,
+"info": false,
+fixedHeader: {
+"header": true,
+},
+"dom": "Bfrtip",
+buttons: [
+{
+extend: "columnsToggle",
+columns: [9],
+},
+{
+extend: "columnsToggle",
+columns: [10],
+},
+{
+extend: "colvisGroup",
+text: "Show all",
+show: [9, 10],
+hide: []
+},
+{
+extend: "colvisGroup",
+text: "Hide all",
+show: [],
+hide: [9, 10]
+},
+],
+});
+
+table.on("column-sizing.dt", function (e, settings) {
+updateBest(table);
+} );
+
+updateBest(table);
+</script>
+</div>
+</body>
+</html>

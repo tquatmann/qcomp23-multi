@@ -1,0 +1,19 @@
+{
+	"id": "multigain.ach.sen-N3-LrLrLr",
+	"benchmark-id": "sen-N3-LrLrLr",
+	"tool": "multigain",
+	"configuration-id": "ach",
+	"invocation-note": "MultiGain default settings.. Achievability queries",
+	"commands": [
+		"~/multigain/bin/prism  /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen3.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N3-LrLrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-19",
+	"log": "multigain.ach.sen-N3-LrLrLr.log",
+	"wallclock-time": 767.1098802089691,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	]
+}

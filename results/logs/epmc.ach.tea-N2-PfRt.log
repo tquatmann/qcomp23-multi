@@ -1,0 +1,54 @@
+Command:	java -jar ~/ePMC/epmc-standard.jar  check --model-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/tea/tea2.prism --property-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/tea/tea-N2-PfRtachievability.props --graphsolver-iterative-stop-criterion absolute --graphsolver-iterative-tolerance 1e-6
+Wallclock time:	1.007300615310669
+Return code:	1
+Output:
+Running EPMC revision b1ba8abf9f52c05f23421efb1abd1be7618f426d
+Assertions are disabled. In case of incorrect results or otherwise strange behaviour, please run the JVM with "-ea" parameter.
+Starting to parse PRISM model...
+Done parsing PRISM model
+Starting model checking...
+Analysing property PfRt
+Starting to compute JANI explorer...
+Starting to build initial states of JANI explorer...
+Done building initial states of JANI explorer
+Done building JANI explorer
+Starting to build model...
+Building model done. 1,847 states. Time for model exploration: 0 seconds.
+Starting multi-objective model checking for property multi(P>=0.38571428574000005 [ F task1_completed ], R{"w_1_total"}>=0.88163265303 [ C ])...
+Starting to normalise formula...
+Done normalising formula.
+Starting to evaluate nested properties of multi-objective property...
+
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+Exception in thread "main" java.lang.NullPointerException: Cannot read the array length because "<local5>" is null
+	at epmc.expression.standard.evaluatorexplicit.UtilEvaluatorExplicit.newEvaluator(UtilEvaluatorExplicit.java:150)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutImplies.<init>(EvaluatorExplicitOperatorShortcutImplies.java:131)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutImplies$Builder.build(EvaluatorExplicitOperatorShortcutImplies.java:96)
+	at epmc.expression.standard.evaluatorexplicit.UtilEvaluatorExplicit.newEvaluator(UtilEvaluatorExplicit.java:169)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutAnd.<init>(EvaluatorExplicitOperatorShortcutAnd.java:128)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutAnd$Builder.build(EvaluatorExplicitOperatorShortcutAnd.java:95)
+	at epmc.expression.standard.evaluatorexplicit.UtilEvaluatorExplicit.newEvaluator(UtilEvaluatorExplicit.java:169)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutAnd.<init>(EvaluatorExplicitOperatorShortcutAnd.java:127)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutAnd$Builder.build(EvaluatorExplicitOperatorShortcutAnd.java:95)
+	at epmc.expression.standard.evaluatorexplicit.UtilEvaluatorExplicit.newEvaluator(UtilEvaluatorExplicit.java:169)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutAnd.<init>(EvaluatorExplicitOperatorShortcutAnd.java:127)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutAnd$Builder.build(EvaluatorExplicitOperatorShortcutAnd.java:95)
+	at epmc.expression.standard.evaluatorexplicit.UtilEvaluatorExplicit.newEvaluator(UtilEvaluatorExplicit.java:169)
+	at epmc.expression.standard.evaluatorexplicit.UtilEvaluatorExplicit.newEvaluator(UtilEvaluatorExplicit.java:114)
+	at epmc.propertysolver.PropertySolverExplicitPropositional.solve(PropertySolverExplicitPropositional.java:81)
+	at epmc.modelchecker.ModelChecker.check(ModelChecker.java:278)
+	at epmc.multiobjective.PropertySolverExplicitMultiObjective.prepareRequiredPropositionals(PropertySolverExplicitMultiObjective.java:225)
+	at epmc.multiobjective.PropertySolverExplicitMultiObjective.solve(PropertySolverExplicitMultiObjective.java:192)
+	at epmc.modelchecker.ModelChecker.check(ModelChecker.java:278)
+	at epmc.modelchecker.ModelChecker.checkProperty(ModelChecker.java:249)
+	at epmc.modelchecker.ModelChecker.check(ModelChecker.java:192)
+	at epmc.command.CommandTaskCheck.executeInServer(CommandTaskCheck.java:64)
+	at epmc.jani.interaction.Analyse.execute(Analyse.java:111)
+	at epmc.jani.interaction.commandline.StartInConsoleJaniInteractionNoJani.execute(StartInConsoleJaniInteractionNoJani.java:91)
+	at epmc.jani.interaction.commandline.StartInConsoleJaniInteractionNoJani.process(StartInConsoleJaniInteractionNoJani.java:68)
+	at epmc.main.EPMC.main(EPMC.java:52)
+
+
+############################## Notes ##############################
+EPMC default settings. Check achievability objectives.

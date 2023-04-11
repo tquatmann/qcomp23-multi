@@ -1,0 +1,19 @@
+{
+	"id": "storm.ach.ejs-N5B008Unf3-PfPf",
+	"benchmark-id": "ejs-N5B008Unf3-PfPf",
+	"tool": "storm",
+	"configuration-id": "ach",
+	"invocation-note": "Storm. check achievability objectives using sound value iteration",
+	"commands": [
+		"~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs5.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N5B008Unf3-PfPfachievability.props -const B=8,Unf=3 --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "storm.ach.ejs-N5B008Unf3-PfPf.log",
+	"wallclock-time": 3114.245900630951,
+	"timeout": false,
+	"execution-error": true,
+	"return-codes": [
+		-9
+	]
+}

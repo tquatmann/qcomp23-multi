@@ -1,0 +1,86 @@
+Command:	~/multigain/bin/prism  /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir2.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir-N2-LrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute
+Wallclock time:	2.4452450275421143
+Return code:	0
+Output:
+MultiGain1.0.2
+Date: Mon Dec 19 09:39:58 GMT+01:00 2022
+Hostname: nihm021.hpc.itc.rwth-aachen.de
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir2.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir-N2-LrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir2.prism"...
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir-N2-LrLrachievability.props"...
+
+1 property:
+(1) "LrLr": multi(R{"withvirus"}>=3.5999997831 [ S ], R{"clean"}>=0.15365860910999998 [ S ])
+
+Type:        MDP
+Modules:     n11 n21 n12 n22 
+Variables:   s11 s21 s12 s22 
+
+---------------------------------------------------------------------
+
+Model checking: "LrLr": multi(R{"withvirus"}>=3.5999997831 [ S ], R{"clean"}>=0.15365860910999998 [ S ])
+
+Building model...
+
+Computing reachable states... 80Computing end components.
+Finished computing end components.
+ states
+Reachable states exploration and model construction done in 0.046 secs.
+Sorting reachable states list...
+
+Time for model construction: 0.108 seconds.
+
+Warning: Deadlocks detected and fixed in 1 states
+
+Type:        MDP
+States:      80 (1 initial)
+Transitions: 526
+Choices:     350
+Max/avg:     7/4.38
+Set parameter TSPort to value 50039
+Set parameter TokenServer to value "license6.itc.rwth-aachen.de"
+Set parameter IntFeasTol to value 1e-08
+Set parameter DualReductions to value 0
+Set parameter Method to value 1
+LP problem construction finished in 0.19 s.
+Gurobi Optimizer version 9.5.0 build v9.5.0rc5 (linux64)
+Thread count: 48 physical cores, 48 logical processors, using up to 32 threads
+Optimize a model with 151 rows, 738 columns and 2181 nonzeros
+Model fingerprint: 0xf2f4261d
+Coefficient statistics:
+  Matrix range     [5e-01, 4e+00]
+  Objective range  [0e+00, 0e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e-01, 4e+00]
+Presolve removed 11 rows and 14 columns
+Presolve time: 0.00s
+Presolved: 140 rows, 724 columns, 2161 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   1.301829e+00   0.000000e+00      0s
+
+Solved in 96 iterations and 0.01 seconds (0.00 work units)
+Infeasible model
+LP solving took 0.006 s.
+
+Number of states satisfying multi(R{"withvirus"}>=3.5999997831 [ S ], R{"clean"}>=0.15365860910999998 [ S ]): 0
+
+Property satisfied in 0 of 1 initial states.
+
+Time for model checking: 0.24 seconds.
+
+Result: false (property not satisfied in the initial state)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+
+
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+
+
+############################## Notes ##############################
+MultiGain default settings.. Achievability queries

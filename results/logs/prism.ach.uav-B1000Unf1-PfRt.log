@@ -1,0 +1,99 @@
+Command:	~/prism/prism/bin/prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav-B1000Unf1-PfRtachievability.props -const B=1000,Unf=1,COUNTER=0 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+Wallclock time:	159.76113629341125
+Return code:	0
+Output:
+java -Xmx30g -Xss1g -Djava.awt.headless=true -Djava.library.path=/home/tq429871/prism/prism/lib -classpath /home/tq429871/prism/prism/lib/prism.jar:/home/tq429871/prism/prism/classes:/home/tq429871/prism/prism:/home/tq429871/prism/prism/lib/pepa.zip:/home/tq429871/prism/prism/lib/* prism.PrismCL /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav-B1000Unf1-PfRtachievability.props -const B=1000,Unf=1,COUNTER=0 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+PRISM
+=====
+
+Version: 4.7.dev
+Date: Sun Dec 18 13:14:51 GMT+01:00 2022
+Hostname: nihm020.hpc.itc.rwth-aachen.de
+Memory limits: cudd=4g, java(heap)=30g
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav-B1000Unf1-PfRtachievability.props -const 'B=1000,Unf=1,COUNTER=0' -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav.prism"...
+
+Type:        MDP
+Modules:     operator UAV timemodule 
+Variables:   stop k t s c w a r send in w1 w2 w3 w4 w5 w6 time_counter 
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav-B1000Unf1-PfRtachievability.props"...
+
+1 property:
+(1) "PfRt": multi(P>=0.8999910567 [ F !"timeExceeded"&"mission" ], R{"ROZ"}<=1.0 [ C ])
+
+---------------------------------------------------------------------
+
+Model checking: "PfRt": multi(P>=0.8999910567 [ F !"timeExceeded"&"mission" ], R{"ROZ"}<=1.0 [ C ])
+Model constants: COUNTER=0,Unf=1,B=1000
+
+Building model...
+Model constants: COUNTER=0,Unf=1,B=1000
+
+Computing reachable states...
+
+Reachability (BFS): 83 iterations in 0.68 seconds (average 0.008181, setup 0.00)
+
+Time for model construction: 0.953 seconds.
+
+Warning: Deadlocks detected and fixed in 10228 states
+
+Type:        MDP
+States:      389554 (1 initial)
+Transitions: 2100412
+Choices:     696780
+
+Transition matrix: 18403 nodes (16 terminal), 2100412 minterms, vars: 43r/43c/8nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.03 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 83 iterations in 0.86 seconds (average 0.010422, setup 0.00)
+States:      389554 (1 initial)
+Transitions: 2100412
+Choices:     696780
+
+Transition matrix: 21635 nodes (16 terminal), 2100412 minterms, vars: 44r/44c/8nd
+Total time for product construction: 0.984 seconds.
+
+States:      389554 (1 initial)
+Transitions: 2100412
+Choices:     696780
+
+Transition matrix: 21635 nodes (16 terminal), 2100412 minterms, vars: 44r/44c/8nd
+
+Finding accepting end components for F !"timeExceeded"&"mission"...
+Time for end component identification: 2.193 seconds.
+
+Prob0A: 19 iterations in 0.06 seconds (average 0.002895, setup 0.00)
+
+yes = 116138, no = 0, maybe = 273416
+
+Computing remaining probabilities...
+Engine: Sparse
+Iterative method: 74 iterations in 1.87 seconds (average 0.025203, setup 0.00)
+The value iteration(s) took 2.751 seconds altogether.
+Number of weight vectors used: 1
+Multi-objective value iterations took 2.752 s.
+
+Property satisfied in 1 of 1 initial states.
+
+Time for model checking: 157.397 seconds.
+
+Result: true
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+
+
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+
+
+############################## Notes ##############################
+Prism.. Achievability queries. Gauss-Seidl VI.

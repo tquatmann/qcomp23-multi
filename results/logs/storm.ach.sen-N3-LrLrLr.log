@@ -1,0 +1,95 @@
+Command:	~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen3.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N3-LrLrLrachievability.props --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute
+Wallclock time:	27.325005292892456
+Return code:	0
+Output:
+Storm 1.7.1 (dev)
+
+Date: Sun Dec 18 05:36:55 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen3.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N3-LrLrLrachievability.props --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.007s.
+
+Time for model construction: 0.674s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	77766
+Transitions: 	320847
+Choices: 	299889
+Reward Models:  working, success, failure
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "LrLrLr": multi(R[exp]{"working"}>=14062499901/25000000000 [LRA], R[exp]{"success"}>=17856000171/20000000000 [LRA], R[exp]{"failure"}>=21744004378500003/500000000000000000 [LRA]) ...
+Preprocessing done in 0.176s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"working"}>=14062499901/25000000000 [LRA], R[exp]{"success"}>=17856000171/20000000000 [LRA], R[exp]{"failure"}>=21744004378500003/500000000000000000 [LRA])
+
+The query considers 3 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"working"}>=14062499901/25000000000 [LRA] 	Preprocessed: R[exp]{"working"}max>=14062499901/25000000000 [LRA] 	result bounds: >=0
+Original: R[exp]{"success"}>=17856000171/20000000000 [LRA] 	Preprocessed: R[exp]{"success"}max>=17856000171/20000000000 [LRA] 	result bounds: >=0
+Original: R[exp]{"failure"}>=21744004378500003/500000000000000000 [LRA] 	Preprocessed: R[exp]{"failure"}max>=21744004378500003/500000000000000000 [LRA] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 3.
+Number of Total Reward Objectives (after preprocessing): 0.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	77766
+Transitions: 	320847
+Choices: 	299889
+Reward Models:  working, success, failure
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	77766
+Transitions: 	320829
+Choices: 	299871
+Reward Models:  working, success, failure
+State Labels: 	3 labels
+   * deadl -> 9 item(s)
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Weight Vector Checker Statistics:
+Final preprocessed model has 77758 states.
+Final preprocessed model has 299863 actions.
+Found 46613 end components that are relevant for LRA-analysis.
+68560 states lie on such an end component.
+
+Pareto Curve Approximation Algorithm terminated after 4 refinement steps.
+Solving multi-objective query took 26.502s seconds (consisting of 0.176s seconds for preprocessing and 26.322s seconds for analyzing the preprocessed model).
+Result (for initial states): false
+
+Time for model checking: 26.502s.
+
+Performance statistics:
+  * peak memory usage: 159MB
+  * CPU time: 27.079s
+  * wallclock time: 27.200s
+
+
+############################## Notes ##############################
+Storm. check achievability objectives using sound value iteration

@@ -1,0 +1,35 @@
+Command:	~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov-B0100Unf2-PfPfachievability.props -const B=100,Unf=2 --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute
+Wallclock time:	1113.1356134414673
+Return code:	-9
+Output:
+Storm 1.7.1 (dev)
+
+Date: Sat Dec 17 23:45:43 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov-B0100Unf2-PfPfachievability.props -const 'B=100,Unf=2' --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.004s.
+
+Time for model construction: 989.359s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	180820738
+Transitions: 	339038882
+Choices: 	226025922
+Reward Models:  none
+State Labels: 	6 labels
+   * init -> 1 item(s)
+   * valueCollected -> 667218 item(s)
+   * exceedTime -> 906034 item(s)
+   * deadlock -> 0 item(s)
+   * exceedEnergy -> 439346 item(s)
+   * done -> 11301297 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "PfPf": multi(P>=9/10 [F "valueCollected"], P>=9/10 [F (((!"exceedTime") & (!"exceedEnergy")) & (done))]) ...
+
+
+############################## Notes ##############################
+Storm. check achievability objectives using sound value iteration

@@ -1,0 +1,19 @@
+{
+	"id": "storm.ach.srv-B000Unf0-RtRt",
+	"benchmark-id": "srv-B000Unf0-RtRt",
+	"tool": "storm",
+	"configuration-id": "ach",
+	"invocation-note": "Storm. check achievability objectives using sound value iteration",
+	"commands": [
+		"~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/srv/srv.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/srv/srv-B000Unf0-RtRtachievability.props -const B=0,Unf=0 --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "storm.ach.srv-B000Unf0-RtRt.log",
+	"wallclock-time": 1.3166720867156982,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	]
+}

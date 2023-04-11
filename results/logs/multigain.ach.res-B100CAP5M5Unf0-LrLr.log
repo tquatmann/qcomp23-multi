@@ -1,0 +1,82 @@
+Command:	~/multigain/bin/prism  /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B100CAP5M5Unf0-LrLrachievability.props -const B=100,CAP=5,M=5,Unf=0 -paretoepsilon 0.0001 -ex -gurobi -absolute
+Wallclock time:	3.557736873626709
+Return code:	0
+Output:
+MultiGain1.0.2
+Date: Mon Dec 19 09:39:58 GMT+01:00 2022
+Hostname: nihm019.hpc.itc.rwth-aachen.de
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B100CAP5M5Unf0-LrLrachievability.props -const 'B=100,CAP=5,M=5,Unf=0' -paretoepsilon 0.0001 -ex -gurobi -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism"...
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B100CAP5M5Unf0-LrLrachievability.props"...
+
+1 property:
+(1) "LrLr": multi(R{"rew_gold"}>=0.13106796012 [ S ], R{"rew_gem"}>=0.13235294115 [ S ])
+
+Type:        MDP
+Modules:     robot goldtile gemtile goldcounter gemcounter stepcounter 
+Variables:   gold gem attacked x y av_gold t_gold av_gem t_gem cgold cgem csteps 
+
+---------------------------------------------------------------------
+
+Model checking: "LrLr": multi(R{"rew_gold"}>=0.13106796012 [ S ], R{"rew_gem"}>=0.13235294115 [ S ])
+Model constants: B=100,CAP=5,M=5,Unf=0
+
+Building model...
+Model constants: B=100,CAP=5,M=5,Unf=0
+
+Computing reachable states... 2618Computing end components.
+Finished computing end components.
+ states
+Reachable states exploration and model construction done in 0.146 secs.
+Sorting reachable states list...
+
+Time for model construction: 0.216 seconds.
+
+Type:        MDP
+States:      2618 (1 initial)
+Transitions: 9606
+Choices:     8577
+Max/avg:     4/3.28
+Set parameter TSPort to value 50039
+Set parameter TokenServer to value "license6.itc.rwth-aachen.de"
+Set parameter IntFeasTol to value 1e-08
+Set parameter DualReductions to value 0
+Set parameter Method to value 1
+LP problem construction finished in 0.272 s.
+Gurobi Optimizer version 9.5.0 build v9.5.0rc5 (linux64)
+Thread count: 48 physical cores, 48 logical processors, using up to 32 threads
+Optimize a model with 5240 rows, 19772 columns and 53142 nonzeros
+Model fingerprint: 0x49e77ade
+Coefficient statistics:
+  Matrix range     [1e-01, 5e+00]
+  Objective range  [0e+00, 0e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e-01, 1e+00]
+Presolve removed 689 rows and 687 columns
+Presolve time: 0.04s
+Presolved: 4551 rows, 19085 columns, 49502 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   4.079276e-01   0.000000e+00      0s
+
+Solved in 4681 iterations and 1.31 seconds (1.59 work units)
+Infeasible model
+LP solving took 1.321 s.
+
+Number of states satisfying multi(R{"rew_gold"}>=0.13106796012 [ S ], R{"rew_gem"}>=0.13235294115 [ S ]): 0
+
+Property satisfied in 0 of 1 initial states.
+
+Time for model checking: 1.656 seconds.
+
+Result: false (property not satisfied in the initial state)
+
+
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+
+
+############################## Notes ##############################
+MultiGain default settings.. Achievability queries

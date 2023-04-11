@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>multigain.ach - vir-N3-LrLr</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>multigain.ach</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>id:</td><td>vir-N3-LrLr (MDP)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ach)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">~/multigain/bin/prism  /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir3.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir-N3-LrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute</pre>
+	MultiGain default settings.. Achievability queries
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">7.279261350631714s</td></tr>
+		<tr><td>Model Checking Walltime:</td><td style="tt">4.58s</td></tr>
+		<tr><td>Return code:</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>MultiGain default settings.. Achievability queries</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">MultiGain1.0.2
+Date: Mon Dec 19 09:39:58 GMT+01:00 2022
+Hostname: nihm021.hpc.itc.rwth-aachen.de
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir3.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir-N3-LrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir3.prism"...
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir-N3-LrLrachievability.props"...
+
+1 property:
+(1) "LrLr": multi(R{"withvirus"}>=7.353658334700001 [ S ], R{"clean"}>=0.15365848761 [ S ])
+
+Type:        MDP
+Modules:     n11 n21 n31 n12 n22 n32 n13 n23 n33 
+Variables:   s11 s21 s31 s12 s22 s32 s13 s23 s33 
+
+---------------------------------------------------------------------
+
+Model checking: "LrLr": multi(R{"withvirus"}>=7.353658334700001 [ S ], R{"clean"}>=0.15365848761 [ S ])
+
+Building model...
+
+Computing reachable states... 19682Computing end components.
+Finished computing end components.
+ states
+Reachable states exploration and model construction done in 0.608 secs.
+Sorting reachable states list...
+
+Time for model construction: 0.779 seconds.
+
+Warning: Deadlocks detected and fixed in 1 states
+
+Type:        MDP
+States:      19682 (1 initial)
+Transitions: 282106
+Choices:     170578
+Max/avg:     17/8.67
+Set parameter TSPort to value 50039
+Set parameter TokenServer to value "license6.itc.rwth-aachen.de"
+Set parameter IntFeasTol to value 1e-08
+Set parameter DualReductions to value 0
+Set parameter Method to value 1
+LP problem construction finished in 1.465 s.
+Gurobi Optimizer version 9.5.0 build v9.5.0rc5 (linux64)
+Thread count: 48 physical cores, 48 logical processors, using up to 32 threads
+Optimize a model with 38859 rows, 358033 columns and 1244338 nonzeros
+Model fingerprint: 0x0025516b
+Coefficient statistics:
+  Matrix range     [5e-01, 9e+00]
+  Objective range  [0e+00, 0e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e-01, 7e+00]
+Presolve removed 12 rows and 20 columns
+Presolve time: 0.66s
+Presolved: 38847 rows, 358013 columns, 1244271 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   4.980183e-01   0.000000e+00      1s
+    1037    0.0000000e+00   0.000000e+00   0.000000e+00      2s
+
+Use crossover to convert LP symmetric solution to basic solution...
+Crossover log...
+
+      32 PPushes remaining with PInf 0.0000000e+00                 2s
+       0 PPushes remaining with PInf 0.0000000e+00                 2s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 0.0000000e+00      2s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+    1072    0.0000000e+00   0.000000e+00   0.000000e+00      3s
+
+Solved in 1072 iterations and 2.57 seconds (2.90 work units)
+Optimal objective  0.000000000e+00
+LP solving took 2.666 s.
+
+Number of states satisfying multi(R{"withvirus"}>=7.353658334700001 [ S ], R{"clean"}>=0.15365848761 [ S ]): 1
+
+Property satisfied in 1 of 1 initial states.
+
+Time for model checking: 4.58 seconds.
+
+Result: true (property satisfied in the initial state)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.	</pre>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">STDERR</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g	</pre>
+</div>
+</body>
+</html>

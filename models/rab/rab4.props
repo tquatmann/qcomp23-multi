@@ -1,0 +1,4 @@
+"qual1": multi(R{"trying"}>=3.5 [S], R{"critical"}>=0.3 [S]);
+"qual2": multi(R{"trying"}>=3.6 [S], R{"critical"}>=0.3 [S]);
+"quant": multi(R{"trying"}max=? [S], R{"critical"}>=0.3 [S]);
+"LrLr": multi(R{"trying"}max=? [S], R{"critical"}max=? [S]);

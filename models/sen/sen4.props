@@ -1,0 +1,4 @@
+"qual1": multi(R{"working"}>=0.31 [S], R{"success"}>=0.5 [S], R{"failure"}>=0.001 [S]);
+"qual2": multi(R{"working"}>=0.32 [S], R{"success"}>=0.5 [S], R{"failure"}>=0.001 [S]);
+"quant": multi(R{"working"}max=? [S], R{"success"}>=0.5 [S], R{"failure"}>=0.001 [S]);
+"LrLrLr": multi(R{"working"}max=? [S], R{"success"}max=? [S], R{"failure"}max=? [S]);

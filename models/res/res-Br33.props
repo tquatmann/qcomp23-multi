@@ -1,0 +1,1 @@
+"Br33": Pmax=? [F{"rew_gold"}>=REQGOLD,{"rew_gem"}>=REQGEM,steps<=AVSTEPS true];

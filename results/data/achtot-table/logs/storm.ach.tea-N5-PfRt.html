@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>storm.ach - tea-N5-PfRt</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>storm.ach</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>id:</td><td>tea-N5-PfRt (MDP)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ach)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/tea/tea5.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/tea/tea-N5-PfRtachievability.props --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute</pre>
+	Storm. check achievability objectives using sound value iteration
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">15.168311595916748s</td></tr>
+		<tr><td>Model Checking Walltime:</td><td style="tt">6.709s</td></tr>
+		<tr><td>Return code:</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Storm. check achievability objectives using sound value iteration</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.7.1 (dev)
+
+Date: Sun Dec 18 10:52:30 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/tea/tea5.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/tea/tea-N5-PfRtachievability.props --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.032s.
+
+Time for model construction: 8.309s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	907993
+Transitions: 	1084752
+Choices: 	1078873
+Reward Models:  w_1_total
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((((status = 7) & ((t1_r1 = 1) => ((((((m1_t1 = 1) & (1 = 1)) | ((m2_t1 = 1) & (2 = 1))) | ((m3_t1 = 1) & (3 = 1))) | ((m4_t1 = 1) & (1 = 1))) | ((m5_t1 = 1) & (2 = 1))))) & ((t1_r2 = 1) => ((((((m1_t1 = 1) & (1 = 2)) | ((m2_t1 = 1) & (2 = 2))) | ((m3_t1 = 1) & (3 = 2))) | ((m4_t1 = 1) & (1 = 2))) | ((m5_t1 = 1) & (2 = 2))))) & ((t1_r3 = 1) => ((((((m1_t1 = 1) & (1 = 3)) | ((m2_t1 = 1) & (2 = 3))) | ((m3_t1 = 1) & (3 = 3))) | ((m4_t1 = 1) & (1 = 3))) | ((m5_t1 = 1) & (2 = 3))))) -> 52200 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "PfRt": multi(P>=9/10 [F ((((status = 7) & ((t1_r1 = 1) => ((((((m1_t1 = 1) & (1 = 1)) | ((m2_t1 = 1) & (2 = 1))) | ((m3_t1 = 1) & (3 = 1))) | ((m4_t1 = 1) & (1 = 1))) | ((m5_t1 = 1) & (2 = 1))))) & ((t1_r2 = 1) => ((((((m1_t1 = 1) & (1 = 2)) | ((m2_t1 = 1) & (2 = 2))) | ((m3_t1 = 1) & (3 = 2))) | ((m4_t1 = 1) & (1 = 2))) | ((m5_t1 = 1) & (2 = 2))))) & ((t1_r3 = 1) => ((((((m1_t1 = 1) & (1 = 3)) | ((m2_t1 = 1) & (2 = 3))) | ((m3_t1 = 1) & (3 = 3))) | ((m4_t1 = 1) & (1 = 3))) | ((m5_t1 = 1) & (2 = 3)))))], R[exp]{"w_1_total"}>=1630102041/625000000 [C]) ...
+Preprocessing done in 1.323s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(P>=9/10 [F ((((status = 7) & ((t1_r1 = 1) => ((((((m1_t1 = 1) & (1 = 1)) | ((m2_t1 = 1) & (2 = 1))) | ((m3_t1 = 1) & (3 = 1))) | ((m4_t1 = 1) & (1 = 1))) | ((m5_t1 = 1) & (2 = 1))))) & ((t1_r2 = 1) => ((((((m1_t1 = 1) & (1 = 2)) | ((m2_t1 = 1) & (2 = 2))) | ((m3_t1 = 1) & (3 = 2))) | ((m4_t1 = 1) & (1 = 2))) | ((m5_t1 = 1) & (2 = 2))))) & ((t1_r3 = 1) => ((((((m1_t1 = 1) & (1 = 3)) | ((m2_t1 = 1) & (2 = 3))) | ((m3_t1 = 1) & (3 = 3))) | ((m4_t1 = 1) & (1 = 3))) | ((m5_t1 = 1) & (2 = 3)))))], R[exp]{"w_1_total"}>=1630102041/625000000 [C])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: P>=9/10 [F ((((status = 7) & ((t1_r1 = 1) => ((((((m1_t1 = 1) & (1 = 1)) | ((m2_t1 = 1) & (2 = 1))) | ((m3_t1 = 1) & (3 = 1))) | ((m4_t1 = 1) & (1 = 1))) | ((m5_t1 = 1) & (2 = 1))))) & ((t1_r2 = 1) => ((((((m1_t1 = 1) & (1 = 2)) | ((m2_t1 = 1) & (2 = 2))) | ((m3_t1 = 1) & (3 = 2))) | ((m4_t1 = 1) & (1 = 2))) | ((m5_t1 = 1) & (2 = 2))))) & ((t1_r3 = 1) => ((((((m1_t1 = 1) & (1 = 3)) | ((m2_t1 = 1) & (2 = 3))) | ((m3_t1 = 1) & (3 = 3))) | ((m4_t1 = 1) & (1 = 3))) | ((m5_t1 = 1) & (2 = 3)))))] 	Preprocessed: R[exp]{"obj1"}max>=9/10 [C] 	result bounds: [0, 1]
+Original: R[exp]{"w_1_total"}>=1630102041/625000000 [C] 	Preprocessed: R[exp]{"w_1_total"}max>=1630102041/625000000 [C] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 2.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	907993
+Transitions: 	1084752
+Choices: 	1078873
+Reward Models:  w_1_total
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((((status = 7) & ((t1_r1 = 1) => ((((((m1_t1 = 1) & (1 = 1)) | ((m2_t1 = 1) & (2 = 1))) | ((m3_t1 = 1) & (3 = 1))) | ((m4_t1 = 1) & (1 = 1))) | ((m5_t1 = 1) & (2 = 1))))) & ((t1_r2 = 1) => ((((((m1_t1 = 1) & (1 = 2)) | ((m2_t1 = 1) & (2 = 2))) | ((m3_t1 = 1) & (3 = 2))) | ((m4_t1 = 1) & (1 = 2))) | ((m5_t1 = 1) & (2 = 2))))) & ((t1_r3 = 1) => ((((((m1_t1 = 1) & (1 = 3)) | ((m2_t1 = 1) & (2 = 3))) | ((m3_t1 = 1) & (3 = 3))) | ((m4_t1 = 1) & (1 = 3))) | ((m5_t1 = 1) & (2 = 3))))) -> 52200 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	666337
+Transitions: 	810776
+Choices: 	804897
+Reward Models:  obj1, w_1_total
+State Labels: 	4 labels
+   * deadl -> 144440 item(s)
+   * ((((status = 7) & ((t1_r1 = 1) => ((((((m1_t1 = 1) & (1 = 1)) | ((m2_t1 = 1) & (2 = 1))) | ((m3_t1 = 1) & (3 = 1))) | ((m4_t1 = 1) & (1 = 1))) | ((m5_t1 = 1) & (2 = 1))))) & ((t1_r2 = 1) => ((((((m1_t1 = 1) & (1 = 2)) | ((m2_t1 = 1) & (2 = 2))) | ((m3_t1 = 1) & (3 = 2))) | ((m4_t1 = 1) & (1 = 2))) | ((m5_t1 = 1) & (2 = 2))))) & ((t1_r3 = 1) => ((((((m1_t1 = 1) & (1 = 3)) | ((m2_t1 = 1) & (2 = 3))) | ((m3_t1 = 1) & (3 = 3))) | ((m4_t1 = 1) & (1 = 3))) | ((m5_t1 = 1) & (2 = 3))))) -> 52200 item(s)
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Weight Vector Checker Statistics:
+Final preprocessed model has 521898 states.
+Final preprocessed model has 660458 actions.
+
+Pareto Curve Approximation Algorithm terminated after 1 refinement steps.
+Solving multi-objective query took 6.706s seconds (consisting of 1.323s seconds for preprocessing and 5.377s seconds for analyzing the preprocessed model).
+Result (for initial states): true
+
+Time for model checking: 6.709s.
+
+Performance statistics:
+  * peak memory usage: 305MB
+  * CPU time: 14.902s
+  * wallclock time: 15.078s	</pre>
+</div>
+</body>
+</html>

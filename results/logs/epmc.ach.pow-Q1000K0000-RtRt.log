@@ -1,0 +1,78 @@
+Command:	java -jar ~/ePMC/epmc-standard.jar  check --model-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/pow/pow.prism --property-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/pow/pow-Q1000K0000-RtRtachievability.props --const Q=1000,K=0 --graphsolver-iterative-stop-criterion absolute --graphsolver-iterative-tolerance 1e-6
+Wallclock time:	161.7055525779724
+Return code:	0
+Output:
+Running EPMC revision b1ba8abf9f52c05f23421efb1abd1be7618f426d
+Assertions are disabled. In case of incorrect results or otherwise strange behaviour, please run the JVM with "-ea" parameter.
+Starting to parse PRISM model...
+Done parsing PRISM model
+Starting model checking...
+Analysing property RtRt
+Starting to compute JANI explorer...
+Starting to build initial states of JANI explorer...
+Done building initial states of JANI explorer
+Done building JANI explorer
+Starting to build model...
+Current number of states: 10,247; states/second: 10,246
+Current number of states: 24,807; states/second: 14,561
+Current number of states: 39,613; states/second: 14,806
+Current number of states: 53,812; states/second: 14,199
+Current number of states: 68,525; states/second: 14,713
+Current number of states: 82,811; states/second: 14,286
+Current number of states: 97,156; states/second: 14,344
+Current number of states: 111,799; states/second: 14,644
+Current number of states: 126,089; states/second: 14,290
+Current number of states: 140,701; states/second: 14,612
+Current number of states: 155,469; states/second: 14,768
+Current number of states: 168,717; states/second: 13,248
+Current number of states: 183,439; states/second: 14,722
+Current number of states: 198,012; states/second: 14,573
+Current number of states: 212,772; states/second: 14,760
+Current number of states: 227,439; states/second: 14,667
+Current number of states: 241,330; states/second: 13,886
+Current number of states: 255,837; states/second: 14,512
+Current number of states: 270,466; states/second: 14,629
+Current number of states: 286,353; states/second: 15,886
+Current number of states: 303,072; states/second: 16,719
+Current number of states: 319,826; states/second: 16,754
+Current number of states: 333,426; states/second: 13,600
+Current number of states: 350,178; states/second: 16,752
+Current number of states: 366,915; states/second: 16,737
+Current number of states: 383,511; states/second: 16,596
+Current number of states: 400,148; states/second: 16,637
+Current number of states: 416,754; states/second: 16,606
+Building model done. 424,424 states. Time for model exploration: 28 seconds.
+Starting multi-objective model checking for property multi(R{"power"}<=110.00010967000001 [ C ], R{"lost"}<=1.0427134886300002 [ C ])...
+Starting to normalise formula...
+Done normalising formula.
+Starting to evaluate nested properties of multi-objective property...
+Done evaluating nested properties of multi-objective property.
+Starting to build product of model and properties automata...
+Computing Büchi automaton for original property...
+Done computing Büchi automaton, is deterministic and has 1 labels and 1 states.
+Computing Büchi automaton for original property...
+Done computing Büchi automaton, is deterministic and has 1 labels and 1 states.
+Done building product of model and properties automata.
+Starting main loop of multi-objective solver...
+Property is qualitative.
+Starting main loop iteration number 1...
+Starting iteration...
+Done. Did 15,905 iterations in 96 seconds.
+Starting iteration...
+Done. Did 6 iterations in 0 seconds.
+Starting iteration...
+Done. Did 6 iterations in 0 seconds.
+Done main loop iteration number 1.
+Starting main loop iteration number 2...
+Done main loop iteration number 2.
+Done main loop of multi-objective solver.
+Done multi-objective model checking for property multi(R{"power"}<=110.00010967000001 [ C ], R{"lost"}<=1.0427134886300002 [ C ]).
+Finished model checking. Time required: 160 seconds
+RtRt: true
+
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+
+
+############################## Notes ##############################
+EPMC default settings. Check achievability objectives.

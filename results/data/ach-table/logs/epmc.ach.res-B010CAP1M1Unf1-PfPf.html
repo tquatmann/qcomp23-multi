@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>epmc.ach - res-B010CAP1M1Unf1-PfPf</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>epmc.ach</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>id:</td><td>res-B010CAP1M1Unf1-PfPf (MDP)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ach)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">java -jar ~/ePMC/epmc-standard.jar  check --model-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism --property-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B010CAP1M1Unf1-PfPfachievability.props --const B=10,CAP=1,M=1,Unf=1 --graphsolver-iterative-stop-criterion absolute --graphsolver-iterative-tolerance 1e-6</pre>
+	EPMC default settings. Check achievability objectives.
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">35.3585364818573s</td></tr>
+		<tr><td>Model Checking Walltime:</td><td style="tt">34.0s</td></tr>
+		<tr><td>Return code:</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>EPMC default settings. Check achievability objectives.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Running EPMC revision b1ba8abf9f52c05f23421efb1abd1be7618f426d
+Assertions are disabled. In case of incorrect results or otherwise strange behaviour, please run the JVM with "-ea" parameter.
+Starting to parse PRISM model...
+Done parsing PRISM model
+Starting model checking...
+Analysing property PfPf
+Starting to compute JANI explorer...
+Starting to build initial states of JANI explorer...
+Done building initial states of JANI explorer
+Done building JANI explorer
+Starting to build model...
+Current number of states: 16,633; states/second: 16,633
+Current number of states: 35,583; states/second: 18,939
+Current number of states: 54,643; states/second: 19,071
+Current number of states: 74,966; states/second: 20,323
+Current number of states: 92,628; states/second: 17,662
+Current number of states: 113,053; states/second: 20,425
+Current number of states: 133,404; states/second: 20,351
+Current number of states: 153,623; states/second: 20,219
+Current number of states: 168,858; states/second: 15,235
+Current number of states: 189,136; states/second: 20,278
+Current number of states: 209,523; states/second: 20,387
+Current number of states: 229,689; states/second: 20,166
+Current number of states: 249,865; states/second: 20,166
+Current number of states: 270,166; states/second: 20,311
+Current number of states: 290,523; states/second: 20,357
+Current number of states: 310,657; states/second: 20,134
+Building model done. 314,318 states. Time for model exploration: 16 seconds.
+Starting multi-objective model checking for property multi(P>=0.89791695513 [F (csteps >= 0 & cgold=0)], P>=0.9 [F (csteps >= 0 & cgem=0)])...
+Starting to normalise formula...
+Done normalising formula.
+Starting to evaluate nested properties of multi-objective property...
+Done evaluating nested properties of multi-objective property.
+Starting to build product of model and properties automata...
+Computing Büchi automaton for original property...
+Done computing Büchi automaton, is deterministic and has 1 labels and 2 states.
+Computing Büchi automaton for original property...
+Done computing Büchi automaton, is deterministic and has 1 labels and 2 states.
+Done building product of model and properties automata.
+Starting main loop of multi-objective solver...
+Property is qualitative.
+Starting main loop iteration number 1...
+Starting iteration...
+Done. Did 86 iterations in 0 seconds.
+Starting iteration...
+Done. Did 86 iterations in 0 seconds.
+Starting iteration...
+Done. Did 86 iterations in 0 seconds.
+Done main loop iteration number 1.
+Done main loop of multi-objective solver.
+Done multi-objective model checking for property multi(P>=0.89791695513 [F (csteps >= 0 & cgold=0)], P>=0.9 [F (csteps >= 0 & cgem=0)]).
+Finished model checking. Time required: 34 seconds
+PfPf: false	</pre>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">STDERR</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g	</pre>
+</div>
+</body>
+</html>

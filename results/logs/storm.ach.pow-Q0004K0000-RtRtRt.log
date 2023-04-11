@@ -1,0 +1,93 @@
+Command:	~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/pow/pow.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/pow/pow-Q0004K0000-RtRtRtachievability.props -const Q=4,K=0 --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute
+Wallclock time:	1.4279334545135498
+Return code:	0
+Output:
+Storm 1.7.1 (dev)
+
+Date: Sat Dec 17 14:48:03 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/pow/pow.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/pow/pow-Q0004K0000-RtRtRtachievability.props -const 'Q=4,K=0' --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.004s.
+
+Time for model construction: 0.041s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	2120
+Transitions: 	9560
+Choices: 	6710
+Reward Models:  queue, power, lost
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "RtRtRt": multi(R[exp]{"power"}<=11000010967000001/100000000000000 [C], R[exp]{"lost"}<=5213567443150001/5000000000000000 [C], R[exp]{"queue"}<=243983531/156250 [C]) ...
+Preprocessing done in 0.004s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"power"}<=11000010967000001/100000000000000 [C], R[exp]{"lost"}<=5213567443150001/5000000000000000 [C], R[exp]{"queue"}<=243983531/156250 [C])
+
+The query considers 3 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"power"}<=11000010967000001/100000000000000 [C] 	Preprocessed: R[exp]{"power"}min<=11000010967000001/100000000000000 [C] 	result bounds: >=0
+Original: R[exp]{"lost"}<=5213567443150001/5000000000000000 [C] 	Preprocessed: R[exp]{"lost"}min<=5213567443150001/5000000000000000 [C] 	result bounds: >=0
+Original: R[exp]{"queue"}<=243983531/156250 [C] 	Preprocessed: R[exp]{"queue"}min<=243983531/156250 [C] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 3.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	2120
+Transitions: 	9560
+Choices: 	6710
+Reward Models:  queue, power, lost
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	1570
+Transitions: 	6460
+Choices: 	3610
+Reward Models:  queue, power, lost
+State Labels: 	3 labels
+   * deadl -> 510 item(s)
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Weight Vector Checker Statistics:
+Final preprocessed model has 1061 states.
+Final preprocessed model has 3101 actions.
+
+Pareto Curve Approximation Algorithm terminated after 3 refinement steps.
+Solving multi-objective query took 1.309s seconds (consisting of 0.004s seconds for preprocessing and 1.305s seconds for analyzing the preprocessed model).
+Result (for initial states): false
+
+Time for model checking: 1.309s.
+
+Performance statistics:
+  * peak memory usage: 51MB
+  * CPU time: 1.388s
+  * wallclock time: 1.362s
+
+
+############################## Notes ##############################
+Storm. check achievability objectives using sound value iteration

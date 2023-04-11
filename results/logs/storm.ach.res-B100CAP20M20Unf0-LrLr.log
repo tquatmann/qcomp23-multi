@@ -1,0 +1,93 @@
+Command:	~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B100CAP20M20Unf0-LrLrachievability.props -const B=100,CAP=20,M=20,Unf=0 --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute
+Wallclock time:	169.81871509552002
+Return code:	0
+Output:
+Storm 1.7.1 (dev)
+
+Date: Sat Dec 17 21:25:34 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B100CAP20M20Unf0-LrLrachievability.props -const 'B=100,CAP=20,M=20,Unf=0' --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.005s.
+
+Time for model construction: 10.608s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	751908
+Transitions: 	2688244
+Choices: 	2433877
+Reward Models:  rew_gold, rew_gem
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "LrLr": multi(R[exp]{"rew_gold"}>=10410709599/250000000000 [LRA], R[exp]{"rew_gem"}>=41685021/1000000000 [LRA]) ...
+Preprocessing done in 0.761s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"rew_gold"}>=10410709599/250000000000 [LRA], R[exp]{"rew_gem"}>=41685021/1000000000 [LRA])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"rew_gold"}>=10410709599/250000000000 [LRA] 	Preprocessed: R[exp]{"rew_gold"}max>=10410709599/250000000000 [LRA] 	result bounds: >=0
+Original: R[exp]{"rew_gem"}>=41685021/1000000000 [LRA] 	Preprocessed: R[exp]{"rew_gem"}max>=41685021/1000000000 [LRA] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 2.
+Number of Total Reward Objectives (after preprocessing): 0.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	751908
+Transitions: 	2688244
+Choices: 	2433877
+Reward Models:  rew_gold, rew_gem
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	751908
+Transitions: 	2688244
+Choices: 	2433877
+Reward Models:  rew_gem, rew_gold
+State Labels: 	2 labels
+   * init -> 1 item(s)
+   * deadlock -> 0 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Weight Vector Checker Statistics:
+Final preprocessed model has 751908 states.
+Final preprocessed model has 2433877 actions.
+Found 1 end components that are relevant for LRA-analysis.
+751908 states lie on such an end component.
+
+Pareto Curve Approximation Algorithm terminated after 3 refinement steps.
+Solving multi-objective query took 159.095s seconds (consisting of 0.761s seconds for preprocessing and 158.314s seconds for analyzing the preprocessed model).
+Result (for initial states): true
+
+Time for model checking: 159.096s.
+
+Performance statistics:
+  * peak memory usage: 908MB
+  * CPU time: 168.603s
+  * wallclock time: 169.731s
+
+
+############################## Notes ##############################
+Storm. check achievability objectives using sound value iteration

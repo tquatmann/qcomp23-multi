@@ -1,0 +1,19 @@
+{
+	"id": "epmc.ach.rov-B0030Unf1-RtRt",
+	"benchmark-id": "rov-B0030Unf1-RtRt",
+	"tool": "epmc",
+	"configuration-id": "ach",
+	"invocation-note": "EPMC default settings. Check achievability objectives.",
+	"commands": [
+		"java -jar ~/ePMC/epmc-standard.jar  check --model-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov.prism --property-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov-B0030Unf1-RtRtachievability.props --const B=30,Unf=1 --graphsolver-iterative-stop-criterion absolute --graphsolver-iterative-tolerance 1e-6"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "epmc.ach.rov-B0030Unf1-RtRt.log",
+	"wallclock-time": 1.2958579063415527,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	]
+}

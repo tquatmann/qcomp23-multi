@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>multigain.ach - rab-N3-LrLr</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>multigain.ach</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>id:</td><td>rab-N3-LrLr (MDP)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ach)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">~/multigain/bin/prism  /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab3.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab-N3-LrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute</pre>
+	MultiGain default settings.. Achievability queries
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">35.39082956314087s</td></tr>
+		<tr><td>Model Checking Walltime:</td><td style="tt">32.924s</td></tr>
+		<tr><td>Return code:</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>MultiGain default settings.. Achievability queries</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">MultiGain1.0.2
+Date: Mon Dec 19 09:39:58 GMT+01:00 2022
+Hostname: nihm018.hpc.itc.rwth-aachen.de
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab3.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab-N3-LrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab3.prism"...
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab-N3-LrLrachievability.props"...
+
+1 property:
+(1) "LrLr": multi(R{"trying"}>=2.4822060642 [ S ], R{"critical"}>=0.77142857652 [ S ])
+
+Type:        MDP
+Modules:     process1 process2 process3 
+Variables:   c b r p1 b1 r1 draw1 p2 b2 r2 draw2 p3 b3 r3 draw3 
+
+---------------------------------------------------------------------
+
+Model checking: "LrLr": multi(R{"trying"}>=2.4822060642 [ S ], R{"critical"}>=0.77142857652 [ S ])
+
+Building model...
+
+Computing reachable states... 27766Computing end components.
+Finished computing end components.
+ states
+Reachable states exploration and model construction done in 0.31 secs.
+Sorting reachable states list...
+
+Time for model construction: 0.431 seconds.
+
+Type:        MDP
+States:      27766 (1 initial)
+Transitions: 137802
+Choices:     45636
+Max/avg:     3/1.64
+Set parameter TSPort to value 50039
+Set parameter TokenServer to value "license6.itc.rwth-aachen.de"
+Set parameter IntFeasTol to value 1e-08
+Set parameter DualReductions to value 0
+Set parameter Method to value 1
+LP problem construction finished in 0.841 s.
+Gurobi Optimizer version 9.5.0 build v9.5.0rc5 (linux64)
+Thread count: 48 physical cores, 48 logical processors, using up to 32 threads
+Optimize a model with 55536 rows, 119038 columns and 549546 nonzeros
+Model fingerprint: 0x3a94fc2b
+Coefficient statistics:
+  Matrix range     [3e-02, 3e+00]
+  Objective range  [0e+00, 0e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [8e-01, 2e+00]
+Presolve removed 36638 rows and 36636 columns
+Presolve time: 0.33s
+Presolved: 18898 rows, 82402 columns, 409852 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   7.116150e-01   0.000000e+00      0s
+    5147    3.5936863e-06   4.233752e+00   0.000000e+00      5s
+   11888    1.7044781e-04   4.785957e+01   0.000000e+00     10s
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   13287    0.0000000e+00   8.209900e-01   0.000000e+00     11s
+   17226    6.7558224e-06   3.262330e+00   0.000000e+00     15s
+   20726    1.6739790e-05   3.330363e+00   0.000000e+00     20s
+   26410    1.5194398e-04   7.960053e+01   0.000000e+00     25s
+   31613    7.3950553e-04   8.699381e+03   0.000000e+00     30s
+
+Solved in 33478 iterations and 31.86 seconds (54.96 work units)
+Infeasible model
+LP solving took 31.909 s.
+
+Number of states satisfying multi(R{"trying"}>=2.4822060642 [ S ], R{"critical"}>=0.77142857652 [ S ]): 0
+
+Property satisfied in 0 of 1 initial states.
+
+Time for model checking: 32.924 seconds.
+
+Result: false (property not satisfied in the initial state)	</pre>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">STDERR</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g	</pre>
+</div>
+</body>
+</html>

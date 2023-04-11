@@ -1,0 +1,13 @@
+Resource Gathering
+
+Grid World in which a robot collects resources (Gold and Gem)
+
+Sources:
+	* First presented in: https://doi.org/10.1145/1390156.1390162
+	* Also relevant: https://doi.org/10.1007/s10994-010-5232-5
+	* Model file obtained (and adapted) from http://qcomp.org/benchmarks/#resource-gathering
+
+Notes:
+	* The original model file has been extended so that the robot can now carry up to C gold and up to C gem, respectively. Whenever a resource is collected, it respawns within M steps.
+	
+

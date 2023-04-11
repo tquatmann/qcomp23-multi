@@ -1,0 +1,46 @@
+Command:	~/prism/prism/bin/prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov-B1000Unf2-PfPfachievability.props -const B=1000,Unf=2 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+Wallclock time:	7200.461387395859
+Return code:	None
+Output:
+java -Xmx30g -Xss1g -Djava.awt.headless=true -Djava.library.path=/home/tq429871/prism/prism/lib -classpath /home/tq429871/prism/prism/lib/prism.jar:/home/tq429871/prism/prism/classes:/home/tq429871/prism/prism:/home/tq429871/prism/prism/lib/pepa.zip:/home/tq429871/prism/prism/lib/* prism.PrismCL /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov-B1000Unf2-PfPfachievability.props -const B=1000,Unf=2 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+PRISM
+=====
+
+Version: 4.7.dev
+Date: Sun Dec 18 01:36:46 GMT+01:00 2022
+Hostname: nihm017.hpc.itc.rwth-aachen.de
+Memory limits: cudd=4g, java(heap)=30g
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov-B1000Unf2-PfPfachievability.props -const 'B=1000,Unf=2' -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov.prism"...
+
+Type:        MDP
+Modules:     rover battery value_counting_module time_counting_module energy_counting_module unfold 
+Variables:   task success done increased_energy counter_value counter_time counter_energy 
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov-B1000Unf2-PfPfachievability.props"...
+
+1 property:
+(1) "PfPf": multi(P>=0.45 [ F "valueCollected" ], P>=0.45 [ F !"exceedTime"&!"exceedEnergy"&done ])
+
+---------------------------------------------------------------------
+
+Model checking: "PfPf": multi(P>=0.45 [ F "valueCollected" ], P>=0.45 [ F !"exceedTime"&!"exceedEnergy"&done ])
+Model constants: Unf=2,B=1000
+
+Building model...
+Model constants: Unf=2,B=1000
+
+Warning: Guard for command 2 of module "time_counting_module" is never satisfied.
+
+Computing reachable states...
+
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+
+
+----------
+Computation aborted after 7200.461387395859 seconds since the total time limit of 7200 seconds was exceeded.
+
+############################## Notes ##############################
+Prism.. Achievability queries. Gauss-Seidl VI.

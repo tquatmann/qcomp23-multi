@@ -1,0 +1,1 @@
+"Qp33": quantile(min TIME, min ENERGY, Pmax>0.95 [F{"value"}>=BndVal,{"time"}<=TIME,{"energy"}<=ENERGY true]);

@@ -1,0 +1,19 @@
+{
+	"id": "storm.ach.rov-B0500Unf2-PfPf",
+	"benchmark-id": "rov-B0500Unf2-PfPf",
+	"tool": "storm",
+	"configuration-id": "ach",
+	"invocation-note": "Storm. check achievability objectives using sound value iteration",
+	"commands": [
+		"~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov-B0500Unf2-PfPfachievability.props -const B=500,Unf=2 --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "storm.ach.rov-B0500Unf2-PfPf.log",
+	"wallclock-time": 2037.9925734996796,
+	"timeout": false,
+	"execution-error": true,
+	"return-codes": [
+		-9
+	]
+}

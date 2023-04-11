@@ -1,0 +1,4 @@
+"RtRt": multi(R{"power"}min=? [ C ], R{"lost"}min=? [ C ]); // As in DKQR20
+"RtRtRt": multi(R{"power"}min=? [ C ], R{"lost"}min=? [ C ], R{"queue"}min=? [ C ]);
+"BsBs": multi(R{"power"}min=? [ C<=K ], R{"queue"}min=? [ C<=K]); // As in FKP12
+"BsBsBs": multi(R{"power"}min=? [ C<=K ], R{"lost"}min=? [ C<=K], R{"queue"}min=? [ C<=K]);

@@ -1,0 +1,63 @@
+Command:	~/multigain/bin/prism  /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen5.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N5-LrLrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute
+Wallclock time:	2575.50661945343
+Return code:	1
+Output:
+MultiGain1.0.2
+Date: Mon Dec 19 09:39:58 GMT+01:00 2022
+Hostname: nihm021.hpc.itc.rwth-aachen.de
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen5.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N5-LrLrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen5.prism"...
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N5-LrLrLrachievability.props"...
+
+1 property:
+(1) "LrLrLr": multi(R{"working"}>=0.45 [ S ], R{"success"}>=0.45 [ S ], R{"failure"}>=0.45 [ S ])
+
+Type:        MDP
+Modules:     sensor1 sensor2 sensor3 sensor4 sensor5 channel proc 
+Variables:   y1 msg1 y2 msg2 y3 msg3 y4 msg4 y5 msg5 c who what cb1 cb2 cbs x count 
+
+---------------------------------------------------------------------
+
+Model checking: "LrLrLr": multi(R{"working"}>=0.45 [ S ], R{"success"}>=0.45 [ S ], R{"failure"}>=0.45 [ S ])
+
+Building model...
+
+Computing reachable states... 195004 404034 629500 830297 1043628 1244391 1445195 1663080 1870498 2075456 2292346 2513761 2727861 2929974 3140846 3360802 3565990Computing end components.
+ states
+Reachable states exploration and model construction done in 50.751 secs.
+Sorting reachable states list...
+
+Time for model construction: 58.063 seconds.
+
+Type:        MDP
+States:      3565990 (1 initial)
+Transitions: 17679375
+Choices:     16700470
+Max/avg:     12/4.68
+
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.BitSet.initWords(BitSet.java:169)
+	at java.base/java.util.BitSet.<init>(BitSet.java:146)
+	at explicit.ECComputerDefault.restrict(ECComputerDefault.java:163)
+	at explicit.ECComputerDefault.findEndComponents(ECComputerDefault.java:114)
+	at explicit.ECComputerDefault.computeMECStates(ECComputerDefault.java:68)
+	at explicit.MultiLongRun.computeMECs(MultiLongRun.java:162)
+	at explicit.MultiLongRun.createMultiLongRunLP(MultiLongRun.java:704)
+	at explicit.MDPModelChecker.checkExpressionMultiObjective(MDPModelChecker.java:188)
+	at explicit.ProbModelChecker.checkExpression(ProbModelChecker.java:461)
+	at explicit.StateModelChecker.checkExpressionFilter(StateModelChecker.java:800)
+	at explicit.StateModelChecker.checkExpression(StateModelChecker.java:448)
+	at explicit.NonProbModelChecker.checkExpression(NonProbModelChecker.java:63)
+	at explicit.ProbModelChecker.checkExpression(ProbModelChecker.java:465)
+	at explicit.StateModelChecker.check(StateModelChecker.java:368)
+	at prism.Prism.modelCheck(Prism.java:2763)
+	at prism.PrismCL.run(PrismCL.java:334)
+	at prism.PrismCL.main(PrismCL.java:2321)
+
+
+############################## Notes ##############################
+MultiGain default settings.. Achievability queries

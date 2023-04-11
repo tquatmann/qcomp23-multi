@@ -1,0 +1,19 @@
+{
+	"id": "storm.ach.tea-N5-PfRt",
+	"benchmark-id": "tea-N5-PfRt",
+	"tool": "storm",
+	"configuration-id": "ach",
+	"invocation-note": "Storm. check achievability objectives using sound value iteration",
+	"commands": [
+		"~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/tea/tea5.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/tea/tea-N5-PfRtachievability.props --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "storm.ach.tea-N5-PfRt.log",
+	"wallclock-time": 15.168311595916748,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	]
+}

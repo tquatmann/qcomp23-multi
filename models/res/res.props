@@ -1,0 +1,8 @@
+"LrLr": multi(R{"rew_gold"}max=? [S], R{"rew_gem"}max=? [S]);
+"LrLrRt": multi(R{"rew_gold"}max=? [S], R{"rew_gem"}max=? [S], R{"attacks"}min=? [C]);
+"LrLrBs": multi(R{"rew_gold"}max=? [S], R{"rew_gem"}max=? [S], R{"attacks"}min=? [C<=AVSTEPS]);
+"PfPf": multi(Pmax=? [F (csteps >= 0 & cgold=0)], Pmax=? [F (csteps >= 0 & cgem=0)]);
+"Pf": Pmax=? [F (csteps >= 0 & cgold=0 & cgem=0)];
+"Br33": Pmax=? [F{"rew_gold"}>=REQGOLD,{"rew_gem"}>=REQGEM,steps<=AVSTEPS true];
+"BrBr34": multi(Pmax=? [F{"rew_gold"}>=REQGOLD,steps<=AVSTEPS true],  Pmax=? [F{"rew_gem"}>=REQGEM,steps<=AVSTEPS true]);
+"Qp33": quantile(max GOLD, max GEM, Pmax>0.95 [F{"rew_gold"}>=GOLD,{"rew_gem"}>=GEM,steps<=AVSTEPS true]);

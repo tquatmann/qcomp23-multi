@@ -1,0 +1,2 @@
+Pmax=? [F "valueCollected"];
+Pmax=? [F !"exceedTime" & !"exceedEnergy" & done];

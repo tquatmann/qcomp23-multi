@@ -1,0 +1,144 @@
+mdp
+
+const double pWantsWater = 2/10;
+const double pDelay = 2/10;
+const double pGetWater = 1/3;
+
+
+formula num_undelivered_water = (wants_water6=1 & !delivered_water6 ? 1 : 0) + (wants_water7=1 & !delivered_water7 ? 1 : 0) + (wants_water11=1 & !delivered_water11 ? 1 : 0);
+formula taskdone = n_water=0 & num_undelivered_water=0 & wants_water6>0 & wants_water7>0 & wants_water11>0;
+formula allow_action = !stopped & !(interacted6 & interacted10 & interacted17 & interacted18 & taskdone);
+ 
+
+module robot
+	l : [0..20] init 0;
+	n_water : [0..2];
+	wants_water6 : [0..2] init 0; // 0: don't know, 1: wants, 2: wants not
+	wants_water7 : [0..2] init 0;
+	wants_water11 : [0..2] init 0;
+	delivered_water6 : bool init false;
+	delivered_water7 : bool init false;
+	delivered_water11 : bool init false;
+	interacted6 : bool init false;
+	interacted10 : bool init false;
+	interacted17 : bool init false;
+	interacted18 : bool init false;
+	
+	delay : bool init false;
+	
+	[wait_delay] delay -> (delay'=false);
+	
+	[move] l=0 & !delay -> (1-pDelay) : (l'=1) + pDelay : (l'=1) & (delay'=true);
+	[move] l=0 & !delay -> (1-pDelay) : (l'=2) + pDelay : (l'=2) & (delay'=true);
+	[move] l=0 & !delay -> (1-pDelay) : (l'=3) + pDelay : (l'=3) & (delay'=true);
+	[move] l=0 & !delay -> (1-pDelay) : (l'=12) + pDelay : (l'=12) & (delay'=true);
+	
+	[move] l=1 & !delay -> (l'=0);
+	[move] l=2 & !delay -> (l'=0);
+	
+	[move] l=3 & !delay -> (l'=0);
+	[move] l=3 & !delay -> (l'=4);
+	[move] l=3 & !delay -> (l'=6);
+	[move] l=3 & !delay -> (l'=7);
+	
+	[move] l=4 & !delay -> (l'=3);
+	[move] l=4 & !delay -> (l'=5);
+	[move] l=4 & !delay -> (l'=8);
+	[move] l=4 & !delay -> (l'=9);
+	
+	[move] l=5 & !delay -> (l'=4);
+	[move] l=5 & !delay -> (l'=10);
+	[move] l=5 & !delay -> (l'=11);
+
+	[move] l=6 & !delay -> (l'=3);
+	[move] l=7 & !delay -> (l'=3);
+	
+	[move] l=8 & !delay -> (l'=4);
+	[move] l=9 & !delay -> (l'=4);
+	
+	[move] l=10 & !delay -> (l'=5);
+	[move] l=11 & !delay -> (l'=5);
+	
+	[move] l=12 & !delay -> (l'=0);
+	[move] l=12 & !delay -> (l'=15);
+	[move] l=12 & !delay -> (l'=16);
+	[move] l=12 & !delay -> (l'=13);
+	
+	[move] l=13 & !delay -> (l'=12);
+	[move] l=13 & !delay -> (l'=14);
+	[move] l=13 & !delay -> (l'=17);
+	[move] l=13 & !delay -> (l'=18);
+	
+	[move] l=14 & !delay -> (l'=13);
+	[move] l=14 & !delay -> (l'=19);
+	[move] l=14 & !delay -> (l'=20);
+	
+	[move] l=15 & !delay -> (l'=12);
+	[move] l=16 & !delay -> (l'=12);
+	
+	[move] l=17 & !delay -> (l'=13);
+	[move] l=18 & !delay -> (l'=13);
+	
+	[move] l=19 & !delay -> (l'=14);
+	[move] l=20 & !delay -> (l'=14);
+	
+	
+	[check_water] l=6 & wants_water6=0 -> (pWantsWater) : (wants_water6'=1) + (1-pWantsWater) : (wants_water6'=2);
+	[check_water] l=7 & wants_water7=0 -> (pWantsWater) : (wants_water7'=1) + (1-pWantsWater) : (wants_water7'=2);
+	[check_water] l=11 & wants_water11=0 -> (pWantsWater) : (wants_water11'=1) + (1-pWantsWater) : (wants_water11'=2);
+	
+	[deliver_water] l=6 & wants_water6=1 & !delivered_water6 & n_water>0 -> (delivered_water6'=true) & (n_water' = n_water-1);
+	[deliver_water] l=7 & wants_water7=1 & !delivered_water7 & n_water>0 -> (delivered_water7'=true) & (n_water' = n_water-1);
+	[deliver_water] l=11 & wants_water11=1 & !delivered_water11 & n_water>0 -> (delivered_water11'=true) & (n_water' = n_water-1);
+	
+	// Only get the amount of water that needs to be delivered
+	[get_water] l=1 & n_water<2 & !delay & n_water<num_undelivered_water -> pGetWater : (n_water'=n_water+1) + (1-pGetWater) : true;
+	
+	[interact] l=6 & !interacted6 -> (interacted6'=true); 
+	[interact] l=10 & !interacted10 -> (interacted10'=true); 
+	[interact] l=17 & !interacted17 -> (interacted17'=true); 
+	[interact] l=18 & !interacted18 -> (interacted18'=true); 
+	
+endmodule
+
+// make sure to not progress further after stopping and to only stop after accomplishing the task
+module stopper
+	stopped : bool init false;
+	[stop] taskdone -> (stopped'=true);
+	[move] allow_action -> true;
+	[wait_delay] allow_action -> true;
+	[get_water] allow_action -> true;
+	[interact] allow_action -> true;
+	[check_water] allow_action -> true;
+	[deliver_water] allow_action -> true;
+endmodule
+
+const int Unf; // 0: don't unfold  rewards, 1: Unfold rewards
+const int B; // magnitude of reward bounds
+
+const int UnfTime = Unf >= 1 ? B : 0;
+module timer
+	t : [0..UnfTime + 1] init UnfTime; // add +1 so the range has multiple values. PRISM apparently doesn't like ranges like [0..0]
+	[move] true -> (t'=max(0,t-1));
+	[wait_delay] true -> (t'=max(0,t-5));
+	[get_water] true -> (t'=max(0,t-6));
+	[interact] true -> (t'=max(0,t-15));
+	[check_water] true -> (t'=max(0,t-10));
+	[deliver_water] true -> (t'=max(0,t-8));
+endmodule
+label "timeExceeded" = t=0;
+
+rewards "time"
+	[move] true : 1;
+	[wait_delay] true : 5;
+	[get_water] true : 6;
+	[interact] true : 15;
+	[check_water] true : 10;
+	[deliver_water] true : 8;
+endrewards
+
+rewards "interaction"
+	[interact] true : 1;
+endrewards
+
+	

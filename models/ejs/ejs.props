@@ -1,0 +1,11 @@
+// Energy vs. time to achieve a certain amount of utility
+"RtRt": multi(R{"energyGlobal"}min=? [C], R{"ticks"}min=? [C]);
+
+"Br22": Pmax=? [F{"utilityGlobal"}>BndUtGl,{"energyGlobal"}<=BndEnGl true ];
+"Pf": Pmax=? [F "exceedUtGl" & !"exceedEnGl" ];
+
+"BrBr44": multi(Pmax=? [F{"utilityLocal"}>BndUtLo,{"energyLocal"}<=BndEnLo true ], Pmax=? [F{"utilityGlobal"}>BndUtGl,{"energyGlobal"}<=BndEnGl true ]);
+
+"PfPf": multi(Pmax=? [F "exceedUtLo" & !"exceedEnLo" ], Pmax=? [F "exceedUtGl" & !"exceedEnGl" ]);
+
+"Qp33": quantile(min glE, min loE, Pmax>0.95 [F{"utilityGlobal"}>=B,{"energyGlobal"}<=glE,{"energyLocal"}<=loE true ]);

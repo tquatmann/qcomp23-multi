@@ -1,0 +1,19 @@
+{
+	"id": "epmc.ach.tea-N5-PfRt",
+	"benchmark-id": "tea-N5-PfRt",
+	"tool": "epmc",
+	"configuration-id": "ach",
+	"invocation-note": "EPMC default settings. Check achievability objectives.",
+	"commands": [
+		"java -jar ~/ePMC/epmc-standard.jar  check --model-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/tea/tea5.prism --property-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/tea/tea-N5-PfRtachievability.props --graphsolver-iterative-stop-criterion absolute --graphsolver-iterative-tolerance 1e-6"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "epmc.ach.tea-N5-PfRt.log",
+	"wallclock-time": 40.60935139656067,
+	"timeout": false,
+	"execution-error": true,
+	"return-codes": [
+		1
+	]
+}

@@ -1,0 +1,98 @@
+Command:	~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav-B1500Unf1-PfRtachievability.props -const B=1500,Unf=1,COUNTER=0 --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute
+Wallclock time:	20.437331438064575
+Return code:	0
+Output:
+Storm 1.7.1 (dev)
+
+Date: Sun Dec 18 14:00:07 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav-B1500Unf1-PfRtachievability.props -const 'B=1500,Unf=1,COUNTER=0' --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.014s.
+
+Time for model construction: 9.196s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	874100
+Transitions: 	5092664
+Choices: 	1657491
+Reward Models:  ROZ
+State Labels: 	4 labels
+   * init -> 1 item(s)
+   * timeExceeded -> 0 item(s)
+   * deadlock -> 10244 item(s)
+   * mission -> 552930 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "PfRt": multi(P>=8999999964900001/10000000000000000 [F ((!"timeExceeded") & "mission")], R[exp]{"ROZ"}<=1 [C]) ...
+Preprocessing done in 2.670s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(P>=8999999964900001/10000000000000000 [F ((!"timeExceeded") & "mission")], R[exp]{"ROZ"}<=1 [C])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: P>=8999999964900001/10000000000000000 [F ((!"timeExceeded") & "mission")] 	Preprocessed: R[exp]{"obj1"}max>=8999999964900001/10000000000000000 [C] 	result bounds: [0, 1]
+Original: R[exp]{"ROZ"}<=1 [C] 	Preprocessed: R[exp]{"ROZ"}min<=1 [C] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 2.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	874100
+Transitions: 	5092664
+Choices: 	1657491
+Reward Models:  ROZ
+State Labels: 	4 labels
+   * init -> 1 item(s)
+   * timeExceeded -> 0 item(s)
+   * deadlock -> 10244 item(s)
+   * mission -> 552930 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	758602
+Transitions: 	3626562
+Choices: 	1215049
+Reward Models:  obj1, ROZ
+State Labels: 	5 labels
+   * deadl -> 227019 item(s)
+   * deadlock -> 1380 item(s)
+   * mission -> 465458 item(s)
+   * timeExceeded -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Weight Vector Checker Statistics:
+Final preprocessed model has 531584 states.
+Final preprocessed model has 988031 actions.
+
+Pareto Curve Approximation Algorithm terminated after 1 refinement steps.
+Solving multi-objective query took 11.113s seconds (consisting of 2.670s seconds for preprocessing and 8.435s seconds for analyzing the preprocessed model).
+Result (for initial states): true
+
+Time for model checking: 11.117s.
+
+Performance statistics:
+  * peak memory usage: 559MB
+  * CPU time: 20.018s
+  * wallclock time: 20.348s
+
+
+############################## Notes ##############################
+Storm. check achievability objectives using sound value iteration

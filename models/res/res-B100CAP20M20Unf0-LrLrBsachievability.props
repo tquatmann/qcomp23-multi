@@ -1,0 +1,1 @@
+"LrLrBs": multi(R{"rew_gold"}>=0.041642838396 [S], R{"rew_gem"}>=0.041685021 [S], R{"attacks"}<=1.0 [C<=AVSTEPS]);

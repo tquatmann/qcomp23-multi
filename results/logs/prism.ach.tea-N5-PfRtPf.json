@@ -1,0 +1,19 @@
+{
+	"id": "prism.ach.tea-N5-PfRtPf",
+	"benchmark-id": "tea-N5-PfRtPf",
+	"tool": "prism",
+	"configuration-id": "ach",
+	"invocation-note": "Prism.. Achievability queries. Gauss-Seidl VI.",
+	"commands": [
+		"~/prism/prism/bin/prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/tea/tea5.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/tea/tea-N5-PfRtPfachievability.props -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "prism.ach.tea-N5-PfRtPf.log",
+	"wallclock-time": 6700.396113157272,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	]
+}

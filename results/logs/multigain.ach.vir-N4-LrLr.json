@@ -1,0 +1,19 @@
+{
+	"id": "multigain.ach.vir-N4-LrLr",
+	"benchmark-id": "vir-N4-LrLr",
+	"tool": "multigain",
+	"configuration-id": "ach",
+	"invocation-note": "MultiGain default settings.. Achievability queries",
+	"commands": [
+		"~/multigain/bin/prism  /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir4.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir-N4-LrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-19",
+	"log": "multigain.ach.vir-N4-LrLr.log",
+	"wallclock-time": 627.1938428878784,
+	"timeout": false,
+	"execution-error": true,
+	"return-codes": [
+		1
+	]
+}

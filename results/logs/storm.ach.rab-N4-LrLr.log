@@ -1,0 +1,93 @@
+Command:	~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab4.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab-N4-LrLrachievability.props --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute
+Wallclock time:	25.897950887680054
+Return code:	0
+Output:
+Storm 1.7.1 (dev)
+
+Date: Sat Dec 17 18:47:03 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab4.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab-N4-LrLrachievability.props --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.004s.
+
+Time for model construction: 4.072s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	668836
+Transitions: 	3637488
+Choices: 	1170736
+Reward Models:  trying, critical
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "LrLr": multi(R[exp]{"trying"}>=34095668949/10000000000 [LRA], R[exp]{"critical"}>=9888787989/12500000000 [LRA]) ...
+Preprocessing done in 0.953s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"trying"}>=34095668949/10000000000 [LRA], R[exp]{"critical"}>=9888787989/12500000000 [LRA])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"trying"}>=34095668949/10000000000 [LRA] 	Preprocessed: R[exp]{"trying"}max>=34095668949/10000000000 [LRA] 	result bounds: >=0
+Original: R[exp]{"critical"}>=9888787989/12500000000 [LRA] 	Preprocessed: R[exp]{"critical"}max>=9888787989/12500000000 [LRA] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 2.
+Number of Total Reward Objectives (after preprocessing): 0.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	668836
+Transitions: 	3637488
+Choices: 	1170736
+Reward Models:  trying, critical
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	668836
+Transitions: 	3637488
+Choices: 	1170736
+Reward Models:  critical, trying
+State Labels: 	2 labels
+   * init -> 1 item(s)
+   * deadlock -> 0 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Weight Vector Checker Statistics:
+Final preprocessed model has 668836 states.
+Final preprocessed model has 1170736 actions.
+Found 1 end components that are relevant for LRA-analysis.
+668836 states lie on such an end component.
+
+Pareto Curve Approximation Algorithm terminated after 3 refinement steps.
+Solving multi-objective query took 21.720s seconds (consisting of 0.953s seconds for preprocessing and 20.761s seconds for analyzing the preprocessed model).
+Result (for initial states): false
+
+Time for model checking: 21.720s.
+
+Performance statistics:
+  * peak memory usage: 725MB
+  * CPU time: 25.058s
+  * wallclock time: 25.809s
+
+
+############################## Notes ##############################
+Storm. check achievability objectives using sound value iteration

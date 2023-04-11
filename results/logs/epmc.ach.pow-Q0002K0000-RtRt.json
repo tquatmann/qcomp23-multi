@@ -1,0 +1,19 @@
+{
+	"id": "epmc.ach.pow-Q0002K0000-RtRt",
+	"benchmark-id": "pow-Q0002K0000-RtRt",
+	"tool": "epmc",
+	"configuration-id": "ach",
+	"invocation-note": "EPMC default settings. Check achievability objectives.",
+	"commands": [
+		"java -jar ~/ePMC/epmc-standard.jar  check --model-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/pow/pow.prism --property-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/pow/pow-Q0002K0000-RtRtachievability.props --const Q=2,K=0 --graphsolver-iterative-stop-criterion absolute --graphsolver-iterative-tolerance 1e-6"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "epmc.ach.pow-Q0002K0000-RtRt.log",
+	"wallclock-time": 1.6894481182098389,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	]
+}

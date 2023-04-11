@@ -1,0 +1,19 @@
+{
+	"id": "prism.ach.rov-B0500Unf1-RtRt",
+	"benchmark-id": "rov-B0500Unf1-RtRt",
+	"tool": "prism",
+	"configuration-id": "ach",
+	"invocation-note": "Prism.. Achievability queries. Gauss-Seidl VI.",
+	"commands": [
+		"~/prism/prism/bin/prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov-B0500Unf1-RtRtachievability.props -const B=500,Unf=1 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "prism.ach.rov-B0500Unf1-RtRt.log",
+	"wallclock-time": 2.705375909805298,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	]
+}

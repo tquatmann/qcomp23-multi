@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>storm.ach - sen-N1-LrLrLr</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>storm.ach</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>id:</td><td>sen-N1-LrLrLr (MDP)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ach)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen1.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N1-LrLrLrachievability.props --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute</pre>
+	Storm. check achievability objectives using sound value iteration
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">0.17977237701416016s</td></tr>
+		<tr><td>Model Checking Walltime:</td><td style="tt">0.084s</td></tr>
+		<tr><td>Return code:</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Storm. check achievability objectives using sound value iteration</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.7.1 (dev)
+
+Date: Sun Dec 18 05:32:08 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen1.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N1-LrLrLrachievability.props --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 0.025s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	462
+Transitions: 	1186
+Choices: 	1079
+Reward Models:  working, success, failure
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "LrLrLr": multi(R[exp]{"working"}>=11249999919/20000000000 [LRA], R[exp]{"success"}>=7200000091800001/10000000000000000 [LRA], R[exp]{"failure"}>=7200001748700001/1000000000000000000 [LRA]) ...
+Preprocessing done in 0.000s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"working"}>=11249999919/20000000000 [LRA], R[exp]{"success"}>=7200000091800001/10000000000000000 [LRA], R[exp]{"failure"}>=7200001748700001/1000000000000000000 [LRA])
+
+The query considers 3 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"working"}>=11249999919/20000000000 [LRA] 	Preprocessed: R[exp]{"working"}max>=11249999919/20000000000 [LRA] 	result bounds: >=0
+Original: R[exp]{"success"}>=7200000091800001/10000000000000000 [LRA] 	Preprocessed: R[exp]{"success"}max>=7200000091800001/10000000000000000 [LRA] 	result bounds: >=0
+Original: R[exp]{"failure"}>=7200001748700001/1000000000000000000 [LRA] 	Preprocessed: R[exp]{"failure"}max>=7200001748700001/1000000000000000000 [LRA] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 3.
+Number of Total Reward Objectives (after preprocessing): 0.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	462
+Transitions: 	1186
+Choices: 	1079
+Reward Models:  working, success, failure
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	462
+Transitions: 	1186
+Choices: 	1079
+Reward Models:  working, success, failure
+State Labels: 	3 labels
+   * deadl -> 3 item(s)
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Weight Vector Checker Statistics:
+Final preprocessed model has 460 states.
+Final preprocessed model has 1077 actions.
+Found 130 end components that are relevant for LRA-analysis.
+264 states lie on such an end component.
+
+Pareto Curve Approximation Algorithm terminated after 4 refinement steps.
+Solving multi-objective query took 0.084s seconds (consisting of 0.000s seconds for preprocessing and 0.083s seconds for analyzing the preprocessed model).
+Result (for initial states): false
+
+Time for model checking: 0.084s.
+
+Performance statistics:
+  * peak memory usage: 50MB
+  * CPU time: 0.118s
+  * wallclock time: 0.120s	</pre>
+</div>
+</body>
+</html>

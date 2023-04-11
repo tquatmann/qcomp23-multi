@@ -1,0 +1,19 @@
+{
+	"id": "multigain.ach.res-B100CAP20M20Unf0-LrLr",
+	"benchmark-id": "res-B100CAP20M20Unf0-LrLr",
+	"tool": "multigain",
+	"configuration-id": "ach",
+	"invocation-note": "MultiGain default settings.. Achievability queries",
+	"commands": [
+		"~/multigain/bin/prism  /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B100CAP20M20Unf0-LrLrachievability.props -const B=100,CAP=20,M=20,Unf=0 -paretoepsilon 0.0001 -ex -gurobi -absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-19",
+	"log": "multigain.ach.res-B100CAP20M20Unf0-LrLr.log",
+	"wallclock-time": 7200.413788557053,
+	"timeout": true,
+	"execution-error": false,
+	"return-codes": [
+		-9
+	]
+}

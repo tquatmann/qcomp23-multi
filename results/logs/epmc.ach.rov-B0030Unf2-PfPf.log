@@ -1,0 +1,175 @@
+Command:	java -jar ~/ePMC/epmc-standard.jar  check --model-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov.prism --property-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov-B0030Unf2-PfPfachievability.props --const B=30,Unf=2 --graphsolver-iterative-stop-criterion absolute --graphsolver-iterative-tolerance 1e-6
+Wallclock time:	1215.377652168274
+Return code:	0
+Output:
+Running EPMC revision b1ba8abf9f52c05f23421efb1abd1be7618f426d
+Assertions are disabled. In case of incorrect results or otherwise strange behaviour, please run the JVM with "-ea" parameter.
+Starting to parse PRISM model...
+Done parsing PRISM model
+Starting model checking...
+Analysing property PfPf
+Starting to compute JANI explorer...
+Starting to build initial states of JANI explorer...
+Done building initial states of JANI explorer
+Done building JANI explorer
+Starting to build model...
+Current number of states: 31,618; states/second: 31,617
+Current number of states: 65,138; states/second: 33,521
+Current number of states: 110,265; states/second: 45,127
+Current number of states: 149,061; states/second: 38,796
+Current number of states: 186,855; states/second: 37,794
+Current number of states: 226,571; states/second: 39,716
+Current number of states: 276,057; states/second: 49,486
+Current number of states: 307,516; states/second: 31,458
+Current number of states: 359,084; states/second: 51,568
+Current number of states: 396,638; states/second: 37,555
+Current number of states: 420,388; states/second: 23,750
+Current number of states: 471,725; states/second: 51,336
+Current number of states: 522,979; states/second: 51,255
+Current number of states: 544,033; states/second: 21,053
+Current number of states: 595,194; states/second: 51,160
+Current number of states: 646,496; states/second: 51,302
+Current number of states: 693,564; states/second: 47,068
+Current number of states: 714,598; states/second: 21,034
+Current number of states: 765,666; states/second: 51,067
+Current number of states: 816,987; states/second: 51,322
+Current number of states: 835,391; states/second: 18,403
+Current number of states: 877,772; states/second: 42,382
+Current number of states: 900,309; states/second: 22,537
+Current number of states: 951,517; states/second: 51,208
+Current number of states: 1,002,945; states/second: 51,428
+Current number of states: 1,054,001; states/second: 51,055
+Current number of states: 1,084,799; states/second: 30,799
+Current number of states: 1,113,991; states/second: 29,192
+Current number of states: 1,165,340; states/second: 51,349
+Current number of states: 1,216,437; states/second: 51,096
+Current number of states: 1,267,671; states/second: 51,235
+Current number of states: 1,306,192; states/second: 38,521
+Current number of states: 1,324,990; states/second: 18,798
+Current number of states: 1,375,954; states/second: 50,963
+Current number of states: 1,427,117; states/second: 51,164
+Current number of states: 1,478,187; states/second: 51,069
+Current number of states: 1,529,321; states/second: 51,134
+Current number of states: 1,553,743; states/second: 24,423
+Current number of states: 1,581,970; states/second: 28,226
+Current number of states: 1,633,300; states/second: 51,331
+Current number of states: 1,645,295; states/second: 11,995
+Current number of states: 1,669,906; states/second: 24,610
+Current number of states: 1,721,237; states/second: 51,332
+Current number of states: 1,772,357; states/second: 51,120
+Current number of states: 1,811,409; states/second: 39,052
+Current number of states: 1,824,207; states/second: 12,798
+Current number of states: 1,869,438; states/second: 45,231
+Current number of states: 1,917,360; states/second: 47,921
+Current number of states: 1,964,576; states/second: 47,217
+Current number of states: 2,012,518; states/second: 47,941
+Current number of states: 2,059,352; states/second: 46,815
+Current number of states: 2,093,337; states/second: 34,005
+Current number of states: 2,105,983; states/second: 12,645
+Current number of states: 2,149,029; states/second: 43,046
+Current number of states: 2,196,832; states/second: 47,804
+Current number of states: 2,244,584; states/second: 47,752
+Current number of states: 2,292,435; states/second: 47,850
+Current number of states: 2,339,817; states/second: 47,381
+Current number of states: 2,387,594; states/second: 47,778
+Current number of states: 2,400,103; states/second: 12,509
+Current number of states: 2,426,952; states/second: 26,849
+Current number of states: 2,473,890; states/second: 46,938
+Current number of states: 2,521,668; states/second: 47,778
+Current number of states: 2,569,465; states/second: 47,797
+Current number of states: 2,617,251; states/second: 47,786
+Current number of states: 2,662,401; states/second: 45,149
+Current number of states: 2,706,587; states/second: 44,186
+Current number of states: 2,719,256; states/second: 12,669
+Current number of states: 2,746,609; states/second: 27,353
+Current number of states: 2,794,171; states/second: 47,562
+Current number of states: 2,841,938; states/second: 47,767
+Current number of states: 2,889,314; states/second: 47,376
+Current number of states: 2,936,810; states/second: 47,496
+Current number of states: 2,984,484; states/second: 47,674
+Current number of states: 3,031,867; states/second: 47,382
+Current number of states: 3,050,962; states/second: 19,096
+Current number of states: 3,064,839; states/second: 13,877
+Current number of states: 3,112,517; states/second: 47,677
+Current number of states: 3,160,322; states/second: 47,805
+Current number of states: 3,208,281; states/second: 47,959
+Current number of states: 3,256,256; states/second: 47,974
+Current number of states: 3,303,814; states/second: 47,558
+Current number of states: 3,346,783; states/second: 42,970
+Current number of states: 3,346,783; states/second: 0
+Current number of states: 3,346,783; states/second: 0
+Current number of states: 3,370,898; states/second: 24,114
+Current number of states: 3,397,692; states/second: 26,795
+Current number of states: 3,418,116; states/second: 20,423
+Current number of states: 3,468,256; states/second: 50,141
+Current number of states: 3,519,097; states/second: 50,841
+Current number of states: 3,570,354; states/second: 51,256
+Current number of states: 3,620,509; states/second: 50,156
+Current number of states: 3,670,547; states/second: 50,038
+Current number of states: 3,684,706; states/second: 14,159
+Current number of states: 3,735,731; states/second: 51,024
+Current number of states: 3,786,540; states/second: 50,809
+Current number of states: 3,837,640; states/second: 51,101
+Current number of states: 3,882,830; states/second: 45,190
+Current number of states: 3,905,751; states/second: 22,920
+Current number of states: 3,956,953; states/second: 51,202
+Current number of states: 4,008,133; states/second: 51,180
+Current number of states: 4,059,152; states/second: 51,018
+Current number of states: 4,078,583; states/second: 19,431
+Current number of states: 4,127,109; states/second: 48,527
+Current number of states: 4,178,302; states/second: 51,193
+Current number of states: 4,228,648; states/second: 50,346
+Current number of states: 4,257,960; states/second: 29,311
+Current number of states: 4,299,655; states/second: 41,696
+Current number of states: 4,350,385; states/second: 50,708
+Current number of states: 4,400,332; states/second: 49,969
+Current number of states: 4,429,456; states/second: 29,124
+Current number of states: 4,469,312; states/second: 39,856
+Current number of states: 4,520,255; states/second: 50,942
+Current number of states: 4,571,274; states/second: 51,018
+Current number of states: 4,602,021; states/second: 30,748
+Current number of states: 4,653,134; states/second: 51,113
+Current number of states: 4,695,722; states/second: 42,588
+Building model done. 4,743,010 states. Time for model exploration: 118 seconds.
+Starting multi-objective model checking for property multi(P>=0.9 [F "valueCollected"], P>=0.9 [F !"exceedTime" & !"exceedEnergy" & done])...
+Starting to normalise formula...
+Done normalising formula.
+Starting to evaluate nested properties of multi-objective property...
+Done evaluating nested properties of multi-objective property.
+Starting to build product of model and properties automata...
+Computing Büchi automaton for original property...
+Done computing Büchi automaton, is deterministic and has 1 labels and 2 states.
+Computing Büchi automaton for original property...
+Done computing Büchi automaton, is deterministic and has 1 labels and 2 states.
+Done building product of model and properties automata.
+Starting main loop of multi-objective solver...
+Property is qualitative.
+Starting main loop iteration number 1...
+Starting iteration...
+Done. Did 58 iterations in 3 seconds.
+Starting iteration...
+Done. Did 73 iterations in 5 seconds.
+Starting iteration...
+Done. Did 52 iterations in 4 seconds.
+Done main loop iteration number 1.
+Starting main loop iteration number 2...
+Starting iteration...
+Done. Did 59 iterations in 3 seconds.
+Starting iteration...
+Done. Did 77 iterations in 5 seconds.
+Starting iteration...
+Done. Did 46 iterations in 3 seconds.
+Done main loop iteration number 2.
+Starting main loop iteration number 3...
+Done main loop iteration number 3.
+Done main loop of multi-objective solver.
+Done multi-objective model checking for property multi(P>=0.9 [F "valueCollected"], P>=0.9 [F !"exceedTime" & !"exceedEnergy" & done]).
+Finished model checking. Time required: 1,214 seconds
+PfPf: true
+
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+
+
+############################## Notes ##############################
+EPMC default settings. Check achievability objectives.

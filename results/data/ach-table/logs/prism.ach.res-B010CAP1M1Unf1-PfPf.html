@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>prism.ach - res-B010CAP1M1Unf1-PfPf</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>prism.ach</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>id:</td><td>res-B010CAP1M1Unf1-PfPf (MDP)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ach)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">~/prism/prism/bin/prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B010CAP1M1Unf1-PfPfachievability.props -const B=10,CAP=1,M=1,Unf=1 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute</pre>
+	Prism.. Achievability queries. Gauss-Seidl VI.
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">6.9180638790130615s</td></tr>
+		<tr><td>Model Checking Walltime:</td><td style="tt">5.512s</td></tr>
+		<tr><td>Return code:</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Prism.. Achievability queries. Gauss-Seidl VI.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">java -Xmx30g -Xss1g -Djava.awt.headless=true -Djava.library.path=/home/tq429871/prism/prism/lib -classpath /home/tq429871/prism/prism/lib/prism.jar:/home/tq429871/prism/prism/classes:/home/tq429871/prism/prism:/home/tq429871/prism/prism/lib/pepa.zip:/home/tq429871/prism/prism/lib/* prism.PrismCL /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B010CAP1M1Unf1-PfPfachievability.props -const B=10,CAP=1,M=1,Unf=1 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+PRISM
+=====
+
+Version: 4.7.dev
+Date: Sat Dec 17 19:29:54 GMT+01:00 2022
+Hostname: nihm023.hpc.itc.rwth-aachen.de
+Memory limits: cudd=4g, java(heap)=30g
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B010CAP1M1Unf1-PfPfachievability.props -const 'B=10,CAP=1,M=1,Unf=1' -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism"...
+
+Type:        MDP
+Modules:     robot goldtile gemtile goldcounter gemcounter stepcounter 
+Variables:   gold gem attacked x y av_gold t_gold av_gem t_gem cgold cgem csteps 
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B010CAP1M1Unf1-PfPfachievability.props"...
+
+1 property:
+(1) "PfPf": multi(P>=0.89791695513 [ F (csteps>=0&cgold=0) ], P>=0.9 [ F (csteps>=0&cgem=0) ])
+
+---------------------------------------------------------------------
+
+Model checking: "PfPf": multi(P>=0.89791695513 [ F (csteps>=0&cgold=0) ], P>=0.9 [ F (csteps>=0&cgem=0) ])
+Model constants: B=10,CAP=1,M=1,Unf=1
+
+Building model...
+Model constants: B=10,CAP=1,M=1,Unf=1
+
+Warning: Guard for command 4 of module "goldtile" is never satisfied.
+
+Warning: Guard for command 2 of module "gemtile" is never satisfied.
+
+Computing reachable states...
+
+Reachability (BFS): 115 iterations in 0.29 seconds (average 0.002548, setup 0.00)
+
+Time for model construction: 0.352 seconds.
+
+Type:        MDP
+States:      314318 (1 initial)
+Transitions: 1092904
+Choices:     1011350
+
+Transition matrix: 6613 nodes (4 terminal), 1092904 minterms, vars: 27r/27c/4nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.035 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 126 iterations in 0.40 seconds (average 0.003167, setup 0.00)
+States:      314882 (1 initial)
+Transitions: 1094860
+Choices:     1013162
+
+Transition matrix: 8717 nodes (4 terminal), 1094860 minterms, vars: 28r/28c/4nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 126 iterations in 0.58 seconds (average 0.004635, setup 0.00)
+States:      316010 (1 initial)
+Transitions: 1098772
+Choices:     1016786
+
+Transition matrix: 14264 nodes (4 terminal), 1098772 minterms, vars: 29r/29c/4nd
+Total time for product construction: 1.116 seconds.
+
+States:      316010 (1 initial)
+Transitions: 1098772
+Choices:     1016786
+
+Transition matrix: 14264 nodes (4 terminal), 1098772 minterms, vars: 29r/29c/4nd
+
+Finding accepting end components for F (csteps>=0&cgold=0)...
+Time for end component identification: 0.003 seconds.
+
+Finding accepting end components for F (csteps>=0&cgem=0)...
+Time for end component identification: 0.001 seconds.
+
+Prob0A: 112 iterations in 1.59 seconds (average 0.014161, setup 0.00)
+
+yes = 1692, no = 104190, maybe = 210128
+
+Computing remaining probabilities...
+Engine: Sparse
+Iterative method: 61 iterations in 0.97 seconds (average 0.015934, setup 0.00)
+The value iteration(s) took 1.198 seconds altogether.
+Number of weight vectors used: 1
+Multi-objective value iterations took 1.198 s.
+
+Property satisfied in 0 of 1 initial states.
+
+Time for model checking: 5.512 seconds.
+
+Result: false
+
+---------------------------------------------------------------------
+
+Note: There were 2 warnings during computation.	</pre>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">STDERR</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g	</pre>
+</div>
+</body>
+</html>

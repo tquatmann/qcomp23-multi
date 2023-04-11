@@ -1,0 +1,93 @@
+Command:	~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/phi/phi5.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/phi/phi-N5-LrLrachievability.props --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute
+Wallclock time:	5.268418550491333
+Return code:	0
+Output:
+Storm 1.7.1 (dev)
+
+Date: Sat Dec 17 10:25:57 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/phi/phi5.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/phi/phi-N5-LrLrachievability.props --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.004s.
+
+Time for model construction: 0.687s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	93068
+Transitions: 	494420
+Choices: 	437050
+Reward Models:  think, eat
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "LrLr": multi(R[exp]{"think"}>=37285714233/10000000000 [LRA], R[exp]{"eat"}>=8590908951/5000000000 [LRA]) ...
+Preprocessing done in 0.123s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"think"}>=37285714233/10000000000 [LRA], R[exp]{"eat"}>=8590908951/5000000000 [LRA])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"think"}>=37285714233/10000000000 [LRA] 	Preprocessed: R[exp]{"think"}max>=37285714233/10000000000 [LRA] 	result bounds: >=0
+Original: R[exp]{"eat"}>=8590908951/5000000000 [LRA] 	Preprocessed: R[exp]{"eat"}max>=8590908951/5000000000 [LRA] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 2.
+Number of Total Reward Objectives (after preprocessing): 0.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	93068
+Transitions: 	494420
+Choices: 	437050
+Reward Models:  think, eat
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	93068
+Transitions: 	494420
+Choices: 	437050
+Reward Models:  eat, think
+State Labels: 	2 labels
+   * init -> 1 item(s)
+   * deadlock -> 0 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Weight Vector Checker Statistics:
+Final preprocessed model has 93068 states.
+Final preprocessed model has 437050 actions.
+Found 1 end components that are relevant for LRA-analysis.
+93068 states lie on such an end component.
+
+Pareto Curve Approximation Algorithm terminated after 3 refinement steps.
+Solving multi-objective query took 4.482s seconds (consisting of 0.123s seconds for preprocessing and 4.358s seconds for analyzing the preprocessed model).
+Result (for initial states): false
+
+Time for model checking: 4.482s.
+
+Performance statistics:
+  * peak memory usage: 166MB
+  * CPU time: 5.094s
+  * wallclock time: 5.183s
+
+
+############################## Notes ##############################
+Storm. check achievability objectives using sound value iteration

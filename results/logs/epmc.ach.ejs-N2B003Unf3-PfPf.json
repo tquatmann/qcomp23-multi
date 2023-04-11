@@ -1,0 +1,19 @@
+{
+	"id": "epmc.ach.ejs-N2B003Unf3-PfPf",
+	"benchmark-id": "ejs-N2B003Unf3-PfPf",
+	"tool": "epmc",
+	"configuration-id": "ach",
+	"invocation-note": "EPMC default settings. Check achievability objectives.",
+	"commands": [
+		"java -jar ~/ePMC/epmc-standard.jar  check --model-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs2.prism --property-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N2B003Unf3-PfPfachievability.props --const B=3,Unf=3 --graphsolver-iterative-stop-criterion absolute --graphsolver-iterative-tolerance 1e-6"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "epmc.ach.ejs-N2B003Unf3-PfPf.log",
+	"wallclock-time": 40.927555561065674,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	]
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>storm.ach - res-B100CAP15M15Unf0-LrLr</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>storm.ach</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>id:</td><td>res-B100CAP15M15Unf0-LrLr (MDP)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ach)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B100CAP15M15Unf0-LrLrachievability.props -const B=100,CAP=15,M=15,Unf=0 --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute</pre>
+	Storm. check achievability objectives using sound value iteration
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">1161.0976901054382s</td></tr>
+		<tr><td>Model Checking Walltime:</td><td style="tt">1157.722s</td></tr>
+		<tr><td>Return code:</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Storm. check achievability objectives using sound value iteration</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.7.1 (dev)
+
+Date: Sat Dec 17 21:12:51 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B100CAP15M15Unf0-LrLrachievability.props -const 'B=100,CAP=15,M=15,Unf=0' --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.005s.
+
+Time for model construction: 3.261s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	220001
+Transitions: 	790746
+Choices: 	714781
+Reward Models:  rew_gold, rew_gem
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "LrLr": multi(R[exp]{"rew_gold"}>=9/160 [LRA], R[exp]{"rew_gem"}>=9/160 [LRA]) ...
+Preprocessing done in 0.224s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"rew_gold"}>=9/160 [LRA], R[exp]{"rew_gem"}>=9/160 [LRA])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"rew_gold"}>=9/160 [LRA] 	Preprocessed: R[exp]{"rew_gold"}max>=9/160 [LRA] 	result bounds: >=0
+Original: R[exp]{"rew_gem"}>=9/160 [LRA] 	Preprocessed: R[exp]{"rew_gem"}max>=9/160 [LRA] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 2.
+Number of Total Reward Objectives (after preprocessing): 0.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	220001
+Transitions: 	790746
+Choices: 	714781
+Reward Models:  rew_gold, rew_gem
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	220001
+Transitions: 	790746
+Choices: 	714781
+Reward Models:  rew_gem, rew_gold
+State Labels: 	2 labels
+   * init -> 1 item(s)
+   * deadlock -> 0 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Weight Vector Checker Statistics:
+Final preprocessed model has 220001 states.
+Final preprocessed model has 714781 actions.
+Found 1 end components that are relevant for LRA-analysis.
+220001 states lie on such an end component.
+
+Pareto Curve Approximation Algorithm terminated after 3 refinement steps.
+Solving multi-objective query took 1157.721s seconds (consisting of 0.224s seconds for preprocessing and 1157.492s seconds for analyzing the preprocessed model).
+Result (for initial states): true
+
+Time for model checking: 1157.722s.
+
+Performance statistics:
+  * peak memory usage: 296MB
+  * CPU time: 1157.942s
+  * wallclock time: 1161.000s	</pre>
+</div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+Pmin=?[F !"timeExceeded" & "done"];
+Pmin=? [F !"rndsExceeded" & "done"];

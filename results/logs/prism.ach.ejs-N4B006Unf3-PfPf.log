@@ -1,0 +1,54 @@
+Command:	~/prism/prism/bin/prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs4.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N4B006Unf3-PfPfachievability.props -const B=6,Unf=3 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+Wallclock time:	675.3181710243225
+Return code:	1
+Output:
+java -Xmx30g -Xss1g -Djava.awt.headless=true -Djava.library.path=/home/tq429871/prism/prism/lib -classpath /home/tq429871/prism/prism/lib/prism.jar:/home/tq429871/prism/prism/classes:/home/tq429871/prism/prism:/home/tq429871/prism/prism/lib/pepa.zip:/home/tq429871/prism/prism/lib/* prism.PrismCL /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs4.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N4B006Unf3-PfPfachievability.props -const B=6,Unf=3 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+PRISM
+=====
+
+Version: 4.7.dev
+Date: Sat Dec 17 06:00:10 GMT+01:00 2022
+Hostname: nihm020.hpc.itc.rwth-aachen.de
+Memory limits: cudd=4g, java(heap)=30g
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs4.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N4B006Unf3-PfPfachievability.props -const 'B=6,Unf=3' -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs4.prism"...
+
+Type:        MDP
+Modules:     Resources Process_1 Process_2 Process_3 Process_4 energyGlobal energyLocal utilityGlobal utilityLocal unfold 
+Variables:   boost_1 user_1 failure_1 loc_1 t_1 failure_2 loc_2 t_2 failure_3 loc_3 t_3 t_4 loc_4 failure_4 r4 r2 r3 r1 
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N4B006Unf3-PfPfachievability.props"...
+
+1 property:
+(1) "PfPf": multi(P>=0.45 [ F "exceedUtLo"&!"exceedEnLo" ], P>=0.45 [ F "exceedUtGl"&!"exceedEnGl" ])
+
+---------------------------------------------------------------------
+
+Model checking: "PfPf": multi(P>=0.45 [ F "exceedUtLo"&!"exceedEnLo" ], P>=0.45 [ F "exceedUtGl"&!"exceedEnGl" ])
+Model constants: Unf=3,B=6
+
+Building model...
+Model constants: Unf=3,B=6
+
+Computing reachable states...
+
+java.lang.NullPointerException: Cannot invoke "jdd.JDDNode.ptr()" because "<parameter1>" is null
+    at jdd.JDD.Deref(JDD.java:297)
+    at prism.NondetModel.clear(NondetModel.java:469)
+    at prism.Modules2MTBDD.translate(Modules2MTBDD.java:368)
+    at prism.Prism.doBuildModel(Prism.java:1974)
+    at prism.Prism.buildModelIfRequired(Prism.java:1941)
+    at prism.Prism.modelCheck(Prism.java:2934)
+    at prism.PrismCL.run(PrismCL.java:407)
+    at prism.PrismCL.go(PrismCL.java:223)
+    at prism.PrismCL.main(PrismCL.java:2757)
+
+Error: Caught unhandled exception, aborting....
+
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+
+
+############################## Notes ##############################
+Prism.. Achievability queries. Gauss-Seidl VI.

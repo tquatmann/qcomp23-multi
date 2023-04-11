@@ -1,0 +1,94 @@
+Command:	~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir2.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir-N2-LrLrachievability.props --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute
+Wallclock time:	0.17255234718322754
+Return code:	0
+Output:
+Storm 1.7.1 (dev)
+
+Date: Sun Dec 18 14:25:04 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir2.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir-N2-LrLrachievability.props --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.004s.
+
+Time for model construction: 0.026s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	80
+Transitions: 	569
+Choices: 	393
+Reward Models:  withvirus, clean
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "LrLr": multi(R[exp]{"withvirus"}>=35999997831/10000000000 [LRA], R[exp]{"clean"}>=7682930455499999/50000000000000000 [LRA]) ...
+Preprocessing done in 0.000s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"withvirus"}>=35999997831/10000000000 [LRA], R[exp]{"clean"}>=7682930455499999/50000000000000000 [LRA])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"withvirus"}>=35999997831/10000000000 [LRA] 	Preprocessed: R[exp]{"withvirus"}max>=35999997831/10000000000 [LRA] 	result bounds: >=0
+Original: R[exp]{"clean"}>=7682930455499999/50000000000000000 [LRA] 	Preprocessed: R[exp]{"clean"}max>=7682930455499999/50000000000000000 [LRA] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 2.
+Number of Total Reward Objectives (after preprocessing): 0.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	80
+Transitions: 	569
+Choices: 	393
+Reward Models:  withvirus, clean
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	80
+Transitions: 	569
+Choices: 	393
+Reward Models:  withvirus, clean
+State Labels: 	3 labels
+   * deadl -> 1 item(s)
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Weight Vector Checker Statistics:
+Final preprocessed model has 80 states.
+Final preprocessed model has 393 actions.
+Found 2 end components that are relevant for LRA-analysis.
+66 states lie on such an end component.
+
+Pareto Curve Approximation Algorithm terminated after 3 refinement steps.
+Solving multi-objective query took 0.060s seconds (consisting of 0.000s seconds for preprocessing and 0.060s seconds for analyzing the preprocessed model).
+Result (for initial states): false
+
+Time for model checking: 0.061s.
+
+Performance statistics:
+  * peak memory usage: 50MB
+  * CPU time: 0.112s
+  * wallclock time: 0.098s
+
+
+############################## Notes ##############################
+Storm. check achievability objectives using sound value iteration

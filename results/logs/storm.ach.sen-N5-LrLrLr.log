@@ -1,0 +1,86 @@
+Command:	~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen5.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N5-LrLrLrachievability.props --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute
+Wallclock time:	7203.023970127106
+Return code:	None
+Output:
+Storm 1.7.1 (dev)
+
+Date: Sun Dec 18 06:06:41 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen5.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N5-LrLrLrachievability.props --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.007s.
+
+Time for model construction: 47.635s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	3565990
+Transitions: 	19736435
+Choices: 	18757530
+Reward Models:  working, success, failure
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "LrLrLr": multi(R[exp]{"working"}>=9/20 [LRA], R[exp]{"success"}>=9/20 [LRA], R[exp]{"failure"}>=9/20 [LRA]) ...
+Preprocessing done in 13.158s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"working"}>=9/20 [LRA], R[exp]{"success"}>=9/20 [LRA], R[exp]{"failure"}>=9/20 [LRA])
+
+The query considers 3 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"working"}>=9/20 [LRA] 	Preprocessed: R[exp]{"working"}max>=9/20 [LRA] 	result bounds: >=0
+Original: R[exp]{"success"}>=9/20 [LRA] 	Preprocessed: R[exp]{"success"}max>=9/20 [LRA] 	result bounds: >=0
+Original: R[exp]{"failure"}>=9/20 [LRA] 	Preprocessed: R[exp]{"failure"}max>=9/20 [LRA] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 3.
+Number of Total Reward Objectives (after preprocessing): 0.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	3565990
+Transitions: 	19736435
+Choices: 	18757530
+Reward Models:  working, success, failure
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	3565990
+Transitions: 	19736375
+Choices: 	18757470
+Reward Models:  working, success, failure
+State Labels: 	3 labels
+   * deadl -> 15 item(s)
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+##############################Output to stderr##############################
+ERROR: The program received signal 15 and will be aborted in 3s.
+Received signal 14
+
+
+----------
+Computation aborted after 7203.023970127106 seconds since the total time limit of 7200 seconds was exceeded.
+
+############################## Notes ##############################
+Storm. check achievability objectives using sound value iteration

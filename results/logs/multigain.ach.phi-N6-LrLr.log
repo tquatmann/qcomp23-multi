@@ -1,0 +1,63 @@
+Command:	~/multigain/bin/prism  /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/phi/phi6.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/phi/phi-N6-LrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute
+Wallclock time:	144.34257173538208
+Return code:	137
+Output:
+MultiGain1.0.2
+Date: Mon Dec 19 09:39:58 GMT+01:00 2022
+Hostname: nihm018.hpc.itc.rwth-aachen.de
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/phi/phi6.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/phi/phi-N6-LrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/phi/phi6.prism"...
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/phi/phi-N6-LrLrachievability.props"...
+
+1 property:
+(1) "LrLr": multi(R{"think"}>=4.6285714233 [ S ], R{"eat"}>=3.3786884988 [ S ])
+
+Type:        MDP
+Modules:     phil1 phil2 phil3 phil4 phil5 phil6 
+Variables:   p1 p2 p3 p4 p5 p6 
+
+---------------------------------------------------------------------
+
+Model checking: "LrLr": multi(R{"think"}>=4.6285714233 [ S ], R{"eat"}>=3.3786884988 [ S ])
+
+Building model...
+
+Computing reachable states... 286765 579045 850376 1129779 1378741 1651339 1925408 2169805Computing end components.
+Finished computing end components.
+ states
+Reachable states exploration and model construction done in 24.026 secs.
+Sorting reachable states list...
+
+Time for model construction: 28.213 seconds.
+
+Type:        MDP
+States:      2169805 (1 initial)
+Transitions: 13965101
+Choices:     12721289
+Max/avg:     11/5.86
+Set parameter TSPort to value 50039
+Set parameter TokenServer to value "license6.itc.rwth-aachen.de"
+Set parameter IntFeasTol to value 1e-08
+Set parameter DualReductions to value 0
+Set parameter Method to value 1
+LP problem construction finished in 87.923 s.
+Gurobi Optimizer version 9.5.0 build v9.5.0rc5 (linux64)
+Thread count: 48 physical cores, 48 logical processors, using up to 32 threads
+Optimize a model with 4339614 rows, 27612383 columns and 86618498 nonzeros
+Model fingerprint: 0x3d0bbd0c
+Coefficient statistics:
+  Matrix range     [5e-01, 6e+00]
+  Objective range  [0e+00, 0e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+00]
+Presolve removed 0 rows and 0 columns (presolve time = 6s) ...
+
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+/home/tq429871/multigain/bin/prism: line 81: 52448 Killed                  "$PRISM_JAVA" $PRISM_JAVA_DEBUG $PRISM_JAVAMAXMEM $PRISM_JAVASTACKSIZE -Djava.awt.headless=$PRISM_HEADLESS -Djava.library.path=$JAVA_LIBRARY_PATH -classpath "$PRISM_CLASSPATH" $PRISM_MAINCLASS "$@"
+
+
+############################## Notes ##############################
+MultiGain default settings.. Achievability queries

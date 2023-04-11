@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>storm.ach - res-B010CAP1M1Unf1-PfPf</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>storm.ach</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>id:</td><td>res-B010CAP1M1Unf1-PfPf (MDP)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ach)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B010CAP1M1Unf1-PfPfachievability.props -const B=10,CAP=1,M=1,Unf=1 --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute</pre>
+	Storm. check achievability objectives using sound value iteration
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">7.520981073379517s</td></tr>
+		<tr><td>Model Checking Walltime:</td><td style="tt">3.068s</td></tr>
+		<tr><td>Return code:</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Storm. check achievability objectives using sound value iteration</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.7.1 (dev)
+
+Date: Sat Dec 17 19:29:04 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B010CAP1M1Unf1-PfPfachievability.props -const 'B=10,CAP=1,M=1,Unf=1' --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.005s.
+
+Time for model construction: 4.360s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	314318
+Transitions: 	1092904
+Choices: 	1011350
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * ((csteps >= 0) & (cgold = 0)) -> 7275 item(s)
+   * init -> 1 item(s)
+   * ((csteps >= 0) & (cgem = 0)) -> 35869 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "PfPf": multi(P>=89791695513/100000000000 [F ((csteps >= 0) & (cgold = 0))], P>=9/10 [F ((csteps >= 0) & (cgem = 0))]) ...
+Preprocessing done in 0.974s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(P>=89791695513/100000000000 [F ((csteps >= 0) & (cgold = 0))], P>=9/10 [F ((csteps >= 0) & (cgem = 0))])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: P>=89791695513/100000000000 [F ((csteps >= 0) & (cgold = 0))] 	Preprocessed: R[exp]{"obj1"}max>=89791695513/100000000000 [C] 	result bounds: [0, 1]
+Original: P>=9/10 [F ((csteps >= 0) & (cgem = 0))] 	Preprocessed: R[exp]{"obj2"}max>=9/10 [C] 	result bounds: [0, 1]
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 2.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	314318
+Transitions: 	1092904
+Choices: 	1011350
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * ((csteps >= 0) & (cgold = 0)) -> 7275 item(s)
+   * init -> 1 item(s)
+   * ((csteps >= 0) & (cgem = 0)) -> 35869 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	180203
+Transitions: 	604954
+Choices: 	559870
+Reward Models:  obj2, obj1
+State Labels: 	5 labels
+   * deadl -> 9988 item(s)
+   * ((csteps >= 0) & (cgem = 0)) -> 4054 item(s)
+   * init -> 1 item(s)
+   * ((csteps >= 0) & (cgold = 0)) -> 396 item(s)
+   * deadlock -> 0 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Weight Vector Checker Statistics:
+Final preprocessed model has 170216 states.
+Final preprocessed model has 549883 actions.
+
+Pareto Curve Approximation Algorithm terminated after 3 refinement steps.
+Solving multi-objective query took 3.067s seconds (consisting of 0.974s seconds for preprocessing and 2.090s seconds for analyzing the preprocessed model).
+Result (for initial states): false
+
+Time for model checking: 3.068s.
+
+Performance statistics:
+  * peak memory usage: 193MB
+  * CPU time: 7.374s
+  * wallclock time: 7.443s	</pre>
+</div>
+</body>
+</html>

@@ -1,0 +1,1318 @@
+{
+	"res-B005CAP1M1Unf1-PfPf-ach": {
+		"id": "res-B005CAP1M1Unf1-PfPf",
+		"name": "res",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B005CAP1M1Unf1",
+		"obj": 2,
+		"obj-prlb": "(2,0,0,0)",
+		"obj-pr": "(2,0)",
+		"mixed": false,
+		"category": "tot",
+		"achievable": {
+			"false": 3
+		},
+		"invocations": [
+			"prism.ach.res-B005CAP1M1Unf1-PfPf"
+		],
+		"states": 22507,
+		"choices": 66993
+	},
+	"uav-B1500Unf1-PfRt-ach": {
+		"id": "uav-B1500Unf1-PfRt",
+		"name": "uav",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B1500Unf1",
+		"obj": 2,
+		"obj-prlb": "(1,1,0,0)",
+		"obj-pr": "(1,1)",
+		"mixed": true,
+		"category": "tot",
+		"achievable": {
+			"true": 3
+		},
+		"invocations": [
+			"prism.ach.uav-B1500Unf1-PfRt"
+		],
+		"states": 758602,
+		"choices": 1215049
+	},
+	"ejs-N4B006Unf3-PfPf-ach": {
+		"id": "ejs-N4B006Unf3-PfPf",
+		"name": "ejs",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N4B006Unf3",
+		"obj": 2,
+		"obj-prlb": "(2,0,0,0)",
+		"obj-pr": "(2,0)",
+		"mixed": false,
+		"category": "tot",
+		"invocations": [
+			"epmc.ach.ejs-N4B006Unf3-PfPf"
+		]
+	},
+	"pow-Q0002K0000-RtRtRt-ach": {
+		"id": "pow-Q0002K0000-RtRtRt",
+		"name": "pow",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "Q0002K0000",
+		"obj": 3,
+		"obj-prlb": "(0,3,0,0)",
+		"obj-pr": "(0,3)",
+		"mixed": false,
+		"category": "tot",
+		"achievable": {
+			"true": 1,
+			"false": 2
+		},
+		"invocations": [
+			"epmc.ach.pow-Q0002K0000-RtRtRt"
+		],
+		"states": 942,
+		"choices": 2166
+	},
+	"sen-N5-LrLrLr-ach": {
+		"id": "sen-N5-LrLrLr",
+		"name": "sen",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N5",
+		"obj": 3,
+		"obj-prlb": "(0,0,3,0)",
+		"obj-pr": "(0,0)",
+		"mixed": false,
+		"category": "lra",
+		"invocations": [
+			"multigain.ach.sen-N5-LrLrLr"
+		],
+		"states": 3565990,
+		"choices": 18757470
+	},
+	"uav-B1000Unf1-PfRt-ach": {
+		"id": "uav-B1000Unf1-PfRt",
+		"name": "uav",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B1000Unf1",
+		"obj": 2,
+		"obj-prlb": "(1,1,0,0)",
+		"obj-pr": "(1,1)",
+		"mixed": true,
+		"category": "tot",
+		"states": 278466,
+		"choices": 424823,
+		"transitions": 1277974,
+		"achievable": {
+			"true": 3
+		},
+		"invocations": [
+			"storm.ach.uav-B1000Unf1-PfRt"
+		]
+	},
+	"tea-N4-PfRt-ach": {
+		"id": "tea-N4-PfRt",
+		"name": "tea",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N4",
+		"obj": 2,
+		"obj-prlb": "(1,1,0,0)",
+		"obj-pr": "(1,1)",
+		"mixed": false,
+		"category": "tot",
+		"states": 65545,
+		"choices": 79857,
+		"transitions": 81032,
+		"achievable": {
+			"true": 2
+		},
+		"invocations": [
+			"storm.ach.tea-N4-PfRt"
+		]
+	},
+	"pow-Q0002K0000-RtRt-ach": {
+		"id": "pow-Q0002K0000-RtRt",
+		"name": "pow",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "Q0002K0000",
+		"obj": 2,
+		"obj-prlb": "(0,2,0,0)",
+		"obj-pr": "(0,2)",
+		"mixed": false,
+		"category": "tot",
+		"achievable": {
+			"false": 2,
+			"true": 1
+		},
+		"invocations": [
+			"prism.ach.pow-Q0002K0000-RtRt"
+		],
+		"states": 942,
+		"choices": 2166
+	},
+	"ejs-N3B005Unf3-PfPf-ach": {
+		"id": "ejs-N3B005Unf3-PfPf",
+		"name": "ejs",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N3B005Unf3",
+		"obj": 2,
+		"obj-prlb": "(2,0,0,0)",
+		"obj-pr": "(2,0)",
+		"mixed": false,
+		"category": "tot",
+		"invocations": [
+			"prism.ach.ejs-N3B005Unf3-PfPf"
+		],
+		"states": 12763641,
+		"choices": 14743654,
+		"achievable": {
+			"false": 1
+		}
+	},
+	"phi-N6-LrLr-ach": {
+		"id": "phi-N6-LrLr",
+		"name": "phi",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N6",
+		"obj": 2,
+		"obj-prlb": "(0,0,2,0)",
+		"obj-pr": "(0,0)",
+		"mixed": false,
+		"category": "lra",
+		"invocations": [
+			"multigain.ach.phi-N6-LrLr"
+		],
+		"states": 2169805,
+		"choices": 12721289,
+		"achievable": {
+			"false": 1
+		}
+	},
+	"rov-B0010Unf1-RtRt-ach": {
+		"id": "rov-B0010Unf1-RtRt",
+		"name": "rov",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B0010Unf1",
+		"obj": 2,
+		"obj-prlb": "(0,2,0,0)",
+		"obj-pr": "(0,2)",
+		"mixed": false,
+		"category": "tot",
+		"achievable": {
+			"true": 1,
+			"false": 2
+		},
+		"invocations": [
+			"epmc.ach.rov-B0010Unf1-RtRt"
+		],
+		"states": 376,
+		"choices": 451
+	},
+	"frw-B10000Unf1-PfPf-ach": {
+		"id": "frw-B10000Unf1-PfPf",
+		"name": "frw",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B10000Unf1",
+		"obj": 2,
+		"obj-prlb": "(2,0,0,0)",
+		"obj-pr": "(2,0)",
+		"mixed": false,
+		"category": "tot",
+		"achievable": {
+			"true": 3
+		},
+		"invocations": [
+			"prism.ach.frw-B10000Unf1-PfPf"
+		],
+		"states": 11784709,
+		"choices": 18072629
+	},
+	"tea-N3-PfRtPf-ach": {
+		"id": "tea-N3-PfRtPf",
+		"name": "tea",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N3",
+		"obj": 3,
+		"obj-prlb": "(2,1,0,0)",
+		"obj-pr": "(2,1)",
+		"mixed": false,
+		"category": "tot",
+		"achievable": {
+			"false": 2
+		},
+		"invocations": [
+			"prism.ach.tea-N3-PfRtPf"
+		],
+		"states": 7861,
+		"choices": 9673
+	},
+	"pow-Q1000K0000-RtRt-ach": {
+		"id": "pow-Q1000K0000-RtRt",
+		"name": "pow",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "Q1000K0000",
+		"obj": 2,
+		"obj-prlb": "(0,2,0,0)",
+		"obj-pr": "(0,2)",
+		"mixed": false,
+		"category": "tot",
+		"states": 314314,
+		"choices": 722722,
+		"transitions": 1293292,
+		"achievable": {
+			"true": 3
+		},
+		"invocations": [
+			"storm.ach.pow-Q1000K0000-RtRt"
+		]
+	},
+	"pow-Q0100K0000-RtRtRt-ach": {
+		"id": "pow-Q0100K0000-RtRtRt",
+		"name": "pow",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "Q0100K0000",
+		"obj": 3,
+		"obj-prlb": "(0,3,0,0)",
+		"obj-pr": "(0,3)",
+		"mixed": false,
+		"category": "tot",
+		"states": 31714,
+		"choices": 72922,
+		"transitions": 130492,
+		"achievable": {
+			"false": 2,
+			"true": 1
+		},
+		"invocations": [
+			"storm.ach.pow-Q0100K0000-RtRtRt"
+		]
+	},
+	"uav-B0750Unf1-PfRt-ach": {
+		"id": "uav-B0750Unf1-PfRt",
+		"name": "uav",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B0750Unf1",
+		"obj": 2,
+		"obj-prlb": "(1,1,0,0)",
+		"obj-pr": "(1,1)",
+		"mixed": true,
+		"category": "tot",
+		"states": 90172,
+		"choices": 127090,
+		"transitions": 389918,
+		"achievable": {
+			"true": 3
+		},
+		"invocations": [
+			"storm.ach.uav-B0750Unf1-PfRt"
+		]
+	},
+	"rov-B0030Unf2-PfPf-ach": {
+		"id": "rov-B0030Unf2-PfPf",
+		"name": "rov",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B0030Unf2",
+		"obj": 2,
+		"obj-prlb": "(2,0,0,0)",
+		"obj-pr": "(2,0)",
+		"mixed": false,
+		"category": "tot",
+		"states": 4741524,
+		"choices": 5926880,
+		"transitions": 8890270,
+		"achievable": {
+			"true": 3
+		},
+		"invocations": [
+			"storm.ach.rov-B0030Unf2-PfPf"
+		]
+	},
+	"sen-N3-LrLrLr-ach": {
+		"id": "sen-N3-LrLrLr",
+		"name": "sen",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N3",
+		"obj": 3,
+		"obj-prlb": "(0,0,3,0)",
+		"obj-pr": "(0,0)",
+		"mixed": false,
+		"category": "lra",
+		"states": 77766,
+		"choices": 299871,
+		"transitions": 320829,
+		"achievable": {
+			"false": 2
+		},
+		"invocations": [
+			"storm.ach.sen-N3-LrLrLr"
+		]
+	},
+	"rov-B1000Unf2-PfPf-ach": {
+		"id": "rov-B1000Unf2-PfPf",
+		"name": "rov",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B1000Unf2",
+		"obj": 2,
+		"obj-prlb": "(2,0,0,0)",
+		"obj-pr": "(2,0)",
+		"mixed": false,
+		"category": "tot",
+		"invocations": [
+			"storm.ach.rov-B1000Unf2-PfPf"
+		]
+	},
+	"tea-N2-PfRt-ach": {
+		"id": "tea-N2-PfRt",
+		"name": "tea",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N2",
+		"obj": 2,
+		"obj-prlb": "(1,1,0,0)",
+		"obj-pr": "(1,1)",
+		"mixed": false,
+		"category": "tot",
+		"states": 865,
+		"choices": 1057,
+		"transitions": 1154,
+		"achievable": {
+			"true": 2
+		},
+		"invocations": [
+			"storm.ach.tea-N2-PfRt"
+		]
+	},
+	"rov-B0500Unf1-RtRt-ach": {
+		"id": "rov-B0500Unf1-RtRt",
+		"name": "rov",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B0500Unf1",
+		"obj": 2,
+		"obj-prlb": "(0,2,0,0)",
+		"obj-pr": "(0,2)",
+		"mixed": false,
+		"category": "tot",
+		"states": 18751,
+		"choices": 22501,
+		"transitions": 35001,
+		"achievable": {
+			"false": 2,
+			"true": 1
+		},
+		"invocations": [
+			"storm.ach.rov-B0500Unf1-RtRt"
+		]
+	},
+	"pow-Q0004K0000-RtRt-ach": {
+		"id": "pow-Q0004K0000-RtRt",
+		"name": "pow",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "Q0004K0000",
+		"obj": 2,
+		"obj-prlb": "(0,2,0,0)",
+		"obj-pr": "(0,2)",
+		"mixed": false,
+		"category": "tot",
+		"achievable": {
+			"true": 3
+		},
+		"invocations": [
+			"prism.ach.pow-Q0004K0000-RtRt"
+		],
+		"states": 1570,
+		"choices": 3610
+	},
+	"rov-B0020Unf2-PfPf-ach": {
+		"id": "rov-B0020Unf2-PfPf",
+		"name": "rov",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B0020Unf2",
+		"obj": 2,
+		"obj-prlb": "(2,0,0,0)",
+		"obj-pr": "(2,0)",
+		"mixed": false,
+		"category": "tot",
+		"states": 1375218,
+		"choices": 1719006,
+		"transitions": 2578476,
+		"achievable": {
+			"true": 3
+		},
+		"invocations": [
+			"storm.ach.rov-B0020Unf2-PfPf"
+		]
+	},
+	"res-B100CAP15M15Unf0-LrLr-ach": {
+		"id": "res-B100CAP15M15Unf0-LrLr",
+		"name": "res",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B100CAP15M15Unf0",
+		"obj": 2,
+		"obj-prlb": "(0,0,2,0)",
+		"obj-pr": "(0,0)",
+		"mixed": false,
+		"category": "lra",
+		"achievable": {
+			"true": 2
+		},
+		"invocations": [
+			"multigain.ach.res-B100CAP15M15Unf0-LrLr"
+		],
+		"states": 220001,
+		"choices": 714781
+	},
+	"pow-Q0100K0000-RtRt-ach": {
+		"id": "pow-Q0100K0000-RtRt",
+		"name": "pow",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "Q0100K0000",
+		"obj": 2,
+		"obj-prlb": "(0,2,0,0)",
+		"obj-pr": "(0,2)",
+		"mixed": false,
+		"category": "tot",
+		"achievable": {
+			"true": 3
+		},
+		"invocations": [
+			"prism.ach.pow-Q0100K0000-RtRt"
+		],
+		"states": 31714,
+		"choices": 72922
+	},
+	"rov-B0100Unf2-PfPf-ach": {
+		"id": "rov-B0100Unf2-PfPf",
+		"name": "rov",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B0100Unf2",
+		"obj": 2,
+		"obj-prlb": "(2,0,0,0)",
+		"obj-pr": "(2,0)",
+		"mixed": false,
+		"category": "tot",
+		"invocations": [
+			"storm.ach.rov-B0100Unf2-PfPf"
+		]
+	},
+	"srv-B000Unf0-RtRt-ach": {
+		"id": "srv-B000Unf0-RtRt",
+		"name": "srv",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B000Unf0",
+		"obj": 2,
+		"obj-prlb": "(0,2,0,0)",
+		"obj-pr": "(0,2)",
+		"mixed": true,
+		"category": "tot",
+		"invocations": [
+			"prism.ach.srv-B000Unf0-RtRt"
+		],
+		"states": 47248,
+		"choices": 90400,
+		"achievable": {
+			"false": 1,
+			"true": 1
+		}
+	},
+	"ejs-N2B003Unf1-RtRt-ach": {
+		"id": "ejs-N2B003Unf1-RtRt",
+		"name": "ejs",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N2B003Unf1",
+		"obj": 2,
+		"obj-prlb": "(0,2,0,0)",
+		"obj-pr": "(0,2)",
+		"mixed": false,
+		"category": "tot",
+		"achievable": {
+			"true": 3
+		},
+		"invocations": [
+			"prism.ach.ejs-N2B003Unf1-RtRt"
+		],
+		"states": 953,
+		"choices": 1107
+	},
+	"res-B100CAP5M5Unf0-LrLr-ach": {
+		"id": "res-B100CAP5M5Unf0-LrLr",
+		"name": "res",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B100CAP5M5Unf0",
+		"obj": 2,
+		"obj-prlb": "(0,0,2,0)",
+		"obj-pr": "(0,0)",
+		"mixed": false,
+		"category": "lra",
+		"achievable": {
+			"false": 2
+		},
+		"invocations": [
+			"multigain.ach.res-B100CAP5M5Unf0-LrLr"
+		],
+		"states": 2618,
+		"choices": 8577
+	},
+	"ejs-N5B008Unf3-PfPf-ach": {
+		"id": "ejs-N5B008Unf3-PfPf",
+		"name": "ejs",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N5B008Unf3",
+		"obj": 2,
+		"obj-prlb": "(2,0,0,0)",
+		"obj-pr": "(2,0)",
+		"mixed": false,
+		"category": "tot",
+		"invocations": [
+			"prism.ach.ejs-N5B008Unf3-PfPf"
+		]
+	},
+	"res-B100CAP1M1Unf1-PfPf-ach": {
+		"id": "res-B100CAP1M1Unf1-PfPf",
+		"name": "res",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B100CAP1M1Unf1",
+		"obj": 2,
+		"obj-prlb": "(2,0,0,0)",
+		"obj-pr": "(2,0)",
+		"mixed": false,
+		"category": "tot",
+		"invocations": [
+			"storm.ach.res-B100CAP1M1Unf1-PfPf"
+		]
+	},
+	"res-B100CAP20M20Unf0-LrLr-ach": {
+		"id": "res-B100CAP20M20Unf0-LrLr",
+		"name": "res",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B100CAP20M20Unf0",
+		"obj": 2,
+		"obj-prlb": "(0,0,2,0)",
+		"obj-pr": "(0,0)",
+		"mixed": false,
+		"category": "lra",
+		"states": 751908,
+		"choices": 2433877,
+		"transitions": 2688244,
+		"achievable": {
+			"true": 1
+		},
+		"invocations": [
+			"storm.ach.res-B100CAP20M20Unf0-LrLr"
+		]
+	},
+	"uav-B0500Unf1-PfRt-ach": {
+		"id": "uav-B0500Unf1-PfRt",
+		"name": "uav",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B0500Unf1",
+		"obj": 2,
+		"obj-prlb": "(1,1,0,0)",
+		"obj-pr": "(1,1)",
+		"mixed": true,
+		"category": "tot",
+		"achievable": {
+			"true": 3
+		},
+		"invocations": [
+			"prism.ach.uav-B0500Unf1-PfRt"
+		],
+		"states": 12848,
+		"choices": 16282
+	},
+	"rov-B0100Unf1-RtRt-ach": {
+		"id": "rov-B0100Unf1-RtRt",
+		"name": "rov",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B0100Unf1",
+		"obj": 2,
+		"obj-prlb": "(0,2,0,0)",
+		"obj-pr": "(0,2)",
+		"mixed": false,
+		"category": "tot",
+		"achievable": {
+			"false": 2,
+			"true": 1
+		},
+		"invocations": [
+			"prism.ach.rov-B0100Unf1-RtRt"
+		],
+		"states": 3751,
+		"choices": 4501
+	},
+	"tea-N5-PfRt-ach": {
+		"id": "tea-N5-PfRt",
+		"name": "tea",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N5",
+		"obj": 2,
+		"obj-prlb": "(1,1,0,0)",
+		"obj-pr": "(1,1)",
+		"mixed": false,
+		"category": "tot",
+		"states": 666337,
+		"choices": 804897,
+		"transitions": 810776,
+		"achievable": {
+			"true": 2
+		},
+		"invocations": [
+			"storm.ach.tea-N5-PfRt"
+		]
+	},
+	"csn-N5-LrLrLrLrLr-ach": {
+		"id": "csn-N5-LrLrLrLrLr",
+		"name": "csn",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N5",
+		"obj": 5,
+		"obj-prlb": "(0,0,5,0)",
+		"obj-pr": "(0,0)",
+		"mixed": false,
+		"category": "lra",
+		"achievable": {
+			"false": 2
+		},
+		"invocations": [
+			"multigain.ach.csn-N5-LrLrLrLrLr"
+		],
+		"states": 4863,
+		"choices": 16271
+	},
+	"res-B010CAP1M1Unf1-PfPf-ach": {
+		"id": "res-B010CAP1M1Unf1-PfPf",
+		"name": "res",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B010CAP1M1Unf1",
+		"obj": 2,
+		"obj-prlb": "(2,0,0,0)",
+		"obj-pr": "(2,0)",
+		"mixed": false,
+		"category": "tot",
+		"achievable": {
+			"false": 3
+		},
+		"invocations": [
+			"epmc.ach.res-B010CAP1M1Unf1-PfPf"
+		],
+		"states": 180203,
+		"choices": 559870
+	},
+	"tea-N5-PfRtPf-ach": {
+		"id": "tea-N5-PfRtPf",
+		"name": "tea",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N5",
+		"obj": 3,
+		"obj-prlb": "(2,1,0,0)",
+		"obj-pr": "(2,1)",
+		"mixed": false,
+		"category": "tot",
+		"achievable": {
+			"false": 2
+		},
+		"invocations": [
+			"prism.ach.tea-N5-PfRtPf"
+		],
+		"states": 666337,
+		"choices": 804897
+	},
+	"rov-B0500Unf2-PfPf-ach": {
+		"id": "rov-B0500Unf2-PfPf",
+		"name": "rov",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B0500Unf2",
+		"obj": 2,
+		"obj-prlb": "(2,0,0,0)",
+		"obj-pr": "(2,0)",
+		"mixed": false,
+		"category": "tot",
+		"invocations": [
+			"prism.ach.rov-B0500Unf2-PfPf"
+		]
+	},
+	"rov-B0020Unf1-RtRt-ach": {
+		"id": "rov-B0020Unf1-RtRt",
+		"name": "rov",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B0020Unf1",
+		"obj": 2,
+		"obj-prlb": "(0,2,0,0)",
+		"obj-pr": "(0,2)",
+		"mixed": false,
+		"category": "tot",
+		"achievable": {
+			"true": 1,
+			"false": 2
+		},
+		"invocations": [
+			"epmc.ach.rov-B0020Unf1-RtRt"
+		],
+		"states": 751,
+		"choices": 901
+	},
+	"rov-B1000Unf1-RtRt-ach": {
+		"id": "rov-B1000Unf1-RtRt",
+		"name": "rov",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B1000Unf1",
+		"obj": 2,
+		"obj-prlb": "(0,2,0,0)",
+		"obj-pr": "(0,2)",
+		"mixed": false,
+		"category": "tot",
+		"achievable": {
+			"false": 2,
+			"true": 1
+		},
+		"invocations": [
+			"prism.ach.rov-B1000Unf1-RtRt"
+		],
+		"states": 37501,
+		"choices": 45001
+	},
+	"tea-N3-PfRt-ach": {
+		"id": "tea-N3-PfRt",
+		"name": "tea",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N3",
+		"obj": 2,
+		"obj-prlb": "(1,1,0,0)",
+		"obj-pr": "(1,1)",
+		"mixed": false,
+		"category": "tot",
+		"states": 7861,
+		"choices": 9673,
+		"transitions": 9966,
+		"achievable": {
+			"true": 2
+		},
+		"invocations": [
+			"storm.ach.tea-N3-PfRt"
+		]
+	},
+	"rov-B0030Unf1-RtRt-ach": {
+		"id": "rov-B0030Unf1-RtRt",
+		"name": "rov",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B0030Unf1",
+		"obj": 2,
+		"obj-prlb": "(0,2,0,0)",
+		"obj-pr": "(0,2)",
+		"mixed": false,
+		"category": "tot",
+		"achievable": {
+			"false": 2,
+			"true": 1
+		},
+		"invocations": [
+			"prism.ach.rov-B0030Unf1-RtRt"
+		],
+		"states": 1126,
+		"choices": 1351
+	},
+	"rov-B0010Unf2-PfPf-ach": {
+		"id": "rov-B0010Unf2-PfPf",
+		"name": "rov",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B0010Unf2",
+		"obj": 2,
+		"obj-prlb": "(2,0,0,0)",
+		"obj-pr": "(2,0)",
+		"mixed": false,
+		"category": "tot",
+		"states": 160944,
+		"choices": 201172,
+		"transitions": 301742,
+		"achievable": {
+			"false": 3
+		},
+		"invocations": [
+			"storm.ach.rov-B0010Unf2-PfPf"
+		]
+	},
+	"tea-N2-PfRtPf-ach": {
+		"id": "tea-N2-PfRtPf",
+		"name": "tea",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N2",
+		"obj": 3,
+		"obj-prlb": "(2,1,0,0)",
+		"obj-pr": "(2,1)",
+		"mixed": false,
+		"category": "tot",
+		"invocations": [
+			"epmc.ach.tea-N2-PfRtPf"
+		],
+		"states": 865,
+		"choices": 1057,
+		"achievable": {
+			"false": 2
+		}
+	},
+	"csn-N3-LrLrLr-ach": {
+		"id": "csn-N3-LrLrLr",
+		"name": "csn",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N3",
+		"obj": 3,
+		"obj-prlb": "(0,0,3,0)",
+		"obj-pr": "(0,0)",
+		"mixed": false,
+		"category": "lra",
+		"states": 183,
+		"choices": 433,
+		"transitions": 535,
+		"achievable": {
+			"false": 2
+		},
+		"invocations": [
+			"storm.ach.csn-N3-LrLrLr"
+		]
+	},
+	"frw-B00500Unf1-PfPf-ach": {
+		"id": "frw-B00500Unf1-PfPf",
+		"name": "frw",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "B00500Unf1",
+		"obj": 2,
+		"obj-prlb": "(2,0,0,0)",
+		"obj-pr": "(2,0)",
+		"mixed": false,
+		"category": "tot",
+		"states": 665745,
+		"choices": 997080,
+		"transitions": 1200876,
+		"achievable": {
+			"true": 3
+		},
+		"invocations": [
+			"storm.ach.frw-B00500Unf1-PfPf"
+		]
+	},
+	"rab-N5-LrLr-ach": {
+		"id": "rab-N5-LrLr",
+		"name": "rab",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N5",
+		"obj": 2,
+		"obj-prlb": "(0,0,2,0)",
+		"obj-pr": "(0,0)",
+		"mixed": false,
+		"category": "lra",
+		"states": 14348966,
+		"choices": 26091220,
+		"transitions": 82381930,
+		"achievable": {
+			"false": 1
+		},
+		"invocations": [
+			"storm.ach.rab-N5-LrLr"
+		]
+	},
+	"sen-N1-LrLrLr-ach": {
+		"id": "sen-N1-LrLrLr",
+		"name": "sen",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N1",
+		"obj": 3,
+		"obj-prlb": "(0,0,3,0)",
+		"obj-pr": "(0,0)",
+		"mixed": false,
+		"category": "lra",
+		"achievable": {
+			"false": 2
+		},
+		"invocations": [
+			"multigain.ach.sen-N1-LrLrLr"
+		],
+		"states": 462,
+		"choices": 1079
+	},
+	"phi-N4-LrLr-ach": {
+		"id": "phi-N4-LrLr",
+		"name": "phi",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N4",
+		"obj": 2,
+		"obj-prlb": "(0,0,2,0)",
+		"obj-pr": "(0,0)",
+		"mixed": false,
+		"category": "lra",
+		"achievable": {
+			"false": 2
+		},
+		"invocations": [
+			"multigain.ach.phi-N4-LrLr"
+		],
+		"states": 9440,
+		"choices": 35464
+	},
+	"rab-N3-LrLr-ach": {
+		"id": "rab-N3-LrLr",
+		"name": "rab",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N3",
+		"obj": 2,
+		"obj-prlb": "(0,0,2,0)",
+		"obj-pr": "(0,0)",
+		"mixed": false,
+		"category": "lra",
+		"achievable": {
+			"false": 2
+		},
+		"invocations": [
+			"multigain.ach.rab-N3-LrLr"
+		],
+		"states": 27766,
+		"choices": 45636
+	},
+	"ejs-N3B005Unf1-RtRt-ach": {
+		"id": "ejs-N3B005Unf1-RtRt",
+		"name": "ejs",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N3B005Unf1",
+		"obj": 2,
+		"obj-prlb": "(0,2,0,0)",
+		"obj-pr": "(0,2)",
+		"mixed": false,
+		"category": "tot",
+		"states": 20052,
+		"choices": 24187,
+		"transitions": 44396,
+		"achievable": {
+			"true": 3
+		},
+		"invocations": [
+			"storm.ach.ejs-N3B005Unf1-RtRt"
+		]
+	},
+	"ejs-N2B003Unf3-PfPf-ach": {
+		"id": "ejs-N2B003Unf3-PfPf",
+		"name": "ejs",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N2B003Unf3",
+		"obj": 2,
+		"obj-prlb": "(2,0,0,0)",
+		"obj-pr": "(2,0)",
+		"mixed": false,
+		"category": "tot",
+		"achievable": {
+			"true": 3
+		},
+		"invocations": [
+			"epmc.ach.ejs-N2B003Unf3-PfPf"
+		],
+		"states": 105269,
+		"choices": 120864
+	},
+	"ejs-N5B008Unf1-RtRt-ach": {
+		"id": "ejs-N5B008Unf1-RtRt",
+		"name": "ejs",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N5B008Unf1",
+		"obj": 2,
+		"obj-prlb": "(0,2,0,0)",
+		"obj-pr": "(0,2)",
+		"mixed": false,
+		"category": "tot",
+		"invocations": [
+			"epmc.ach.ejs-N5B008Unf1-RtRt"
+		],
+		"states": 8442913,
+		"choices": 13769361,
+		"achievable": {
+			"true": 2
+		}
+	},
+	"vir-N4-LrLr-ach": {
+		"id": "vir-N4-LrLr",
+		"name": "vir",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N4",
+		"obj": 2,
+		"obj-prlb": "(0,0,2,0)",
+		"obj-pr": "(0,0)",
+		"mixed": false,
+		"category": "lra",
+		"invocations": [
+			"multigain.ach.vir-N4-LrLr"
+		]
+	},
+	"vir-N2-LrLr-ach": {
+		"id": "vir-N2-LrLr",
+		"name": "vir",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N2",
+		"obj": 2,
+		"obj-prlb": "(0,0,2,0)",
+		"obj-pr": "(0,0)",
+		"mixed": false,
+		"category": "lra",
+		"states": 80,
+		"choices": 393,
+		"transitions": 569,
+		"achievable": {
+			"false": 2
+		},
+		"invocations": [
+			"storm.ach.vir-N2-LrLr"
+		]
+	},
+	"pow-Q1000K0000-RtRtRt-ach": {
+		"id": "pow-Q1000K0000-RtRtRt",
+		"name": "pow",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "Q1000K0000",
+		"obj": 3,
+		"obj-prlb": "(0,3,0,0)",
+		"obj-pr": "(0,3)",
+		"mixed": false,
+		"category": "tot",
+		"achievable": {
+			"true": 1,
+			"false": 2
+		},
+		"invocations": [
+			"epmc.ach.pow-Q1000K0000-RtRtRt"
+		],
+		"states": 314314,
+		"choices": 722722
+	},
+	"sen-N2-LrLrLr-ach": {
+		"id": "sen-N2-LrLrLr",
+		"name": "sen",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N2",
+		"obj": 3,
+		"obj-prlb": "(0,0,3,0)",
+		"obj-pr": "(0,0)",
+		"mixed": false,
+		"category": "lra",
+		"states": 7860,
+		"choices": 24578,
+		"transitions": 26618,
+		"achievable": {
+			"false": 2
+		},
+		"invocations": [
+			"storm.ach.sen-N2-LrLrLr"
+		]
+	},
+	"ejs-N4B006Unf1-RtRt-ach": {
+		"id": "ejs-N4B006Unf1-RtRt",
+		"name": "ejs",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N4B006Unf1",
+		"obj": 2,
+		"obj-prlb": "(0,2,0,0)",
+		"obj-pr": "(0,2)",
+		"mixed": false,
+		"category": "tot",
+		"achievable": {
+			"true": 2
+		},
+		"invocations": [
+			"prism.ach.ejs-N4B006Unf1-RtRt"
+		],
+		"states": 457993,
+		"choices": 654753
+	},
+	"pow-Q0004K0000-RtRtRt-ach": {
+		"id": "pow-Q0004K0000-RtRtRt",
+		"name": "pow",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "Q0004K0000",
+		"obj": 3,
+		"obj-prlb": "(0,3,0,0)",
+		"obj-pr": "(0,3)",
+		"mixed": false,
+		"category": "tot",
+		"achievable": {
+			"true": 1,
+			"false": 2
+		},
+		"invocations": [
+			"epmc.ach.pow-Q0004K0000-RtRtRt"
+		],
+		"states": 1570,
+		"choices": 3610
+	},
+	"sen-N4-LrLrLr-ach": {
+		"id": "sen-N4-LrLrLr",
+		"name": "sen",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N4",
+		"obj": 3,
+		"obj-prlb": "(0,0,3,0)",
+		"obj-pr": "(0,0)",
+		"mixed": false,
+		"category": "lra",
+		"invocations": [
+			"multigain.ach.sen-N4-LrLrLr"
+		],
+		"states": 572452,
+		"choices": 2611300,
+		"achievable": {
+			"false": 1
+		}
+	},
+	"rab-N4-LrLr-ach": {
+		"id": "rab-N4-LrLr",
+		"name": "rab",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N4",
+		"obj": 2,
+		"obj-prlb": "(0,0,2,0)",
+		"obj-pr": "(0,0)",
+		"mixed": false,
+		"category": "lra",
+		"states": 668836,
+		"choices": 1170736,
+		"transitions": 3637488,
+		"achievable": {
+			"false": 2
+		},
+		"invocations": [
+			"storm.ach.rab-N4-LrLr"
+		]
+	},
+	"phi-N5-LrLr-ach": {
+		"id": "phi-N5-LrLr",
+		"name": "phi",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N5",
+		"obj": 2,
+		"obj-prlb": "(0,0,2,0)",
+		"obj-pr": "(0,0)",
+		"mixed": false,
+		"category": "lra",
+		"achievable": {
+			"false": 2
+		},
+		"invocations": [
+			"multigain.ach.phi-N5-LrLr"
+		],
+		"states": 93068,
+		"choices": 437050
+	},
+	"csn-N4-LrLrLrLr-ach": {
+		"id": "csn-N4-LrLrLrLr",
+		"name": "csn",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N4",
+		"obj": 4,
+		"obj-prlb": "(0,0,4,0)",
+		"obj-pr": "(0,0)",
+		"mixed": false,
+		"category": "lra",
+		"achievable": {
+			"false": 2
+		},
+		"invocations": [
+			"multigain.ach.csn-N4-LrLrLrLr"
+		],
+		"states": 959,
+		"choices": 2767
+	},
+	"tea-N4-PfRtPf-ach": {
+		"id": "tea-N4-PfRtPf",
+		"name": "tea",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N4",
+		"obj": 3,
+		"obj-prlb": "(2,1,0,0)",
+		"obj-pr": "(2,1)",
+		"mixed": false,
+		"category": "tot",
+		"invocations": [
+			"epmc.ach.tea-N4-PfRtPf"
+		],
+		"states": 65545,
+		"choices": 79857,
+		"achievable": {
+			"false": 2
+		}
+	},
+	"vir-N3-LrLr-ach": {
+		"id": "vir-N3-LrLr",
+		"name": "vir",
+		"formalism": "prism",
+		"type": "mdp",
+		"par": "N3",
+		"obj": 2,
+		"obj-prlb": "(0,0,2,0)",
+		"obj-pr": "(0,0)",
+		"mixed": false,
+		"category": "lra",
+		"states": 19682,
+		"choices": 170578,
+		"transitions": 282106,
+		"achievable": {
+			"true": 2
+		},
+		"invocations": [
+			"storm.ach.vir-N3-LrLr"
+		]
+	}
+}

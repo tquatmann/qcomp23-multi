@@ -1,0 +1,1 @@
+"PfPf": multi(P>=0.9 [F "valueCollected"], P>=0.9 [F !"exceedTime" & !"exceedEnergy" & done]);

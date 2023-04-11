@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>epmc.ach - tea-N4-PfRtPf</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>epmc.ach</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>id:</td><td>tea-N4-PfRtPf (MDP)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ach)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">java -jar ~/ePMC/epmc-standard.jar  check --model-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/tea/tea4.prism --property-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/tea/tea-N4-PfRtPfachievability.props --graphsolver-iterative-stop-criterion absolute --graphsolver-iterative-tolerance 1e-6</pre>
+	EPMC default settings. Check achievability objectives.
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">5.903793096542358s</td></tr>
+		<tr><td>Return code:</td><td style="tt; color: red;">1</td></tr>
+		<tr><td>Note(s):</td><td>EPMC default settings. Check achievability objectives.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Running EPMC revision b1ba8abf9f52c05f23421efb1abd1be7618f426d
+Assertions are disabled. In case of incorrect results or otherwise strange behaviour, please run the JVM with "-ea" parameter.
+Starting to parse PRISM model...
+Done parsing PRISM model
+Starting model checking...
+Analysing property PfRtPf
+Starting to compute JANI explorer...
+Starting to build initial states of JANI explorer...
+Done building initial states of JANI explorer
+Done building JANI explorer
+Starting to build model...
+Current number of states: 15,242; states/second: 15,230
+Current number of states: 39,870; states/second: 24,640
+Current number of states: 63,723; states/second: 23,853
+Current number of states: 94,563; states/second: 30,840
+Building model done. 96,665 states. Time for model exploration: 4 seconds.
+Starting multi-objective model checking for property multi(P>=0.9 [ F task1_completed ], R{"w_1_total"}>=2.2959183672 [ C ], P>=0.9 [ F task2_completed ])...
+Starting to normalise formula...
+Done normalising formula.
+Starting to evaluate nested properties of multi-objective property...	</pre>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">STDERR</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+Exception in thread "main" java.lang.NullPointerException: Cannot read the array length because "<local5>" is null
+	at epmc.expression.standard.evaluatorexplicit.UtilEvaluatorExplicit.newEvaluator(UtilEvaluatorExplicit.java:150)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutImplies.<init>(EvaluatorExplicitOperatorShortcutImplies.java:131)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutImplies$Builder.build(EvaluatorExplicitOperatorShortcutImplies.java:96)
+	at epmc.expression.standard.evaluatorexplicit.UtilEvaluatorExplicit.newEvaluator(UtilEvaluatorExplicit.java:169)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutAnd.<init>(EvaluatorExplicitOperatorShortcutAnd.java:128)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutAnd$Builder.build(EvaluatorExplicitOperatorShortcutAnd.java:95)
+	at epmc.expression.standard.evaluatorexplicit.UtilEvaluatorExplicit.newEvaluator(UtilEvaluatorExplicit.java:169)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutAnd.<init>(EvaluatorExplicitOperatorShortcutAnd.java:127)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutAnd$Builder.build(EvaluatorExplicitOperatorShortcutAnd.java:95)
+	at epmc.expression.standard.evaluatorexplicit.UtilEvaluatorExplicit.newEvaluator(UtilEvaluatorExplicit.java:169)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutAnd.<init>(EvaluatorExplicitOperatorShortcutAnd.java:127)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutAnd$Builder.build(EvaluatorExplicitOperatorShortcutAnd.java:95)
+	at epmc.expression.standard.evaluatorexplicit.UtilEvaluatorExplicit.newEvaluator(UtilEvaluatorExplicit.java:169)
+	at epmc.expression.standard.evaluatorexplicit.UtilEvaluatorExplicit.newEvaluator(UtilEvaluatorExplicit.java:114)
+	at epmc.propertysolver.PropertySolverExplicitPropositional.solve(PropertySolverExplicitPropositional.java:81)
+	at epmc.modelchecker.ModelChecker.check(ModelChecker.java:278)
+	at epmc.multiobjective.PropertySolverExplicitMultiObjective.prepareRequiredPropositionals(PropertySolverExplicitMultiObjective.java:225)
+	at epmc.multiobjective.PropertySolverExplicitMultiObjective.solve(PropertySolverExplicitMultiObjective.java:192)
+	at epmc.modelchecker.ModelChecker.check(ModelChecker.java:278)
+	at epmc.modelchecker.ModelChecker.checkProperty(ModelChecker.java:249)
+	at epmc.modelchecker.ModelChecker.check(ModelChecker.java:192)
+	at epmc.command.CommandTaskCheck.executeInServer(CommandTaskCheck.java:64)
+	at epmc.jani.interaction.Analyse.execute(Analyse.java:111)
+	at epmc.jani.interaction.commandline.StartInConsoleJaniInteractionNoJani.execute(StartInConsoleJaniInteractionNoJani.java:91)
+	at epmc.jani.interaction.commandline.StartInConsoleJaniInteractionNoJani.process(StartInConsoleJaniInteractionNoJani.java:68)
+	at epmc.main.EPMC.main(EPMC.java:52)	</pre>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+	"id": "storm.ach.pow-Q0100K0000-RtRt",
+	"benchmark-id": "pow-Q0100K0000-RtRt",
+	"tool": "storm",
+	"configuration-id": "ach",
+	"invocation-note": "Storm. check achievability objectives using sound value iteration",
+	"commands": [
+		"~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/pow/pow.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/pow/pow-Q0100K0000-RtRtachievability.props -const Q=100,K=0 --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "storm.ach.pow-Q0100K0000-RtRt.log",
+	"wallclock-time": 9.02056336402893,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	]
+}

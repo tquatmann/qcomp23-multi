@@ -1,0 +1,19 @@
+{
+	"id": "storm.ach.res-B100CAP1M1Unf1-PfPf",
+	"benchmark-id": "res-B100CAP1M1Unf1-PfPf",
+	"tool": "storm",
+	"configuration-id": "ach",
+	"invocation-note": "Storm. check achievability objectives using sound value iteration",
+	"commands": [
+		"~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B100CAP1M1Unf1-PfPfachievability.props -const B=100,CAP=1,M=1,Unf=1 --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "storm.ach.res-B100CAP1M1Unf1-PfPf.log",
+	"wallclock-time": 4179.623403310776,
+	"timeout": false,
+	"execution-error": true,
+	"return-codes": [
+		-9
+	]
+}

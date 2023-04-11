@@ -1,0 +1,1 @@
+"LrLrLr": multi(R{"working"}>=0.45 [S], R{"success"}>=0.45 [S], R{"failure"}>=0.45 [S]);

@@ -1,0 +1,139 @@
+mdp
+
+// probability of successful send (from channel to processor)
+const double p_succ = 0.8;
+const double q_succ = 0.2;
+
+// probability of successful receive of noack (from channel to sensor)
+const double p_succ1 = 1;
+const double q_succ1 = 0;
+
+module sensor1
+
+	// local state
+	y1 : [0..6] init 0;
+	// message code: 1=data, 2=alert, 3=stop
+	msg1 : [1..3] init 1;
+
+	// send data packets (msg=1)
+	[s1_to_c] y1=0 -> (y1'=1);
+	[ack1_0]    y1=1 -> (y1'=0);
+	[noack1]  y1=1 -> (y1'=0);
+	// detect a problem and start to send warning/error messages
+	[detect1] y1=0 -> (y1'=2) & (msg1'=2);
+	// send warning message
+	[s1_to_c] y1=2 -> (y1'=3);
+	[ack1_1]    y1=3 -> (y1'=4) & (msg1'=3);
+	[noack1]  y1=3 -> p_succ1:(y1'=2) + q_succ1:(y1'=4) & (msg1'=3);
+	// send error message
+	[s1_to_c] y1=4 -> (y1'=5);
+	[ack1_2]    y1=5 -> (y1'=6);
+	[noack1]  y1=5 -> p_succ1:(y1'=4) + q_succ1:(y1'=6);
+	// stop (after error)
+	[]        y1=6 -> true;
+
+endmodule
+
+module sensor2 = sensor1 [ y1=y2, msg1=msg2, detect1=detect2, s1_to_c=s2_to_c,
+ack1_0=ack2_0, ack1_1=ack2_1, ack1_2=ack2_2, noack1=noack2 ] endmodule
+module sensor3 = sensor1 [ y1=y3, msg1=msg3, detect1=detect3, s1_to_c=s3_to_c,
+ack1_0=ack3_0, ack1_1=ack3_1, ack1_2=ack3_2, noack1=noack3 ] endmodule
+
+module channel
+
+	// local state: 0=IDLE, 1=STORE, 2=SEND
+	c : [0..3] init 0;
+	// who is currently sending to the channel
+	who: [1..3];
+	// what message is currently being sent onwards
+	what: [0..3];
+	// buffer of messages to be sent
+	// (see sensor for message codes)
+	cb1 : [0..3];
+	cb2 : [0..3];
+	// buffer size
+	cbs : [0..2];
+	
+	// IDLE: either...
+	// receive incoming message
+	[s1_to_c]  c=0 -> (c'=1) & (who'=1);
+	[s2_to_c]  c=0 -> (c'=1) & (who'=2);
+	[s3_to_c]  c=0 -> (c'=1) & (who'=3);
+	// or choose to process next message in buffer
+	[process]  c=0 & cbs>0 -> (c'=2);
+	
+	// STORE: send ack and then store in buffer
+	[ack1_0]     c=1 & who=1 & cbs=0 -> (c'=0)&(cb1'=msg1)&(cbs'=1);
+	[ack1_1]     c=1 & who=1 & cbs=0 -> (c'=0)&(cb1'=msg1)&(cbs'=1);
+	[ack1_2]     c=1 & who=1 & cbs=0 -> (c'=0)&(cb1'=msg1)&(cbs'=1);
+	[ack1_0]     c=1 & who=1 & cbs=1 -> (c'=0)&(cb2'=msg1)&(cbs'=2);
+	[ack1_1]     c=1 & who=1 & cbs=1 -> (c'=0)&(cb2'=msg1)&(cbs'=2);
+	[ack1_2]     c=1 & who=1 & cbs=1 -> (c'=0)&(cb2'=msg1)&(cbs'=2);
+	[noack1]   c=1 & who=1 & cbs=2 -> (c'=0);
+	[ack2_0]     c=1 & who=2 & cbs=0 -> (c'=0)&(cb1'=msg2)&(cbs'=1);
+	[ack2_1]     c=1 & who=2 & cbs=0 -> (c'=0)&(cb1'=msg2)&(cbs'=1);
+	[ack2_2]     c=1 & who=2 & cbs=0 -> (c'=0)&(cb1'=msg2)&(cbs'=1);
+	[ack2_0]     c=1 & who=2 & cbs=1 -> (c'=0)&(cb2'=msg2)&(cbs'=2);
+	[ack2_1]     c=1 & who=2 & cbs=1 -> (c'=0)&(cb2'=msg2)&(cbs'=2);
+	[ack2_2]     c=1 & who=2 & cbs=1 -> (c'=0)&(cb2'=msg2)&(cbs'=2);
+	[noack2]   c=1 & who=2 & cbs=2 -> (c'=0);
+	[ack3_0]     c=1 & who=3 & cbs=0 -> (c'=0)&(cb1'=msg3)&(cbs'=1);
+	[ack3_1]     c=1 & who=3 & cbs=0 -> (c'=0)&(cb1'=msg3)&(cbs'=1);
+	[ack3_2]     c=1 & who=3 & cbs=0 -> (c'=0)&(cb1'=msg3)&(cbs'=1);
+	[ack3_0]     c=1 & who=3 & cbs=1 -> (c'=0)&(cb2'=msg3)&(cbs'=2);
+	[ack3_1]     c=1 & who=3 & cbs=1 -> (c'=0)&(cb2'=msg3)&(cbs'=2);
+	[ack3_2]     c=1 & who=3 & cbs=1 -> (c'=0)&(cb2'=msg3)&(cbs'=2);
+	[noack3]   c=1 & who=3 & cbs=2 -> (c'=0);
+	
+	// SEND: send next message in buffer
+	// first step of send (extraction from buffer, possible fail)
+	[extract]  c=2 & cbs=1 -> p_succ:(c'=3)&(what'=cb1)&(cbs'=0)&(cb1'=0) +
+q_succ:(c'=0)&(cbs'=0)&(cb1'=0);
+	[extract]  c=2 & cbs=2 ->
+p_succ:(c'=3)&(what'=cb1)&(cbs'=1)&(cb1'=cb2)&(cb2'=0) +
+q_succ:(c'=0)&(cbs'=1)&(cb1'=cb2)&(cb2'=0);
+	// second step of send (actual communication)
+	[data]     c=3 & what=1 -> (c'=0);
+	[alert]    c=3 & what=2 -> (c'=0);
+	[stop]     c=3 & what=3 -> (c'=0);
+
+endmodule
+
+// number of chunks of data
+const int K = 10;
+
+// processor receiving data from sensors
+module proc
+
+	// local state
+	x : [0..2] init 0;
+	// number of chunks to process
+	count : [0..10] init 0;
+
+	// receive (K chunks of) data
+	[data]     x=0 -> (count'=K);
+	// process one chunk of data
+	[work]     x=0 & count>0 -> (count'=count-1);
+	// receive alert, discard unprocessed data
+	[alert]    x=0 -> (count'=0);
+	// receive stop signal (crash with probability 0.05)
+	[stop]     x=0 & count>0 -> 0.95:(x'=1) + 0.05:(x'=2);
+	[stop]     x=0 & count=0 -> (x'=1);
+	// stopped
+	[done]      x=1 -> true;
+	// crashed
+	[crash]     x=2 -> true;
+	
+endmodule
+
+rewards "working"
+	[work] true : 1;
+endrewards
+
+rewards "success"
+	[done] true : 1;
+endrewards
+
+rewards "failure"
+	[crash] true : 1;
+endrewards

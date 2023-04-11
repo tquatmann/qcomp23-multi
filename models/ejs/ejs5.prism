@@ -1,0 +1,283 @@
+mdp
+
+formula globalFailure = (loc_1=crit&t_1=0&failure_1|loc_2=crit&t_2=0&failure_2|loc_3=crit&t_3=0&failure_3|loc_4=crit&t_4=0&failure_4|loc_5=crit&t_5=0&failure_5);
+formula noGlobalFailure = !(((loc_1=crit&t_1=0&failure_1|loc_2=crit&t_2=0&failure_2|loc_3=crit&t_3=0&failure_3|loc_4=crit&t_4=0&failure_4|loc_5=crit&t_5=0&failure_5)));
+formula localFailure = loc_1=crit&t_1=0&failure_1;
+formula noLocalFailure = !((loc_1=crit&t_1=0&failure_1));
+formula process_1_finishes = (loc_1=crit&t_1=0);
+formula process_2_finishes = (loc_2=crit&t_2=0);
+formula process_3_finishes = (loc_3=crit&t_3=0);
+formula process_4_finishes = (loc_4=crit&t_4=0);
+formula process_5_finishes = (loc_5=crit&t_5=0);
+
+label "globalFailure" = (((loc_1=crit&t_1=0&failure_1|loc_2=crit&t_2=0&failure_2|loc_3=crit&t_3=0&failure_3|loc_4=crit&t_4=0&failure_4|loc_5=crit&t_5=0&failure_5)));
+label "noGlobalFailure" = ((!(((loc_1=crit&t_1=0&failure_1|loc_2=crit&t_2=0&failure_2|loc_3=crit&t_3=0&failure_3|loc_4=crit&t_4=0&failure_4|loc_5=crit&t_5=0&failure_5)))));
+label "localFailure" = ((loc_1=crit&t_1=0&failure_1));
+label "noLocalFailure" = ((!((loc_1=crit&t_1=0&failure_1))));
+label "process_1_finishes" = (((loc_1=crit&t_1=0)));
+label "process_2_finishes" = (((loc_2=crit&t_2=0)));
+label "process_3_finishes" = (((loc_3=crit&t_3=0)));
+label "process_4_finishes" = (((loc_4=crit&t_4=0)));
+label "process_5_finishes" = (((loc_5=crit&t_5=0)));
+
+const int N = 5;
+const int t_max = 9;
+const int undef = 0;
+const int ncrit = 2;
+const int wait = 0;
+const int crit = 1;
+const int none = 0;
+const int process_1 = 1;
+const int process_2 = 2;
+const int process_3 = 3;
+const int process_4 = 4;
+const int process_5 = 5;
+const int m_1 = 1;
+const int m_2 = 1;
+const int m_3 = 2;
+const int m_4 = 1;
+const int m_5 = 1;
+const int boost_multiplicator = 3;
+
+module Resources
+
+	boost_1 : [0..1] init 0;
+	user_1 : [0..5] init none;
+
+	[tick] user_1=none&loc_1=wait -> (user_1'=process_1);
+	[tick] user_1=none&loc_1=wait -> (user_1'=process_1) & (boost_1'=1);
+	[tick] user_1=process_1&!(((loc_1=crit&t_1=0))) -> true;
+	[tick] user_1=process_1&(((loc_1=crit&t_1=0)))&loc_1!=wait&loc_2!=wait&loc_3!=wait&loc_4!=wait&loc_5!=wait -> (user_1'=none) & (boost_1'=0);
+	[tick] user_1=process_1&(((loc_1=crit&t_1=0)))&loc_2=wait -> (user_1'=process_2) & (boost_1'=1);
+	[tick] user_1=process_1&(((loc_1=crit&t_1=0)))&loc_2=wait -> (user_1'=process_2) & (boost_1'=0);
+	[tick] user_1=process_1&(((loc_1=crit&t_1=0)))&loc_3=wait -> (user_1'=process_3) & (boost_1'=1);
+	[tick] user_1=process_1&(((loc_1=crit&t_1=0)))&loc_3=wait -> (user_1'=process_3) & (boost_1'=0);
+	[tick] user_1=process_1&(((loc_1=crit&t_1=0)))&loc_4=wait -> (user_1'=process_4) & (boost_1'=1);
+	[tick] user_1=process_1&(((loc_1=crit&t_1=0)))&loc_4=wait -> (user_1'=process_4) & (boost_1'=0);
+	[tick] user_1=process_1&(((loc_1=crit&t_1=0)))&loc_5=wait -> (user_1'=process_5) & (boost_1'=1);
+	[tick] user_1=process_1&(((loc_1=crit&t_1=0)))&loc_5=wait -> (user_1'=process_5) & (boost_1'=0);
+	[tick] user_1=none&loc_2=wait -> (user_1'=process_2);
+	[tick] user_1=none&loc_2=wait -> (user_1'=process_2) & (boost_1'=1);
+	[tick] user_1=process_2&!(((loc_2=crit&t_2=0))) -> true;
+	[tick] user_1=process_2&(((loc_2=crit&t_2=0)))&loc_1!=wait&loc_2!=wait&loc_3!=wait&loc_4!=wait&loc_5!=wait -> (user_1'=none) & (boost_1'=0);
+	[tick] user_1=process_2&(((loc_2=crit&t_2=0)))&loc_1=wait -> (user_1'=process_1) & (boost_1'=1);
+	[tick] user_1=process_2&(((loc_2=crit&t_2=0)))&loc_1=wait -> (user_1'=process_1) & (boost_1'=0);
+	[tick] user_1=process_2&(((loc_2=crit&t_2=0)))&loc_3=wait -> (user_1'=process_3) & (boost_1'=1);
+	[tick] user_1=process_2&(((loc_2=crit&t_2=0)))&loc_3=wait -> (user_1'=process_3) & (boost_1'=0);
+	[tick] user_1=process_2&(((loc_2=crit&t_2=0)))&loc_4=wait -> (user_1'=process_4) & (boost_1'=1);
+	[tick] user_1=process_2&(((loc_2=crit&t_2=0)))&loc_4=wait -> (user_1'=process_4) & (boost_1'=0);
+	[tick] user_1=process_2&(((loc_2=crit&t_2=0)))&loc_5=wait -> (user_1'=process_5) & (boost_1'=1);
+	[tick] user_1=process_2&(((loc_2=crit&t_2=0)))&loc_5=wait -> (user_1'=process_5) & (boost_1'=0);
+	[tick] user_1=none&loc_3=wait -> (user_1'=process_3);
+	[tick] user_1=none&loc_3=wait -> (user_1'=process_3) & (boost_1'=1);
+	[tick] user_1=process_3&!(((loc_3=crit&t_3=0))) -> true;
+	[tick] user_1=process_3&(((loc_3=crit&t_3=0)))&loc_1!=wait&loc_2!=wait&loc_3!=wait&loc_4!=wait&loc_5!=wait -> (user_1'=none) & (boost_1'=0);
+	[tick] user_1=process_3&(((loc_3=crit&t_3=0)))&loc_1=wait -> (user_1'=process_1) & (boost_1'=1);
+	[tick] user_1=process_3&(((loc_3=crit&t_3=0)))&loc_1=wait -> (user_1'=process_1) & (boost_1'=0);
+	[tick] user_1=process_3&(((loc_3=crit&t_3=0)))&loc_2=wait -> (user_1'=process_2) & (boost_1'=1);
+	[tick] user_1=process_3&(((loc_3=crit&t_3=0)))&loc_2=wait -> (user_1'=process_2) & (boost_1'=0);
+	[tick] user_1=process_3&(((loc_3=crit&t_3=0)))&loc_4=wait -> (user_1'=process_4) & (boost_1'=1);
+	[tick] user_1=process_3&(((loc_3=crit&t_3=0)))&loc_4=wait -> (user_1'=process_4) & (boost_1'=0);
+	[tick] user_1=process_3&(((loc_3=crit&t_3=0)))&loc_5=wait -> (user_1'=process_5) & (boost_1'=1);
+	[tick] user_1=process_3&(((loc_3=crit&t_3=0)))&loc_5=wait -> (user_1'=process_5) & (boost_1'=0);
+	[tick] user_1=none&loc_4=wait -> (user_1'=process_4);
+	[tick] user_1=none&loc_4=wait -> (user_1'=process_4) & (boost_1'=1);
+	[tick] user_1=process_4&!(((loc_4=crit&t_4=0))) -> true;
+	[tick] user_1=process_4&(((loc_4=crit&t_4=0)))&loc_1!=wait&loc_2!=wait&loc_3!=wait&loc_4!=wait&loc_5!=wait -> (user_1'=none) & (boost_1'=0);
+	[tick] user_1=process_4&(((loc_4=crit&t_4=0)))&loc_1=wait -> (user_1'=process_1) & (boost_1'=1);
+	[tick] user_1=process_4&(((loc_4=crit&t_4=0)))&loc_1=wait -> (user_1'=process_1) & (boost_1'=0);
+	[tick] user_1=process_4&(((loc_4=crit&t_4=0)))&loc_2=wait -> (user_1'=process_2) & (boost_1'=1);
+	[tick] user_1=process_4&(((loc_4=crit&t_4=0)))&loc_2=wait -> (user_1'=process_2) & (boost_1'=0);
+	[tick] user_1=process_4&(((loc_4=crit&t_4=0)))&loc_3=wait -> (user_1'=process_3) & (boost_1'=1);
+	[tick] user_1=process_4&(((loc_4=crit&t_4=0)))&loc_3=wait -> (user_1'=process_3) & (boost_1'=0);
+	[tick] user_1=process_4&(((loc_4=crit&t_4=0)))&loc_5=wait -> (user_1'=process_5) & (boost_1'=1);
+	[tick] user_1=process_4&(((loc_4=crit&t_4=0)))&loc_5=wait -> (user_1'=process_5) & (boost_1'=0);
+	[tick] user_1=none&loc_5=wait -> (user_1'=process_5);
+	[tick] user_1=none&loc_5=wait -> (user_1'=process_5) & (boost_1'=1);
+	[tick] user_1=process_5&!(((loc_5=crit&t_5=0))) -> true;
+	[tick] user_1=process_5&(((loc_5=crit&t_5=0)))&loc_1!=wait&loc_2!=wait&loc_3!=wait&loc_4!=wait&loc_5!=wait -> (user_1'=none) & (boost_1'=0);
+	[tick] user_1=process_5&(((loc_5=crit&t_5=0)))&loc_1=wait -> (user_1'=process_1) & (boost_1'=1);
+	[tick] user_1=process_5&(((loc_5=crit&t_5=0)))&loc_1=wait -> (user_1'=process_1) & (boost_1'=0);
+	[tick] user_1=process_5&(((loc_5=crit&t_5=0)))&loc_2=wait -> (user_1'=process_2) & (boost_1'=1);
+	[tick] user_1=process_5&(((loc_5=crit&t_5=0)))&loc_2=wait -> (user_1'=process_2) & (boost_1'=0);
+	[tick] user_1=process_5&(((loc_5=crit&t_5=0)))&loc_3=wait -> (user_1'=process_3) & (boost_1'=1);
+	[tick] user_1=process_5&(((loc_5=crit&t_5=0)))&loc_3=wait -> (user_1'=process_3) & (boost_1'=0);
+	[tick] user_1=process_5&(((loc_5=crit&t_5=0)))&loc_4=wait -> (user_1'=process_4) & (boost_1'=1);
+	[tick] user_1=process_5&(((loc_5=crit&t_5=0)))&loc_4=wait -> (user_1'=process_4) & (boost_1'=0);
+	[tick] user_1=none&loc_1!=wait&loc_2!=wait&loc_3!=wait&loc_4!=wait&loc_5!=wait -> true;
+
+endmodule
+
+module Process_2
+
+	failure_2 : bool init false;
+	loc_2 : [0..2] init ncrit;
+	t_2 : [0..t_max] init 0;
+
+	[tick] loc_2=ncrit&t_2!=0 -> (t_2'=t_2-1);
+	[tick] loc_2=ncrit&t_2=0 -> 2/3 : (t_2'=9) & (loc_2'=wait) + 1/3 : (t_2'=7) & (loc_2'=wait);
+	[tick] loc_2=wait&user_1!=process_2 -> (t_2'=max(0, t_2-1));
+	[tick] loc_2=wait&user_1=process_2 -> 1/3 : (loc_2'=crit) & (t_2'=2) & (failure_2'=(2<(boost_1+1)*t_2) ? false : true) + 2/3 : (loc_2'=crit) & (t_2'=3) & (failure_2'=(3<(boost_1+1)*t_2) ? false : true);
+	[tick] loc_2=crit&t_2>0 -> (t_2'=max(t_2-(boost_1+1), 0));
+	[tick] loc_2=crit&t_2=0 -> 2/3 : (loc_2'=ncrit) & (t_2'=4) & (failure_2'=false) + 1/3 : (loc_2'=ncrit) & (t_2'=5) & (failure_2'=false);
+
+endmodule
+
+module Process_3
+
+	failure_3 : bool init false;
+	loc_3 : [0..2] init ncrit;
+	t_3 : [0..t_max] init 0;
+
+	[tick] loc_3=ncrit&t_3!=0 -> (t_3'=t_3-1);
+	[tick] loc_3=ncrit&t_3=0 -> 2/3 : (t_3'=9) & (loc_3'=wait) + 1/3 : (t_3'=7) & (loc_3'=wait);
+	[tick] loc_3=wait&user_1!=process_3 -> (t_3'=max(0, t_3-1));
+	[tick] loc_3=wait&user_1=process_3 -> 1/3 : (loc_3'=crit) & (t_3'=2) & (failure_3'=(2<(boost_1+1)*t_3) ? false : true) + 2/3 : (loc_3'=crit) & (t_3'=3) & (failure_3'=(3<(boost_1+1)*t_3) ? false : true);
+	[tick] loc_3=crit&t_3>0 -> (t_3'=max(t_3-(boost_1+1), 0));
+	[tick] loc_3=crit&t_3=0 -> 2/3 : (loc_3'=ncrit) & (t_3'=4) & (failure_3'=false) + 1/3 : (loc_3'=ncrit) & (t_3'=5) & (failure_3'=false);
+
+endmodule
+
+module Process_4
+
+	failure_4 : bool init false;
+	t_4 : [0..t_max] init 0;
+	loc_4 : [0..2] init ncrit;
+
+	[tick] loc_4=ncrit&t_4!=0 -> (t_4'=t_4-1);
+	[tick] loc_4=ncrit&t_4=0 -> 2/3 : (t_4'=9) & (loc_4'=wait) + 1/3 : (t_4'=7) & (loc_4'=wait);
+	[tick] loc_4=wait&user_1!=process_4 -> (t_4'=max(0, t_4-1));
+	[tick] loc_4=wait&user_1=process_4 -> 1/3 : (loc_4'=crit) & (t_4'=2) & (failure_4'=(2<(boost_1+1)*t_4) ? false : true) + 2/3 : (loc_4'=crit) & (t_4'=3) & (failure_4'=(3<(boost_1+1)*t_4) ? false : true);
+	[tick] loc_4=crit&t_4>0 -> (t_4'=max(t_4-(boost_1+1), 0));
+	[tick] loc_4=crit&t_4=0 -> 2/3 : (loc_4'=ncrit) & (t_4'=4) & (failure_4'=false) + 1/3 : (loc_4'=ncrit) & (t_4'=5) & (failure_4'=false);
+
+endmodule
+
+module Process_5
+
+	t_5 : [0..t_max] init 0;
+	loc_5 : [0..2] init ncrit;
+	failure_5 : bool init false;
+
+	[tick] loc_5=ncrit&t_5!=0 -> (t_5'=t_5-1);
+	[tick] loc_5=ncrit&t_5=0 -> 2/3 : (t_5'=9) & (loc_5'=wait) + 1/3 : (t_5'=7) & (loc_5'=wait);
+	[tick] loc_5=wait&user_1!=process_5 -> (t_5'=max(0, t_5-1));
+	[tick] loc_5=wait&user_1=process_5 -> 1/3 : (loc_5'=crit) & (t_5'=2) & (failure_5'=(2<(boost_1+1)*t_5) ? false : true) + 2/3 : (loc_5'=crit) & (t_5'=3) & (failure_5'=(3<(boost_1+1)*t_5) ? false : true);
+	[tick] loc_5=crit&t_5>0 -> (t_5'=max(t_5-(boost_1+1), 0));
+	[tick] loc_5=crit&t_5=0 -> 2/3 : (loc_5'=ncrit) & (t_5'=4) & (failure_5'=false) + 1/3 : (loc_5'=ncrit) & (t_5'=5) & (failure_5'=false);
+
+endmodule
+
+module Process_1
+
+	failure_1 : bool init false;
+	loc_1 : [0..2] init ncrit;
+	t_1 : [0..t_max] init 0;
+
+	[tick] loc_1=ncrit&t_1!=0 -> (t_1'=t_1-1);
+	[tick] loc_1=ncrit&t_1=0 -> 2/3 : (t_1'=9) & (loc_1'=wait) + 1/3 : (t_1'=7) & (loc_1'=wait);
+	[tick] loc_1=wait&user_1!=process_1 -> (t_1'=max(0, t_1-1));
+	[tick] loc_1=wait&user_1=process_1 -> 1/3 : (loc_1'=crit) & (t_1'=2) & (failure_1'=(2<(boost_1+1)*t_1) ? false : true) + 2/3 : (loc_1'=crit) & (t_1'=3) & (failure_1'=(3<(boost_1+1)*t_1) ? false : true);
+	[tick] loc_1=crit&t_1>0 -> (t_1'=max(t_1-(boost_1+1), 0));
+	[tick] loc_1=crit&t_1=0 -> 2/3 : (loc_1'=ncrit) & (t_1'=4) & (failure_1'=false) + 1/3 : (loc_1'=ncrit) & (t_1'=5) & (failure_1'=false);
+
+endmodule
+
+
+rewards "energyGlobal" 
+
+	[tick] loc_1=ncrit : 2*m_1;
+	[tick] loc_1=wait : 1*m_1;
+	[tick] loc_1=crit&user_1=process_1&boost_1=0 : 3*m_1;
+	[tick] loc_1=crit&user_1=process_1&boost_1=1 : 3*m_1*boost_multiplicator;
+	[tick] loc_2=ncrit : 2*m_2;
+	[tick] loc_2=wait : 1*m_2;
+	[tick] loc_2=crit&user_1=process_2&boost_1=0 : 3*m_2;
+	[tick] loc_2=crit&user_1=process_2&boost_1=1 : 3*m_2*boost_multiplicator;
+	[tick] loc_3=ncrit : 2*m_3;
+	[tick] loc_3=wait : 1*m_3;
+	[tick] loc_3=crit&user_1=process_3&boost_1=0 : 3*m_3;
+	[tick] loc_3=crit&user_1=process_3&boost_1=1 : 3*m_3*boost_multiplicator;
+	[tick] loc_4=ncrit : 2*m_4;
+	[tick] loc_4=wait : 1*m_4;
+	[tick] loc_4=crit&user_1=process_4&boost_1=0 : 3*m_4;
+	[tick] loc_4=crit&user_1=process_4&boost_1=1 : 3*m_4*boost_multiplicator;
+	[tick] loc_5=ncrit : 2*m_5;
+	[tick] loc_5=wait : 1*m_5;
+	[tick] loc_5=crit&user_1=process_5&boost_1=0 : 3*m_5;
+	[tick] loc_5=crit&user_1=process_5&boost_1=1 : 3*m_5*boost_multiplicator;
+
+endrewards
+
+rewards "energyLocal" 
+
+	[tick] loc_1=ncrit : 2*m_1;
+	[tick] loc_1=wait : 1*m_1;
+	[tick] loc_1=crit&user_1=process_1&boost_1=0 : 3*m_1;
+	[tick] loc_1=crit&user_1=process_1&boost_1=1 : 3*m_1*boost_multiplicator;
+
+endrewards
+
+rewards "utilityGlobal" 
+
+	[tick] loc_1=crit&t_1=0&!failure_1 : 1;
+	[tick] loc_2=crit&t_2=0&!failure_2 : 1;
+	[tick] loc_3=crit&t_3=0&!failure_3 : 1;
+	[tick] loc_4=crit&t_4=0&!failure_4 : 1;
+	[tick] loc_5=crit&t_5=0&!failure_5 : 1;
+
+endrewards
+
+rewards "utilityLocal" 
+
+	[tick] loc_1=crit&t_1=0&!failure_1 : 1;
+
+endrewards
+
+rewards "ticks" 
+	[tick] true : 1;
+endrewards
+
+const int Unf; // 0: don't unfold any rewards, 1: Unfold the global utility rewards, 2: Unfold all global rewards, 3: Unfold all local and global rewards
+const int B; // magnitude of bounds for global rewards
+
+const int BndEnGl = B * 65;
+const int UnfEnGl = Unf >= 2 ? BndEnGl + 1 : 0;
+module energyGlobal
+	r4 : [0..UnfEnGl + 1] init UnfEnGl; // add +1 so the range has multiple values. PRISM apparently doesn't like ranges like [0..0]
+
+	 [tick] true -> (r4'=max(0, r4 - (0 + m_1 * ((loc_1=ncrit ? 2 : 0) + (loc_1=wait ? 1 : 0) + (loc_1=crit & user_1=process_1 & boost_1=0 ? 3 : 0) + (loc_1=crit & user_1=process_1 & boost_1=1 ? 3*boost_multiplicator : 0) ) + m_2 * ((loc_2=ncrit ? 2 : 0) + (loc_2=wait ? 1 : 0) + (loc_2=crit & user_1=process_2 & boost_1=0 ? 3 : 0) + (loc_2=crit & user_1=process_2 & boost_1=1 ? 3*boost_multiplicator : 0) ) + m_3 * ((loc_3=ncrit ? 2 : 0) + (loc_3=wait ? 1 : 0) + (loc_3=crit & user_1=process_3 & boost_1=0 ? 3 : 0) + (loc_3=crit & user_1=process_3 & boost_1=1 ? 3*boost_multiplicator : 0) ) + m_4 * ((loc_4=ncrit ? 2 : 0) + (loc_4=wait ? 1 : 0) + (loc_4=crit & user_1=process_4 & boost_1=0 ? 3 : 0) + (loc_4=crit & user_1=process_4 & boost_1=1 ? 3*boost_multiplicator : 0) ) + m_5 * ((loc_5=ncrit ? 2 : 0) + (loc_5=wait ? 1 : 0) + (loc_5=crit & user_1=process_5 & boost_1=0 ? 3 : 0) + (loc_5=crit & user_1=process_5 & boost_1=1 ? 3*boost_multiplicator : 0) ))));
+endmodule
+
+const int BndEnLo = 65;
+const int UnfEnLo = Unf >= 3 ? BndEnLo + 1 : 0;
+module energyLocal
+	r2 : [0..UnfEnLo + 1] init UnfEnLo; // add +1 so the range has multiple values. PRISM apparently doesn't like ranges like [0..0]
+
+	 [tick] true -> (r2'=max(0, r2 - (m_1 * ((loc_1=ncrit ? 2 : 0) + (loc_1=wait ? 1 : 0) + (loc_1=crit & user_1=process_1 & boost_1=0 ? 3 : 0) + (loc_1=crit & user_1=process_1 & boost_1=1 ? 3*boost_multiplicator : 0) ))));
+endmodule
+
+const int BndUtGl = B;
+const int UnfUtGl = Unf >= 1 ? BndUtGl + 1 : 0;
+module utilityGlobal
+	r3 : [0..UnfUtGl + 1] init UnfUtGl; // add +1 so the range has multiple values. PRISM apparently doesn't like ranges like [0..0]
+
+	 [tick] true -> (r3'=max(0, r3 - (0 + (loc_1=crit & t_1=0 & !failure_1 ? 1 : 0) + (loc_2=crit & t_2=0 & !failure_2 ? 1 : 0) + (loc_3=crit & t_3=0 & !failure_3 ? 1 : 0) + (loc_4=crit & t_4=0 & !failure_4 ? 1 : 0) + (loc_5=crit & t_5=0 & !failure_5 ? 1 : 0))));
+endmodule
+
+const int BndUtLo = 2;
+const int UnfUtLo = Unf >= 3 ? BndUtLo + 1 : 0;
+module utilityLocal
+	r1 : [0..UnfUtLo + 1] init UnfUtLo; // add +1 so the range has multiple values. PRISM apparently doesn't like ranges like [0..0]
+
+	 [tick] true -> (r1'=max(0, r1 - ((loc_1=crit & t_1=0 & !failure_1 ? 1 : 0))));
+endmodule
+
+module unfold
+	[tick] Unf = 0 | !(r1=0 & r2=0 & r3=0 & r4=0) -> 1: true;
+endmodule
+
+label "exceedUtLo" = r1=0;
+label "exceedEnLo" = r2=0;
+label "exceedUtGl" = r3=0;
+label "exceedEnGl" = r4=0;

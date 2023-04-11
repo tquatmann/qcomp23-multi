@@ -1,0 +1,85 @@
+Command:	java -jar ~/ePMC/epmc-standard.jar  check --model-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs2.prism --property-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N2B003Unf3-PfPfachievability.props --const B=3,Unf=3 --graphsolver-iterative-stop-criterion absolute --graphsolver-iterative-tolerance 1e-6
+Wallclock time:	40.927555561065674
+Return code:	0
+Output:
+Running EPMC revision b1ba8abf9f52c05f23421efb1abd1be7618f426d
+Assertions are disabled. In case of incorrect results or otherwise strange behaviour, please run the JVM with "-ea" parameter.
+Starting to parse PRISM model...
+Done parsing PRISM model
+Starting model checking...
+Analysing property PfPf
+Starting to compute JANI explorer...
+Starting to build initial states of JANI explorer...
+Done building initial states of JANI explorer
+Done building JANI explorer
+Starting to build model...
+Current number of states: 6,344; states/second: 6,344
+Current number of states: 13,719; states/second: 7,375
+Current number of states: 20,902; states/second: 7,183
+Current number of states: 27,915; states/second: 7,013
+Current number of states: 34,945; states/second: 7,030
+Current number of states: 42,134; states/second: 7,189
+Current number of states: 49,365; states/second: 7,231
+Current number of states: 57,236; states/second: 7,871
+Current number of states: 65,391; states/second: 8,155
+Current number of states: 73,584; states/second: 8,192
+Current number of states: 81,605; states/second: 8,022
+Current number of states: 89,658; states/second: 8,053
+Current number of states: 97,702; states/second: 8,044
+Current number of states: 105,554; states/second: 7,852
+Current number of states: 112,843; states/second: 7,289
+Current number of states: 120,807; states/second: 7,960
+Current number of states: 128,308; states/second: 7,504
+Current number of states: 133,113; states/second: 4,805
+Current number of states: 137,936; states/second: 4,823
+Current number of states: 142,712; states/second: 4,776
+Current number of states: 147,586; states/second: 4,874
+Current number of states: 152,427; states/second: 4,841
+Current number of states: 157,298; states/second: 4,871
+Current number of states: 162,184; states/second: 4,886
+Current number of states: 167,078; states/second: 4,894
+Current number of states: 171,948; states/second: 4,870
+Current number of states: 176,813; states/second: 4,865
+Current number of states: 181,679; states/second: 4,866
+Current number of states: 186,561; states/second: 4,882
+Current number of states: 191,401; states/second: 4,840
+Current number of states: 196,232; states/second: 4,831
+Current number of states: 200,966; states/second: 4,734
+Current number of states: 205,774; states/second: 4,808
+Current number of states: 210,608; states/second: 4,834
+Current number of states: 215,406; states/second: 4,798
+Building model done. 216,575 states. Time for model exploration: 35 seconds.
+Starting multi-objective model checking for property multi(P>=0.75185185185 [F "exceedUtLo" & !"exceedEnLo" ], P>=0.9 [F "exceedUtGl" & !"exceedEnGl" ])...
+Starting to normalise formula...
+Done normalising formula.
+Starting to evaluate nested properties of multi-objective property...
+Done evaluating nested properties of multi-objective property.
+Starting to build product of model and properties automata...
+Computing Büchi automaton for original property...
+Done computing Büchi automaton, is deterministic and has 1 labels and 2 states.
+Computing Büchi automaton for original property...
+Done computing Büchi automaton, is deterministic and has 1 labels and 2 states.
+Done building product of model and properties automata.
+Starting main loop of multi-objective solver...
+Property is qualitative.
+Starting main loop iteration number 1...
+Starting iteration...
+Done. Did 40 iterations in 0 seconds.
+Starting iteration...
+Done. Did 42 iterations in 0 seconds.
+Starting iteration...
+Done. Did 42 iterations in 0 seconds.
+Done main loop iteration number 1.
+Starting main loop iteration number 2...
+Done main loop iteration number 2.
+Done main loop of multi-objective solver.
+Done multi-objective model checking for property multi(P>=0.75185185185 [F "exceedUtLo" & !"exceedEnLo" ], P>=0.9 [F "exceedUtGl" & !"exceedEnGl" ]).
+Finished model checking. Time required: 40 seconds
+PfPf: true
+
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+
+
+############################## Notes ##############################
+EPMC default settings. Check achievability objectives.

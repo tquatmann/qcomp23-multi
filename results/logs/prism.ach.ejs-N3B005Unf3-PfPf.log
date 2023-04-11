@@ -1,0 +1,65 @@
+Command:	~/prism/prism/bin/prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs3.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N3B005Unf3-PfPfachievability.props -const B=5,Unf=3 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+Wallclock time:	7200.435791969299
+Return code:	None
+Output:
+java -Xmx30g -Xss1g -Djava.awt.headless=true -Djava.library.path=/home/tq429871/prism/prism/lib -classpath /home/tq429871/prism/prism/lib/prism.jar:/home/tq429871/prism/prism/classes:/home/tq429871/prism/prism:/home/tq429871/prism/prism/lib/pepa.zip:/home/tq429871/prism/prism/lib/* prism.PrismCL /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs3.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N3B005Unf3-PfPfachievability.props -const B=5,Unf=3 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+PRISM
+=====
+
+Version: 4.7.dev
+Date: Sat Dec 17 04:38:57 GMT+01:00 2022
+Hostname: nihm019.hpc.itc.rwth-aachen.de
+Memory limits: cudd=4g, java(heap)=30g
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs3.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N3B005Unf3-PfPfachievability.props -const 'B=5,Unf=3' -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs3.prism"...
+
+Type:        MDP
+Modules:     Resources Process_1 Process_2 Process_3 energyGlobal energyLocal utilityGlobal utilityLocal unfold 
+Variables:   boost_1 user_1 failure_1 loc_1 t_1 failure_2 loc_2 t_2 t_3 failure_3 loc_3 r4 r2 r3 r1 
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N3B005Unf3-PfPfachievability.props"...
+
+1 property:
+(1) "PfPf": multi(P>=0.58065843618 [ F "exceedUtLo"&!"exceedEnLo" ], P>=0.89998929531 [ F "exceedUtGl"&!"exceedEnGl" ])
+
+---------------------------------------------------------------------
+
+Model checking: "PfPf": multi(P>=0.58065843618 [ F "exceedUtLo"&!"exceedEnLo" ], P>=0.89998929531 [ F "exceedUtGl"&!"exceedEnGl" ])
+Model constants: Unf=3,B=5
+
+Building model...
+Model constants: Unf=3,B=5
+
+Computing reachable states...
+
+Reachability (BFS): 52 iterations in 71.67 seconds (average 1.378269, setup 0.00)
+
+Time for model construction: 6516.229 seconds.
+
+Warning: Deadlocks detected and fixed in 3586 states
+
+Type:        MDP
+States:      22984287 (1 initial)
+Transitions: 51125790
+Choices:     26671750
+
+Transition matrix: 5299980 nodes (11 terminal), 51125790 minterms, vars: 46r/46c/4nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.078 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 59 iterations in 77.92 seconds (average 1.320627, setup 0.00)
+
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+
+
+----------
+Computation aborted after 7200.435791969299 seconds since the total time limit of 7200 seconds was exceeded.
+
+############################## Notes ##############################
+Prism.. Achievability queries. Gauss-Seidl VI.

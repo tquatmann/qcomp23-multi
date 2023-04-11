@@ -1,0 +1,1 @@
+"PfPf": multi(Pmax=? [F "valueCollected"], Pmax=? [F !"exceedTime" & !"exceedEnergy" & done]);

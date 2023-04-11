@@ -1,0 +1,4 @@
+"qual1": multi(R{"grants1"}>=0.02 [ S ], R{"grants2"}>=0.28 [ S ], R{"grants3"}>=0.028 [ S ], R{"grants4"}>=0.0028 [S], R{"grants5"}>=0.00028 [S]);
+"qual2": multi(R{"grants1"}>=0.03 [ S ], R{"grants2"}>=0.28 [ S ], R{"grants3"}>=0.028 [ S ], R{"grants4"}>=0.0028 [S], R{"grants5"}>=0.00028 [S]);
+"quant": multi(R{"grants1"}max=? [ S ], R{"grants2"}>=0.28 [ S ], R{"grants3"}>=0.028 [ S ], R{"grants4"}>=0.0028 [S], R{"grants5"}>=0.00028 [S]);
+"LrLrLrLrLr": multi(R{"grants1"}max=? [ S ], R{"grants2"}max=? [ S ], R{"grants3"}max=? [ S ], R{"grants4"}max=? [S], R{"grants5"}max=? [S]);

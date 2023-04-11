@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>multigain.ach - sen-N1-LrLrLr</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>multigain.ach</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>id:</td><td>sen-N1-LrLrLr (MDP)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ach)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">~/multigain/bin/prism  /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen1.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N1-LrLrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute</pre>
+	MultiGain default settings.. Achievability queries
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">1.8978559970855713s</td></tr>
+		<tr><td>Model Checking Walltime:</td><td style="tt">0.298s</td></tr>
+		<tr><td>Return code:</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>MultiGain default settings.. Achievability queries</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">MultiGain1.0.2
+Date: Mon Dec 19 09:39:58 GMT+01:00 2022
+Hostname: nihm020.hpc.itc.rwth-aachen.de
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen1.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N1-LrLrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen1.prism"...
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N1-LrLrLrachievability.props"...
+
+1 property:
+(1) "LrLrLr": multi(R{"working"}>=0.56249999595 [ S ], R{"success"}>=0.7200000091800001 [ S ], R{"failure"}>=0.007200001748700001 [ S ])
+
+Type:        MDP
+Modules:     sensor1 channel proc 
+Variables:   y1 msg1 c what cb1 cb2 cbs x count 
+
+---------------------------------------------------------------------
+
+Model checking: "LrLrLr": multi(R{"working"}>=0.56249999595 [ S ], R{"success"}>=0.7200000091800001 [ S ], R{"failure"}>=0.007200001748700001 [ S ])
+
+Building model...
+
+Computing reachable states... 462Computing end components.
+Finished computing end components.
+ states
+Reachable states exploration and model construction done in 0.068 secs.
+Sorting reachable states list...
+
+Time for model construction: 0.152 seconds.
+
+Type:        MDP
+States:      462 (1 initial)
+Transitions: 1186
+Choices:     1079
+Max/avg:     4/2.34
+Set parameter TSPort to value 50039
+Set parameter TokenServer to value "license6.itc.rwth-aachen.de"
+Set parameter IntFeasTol to value 1e-08
+Set parameter DualReductions to value 0
+Set parameter Method to value 1
+LP problem construction finished in 0.194 s.
+Gurobi Optimizer version 9.5.0 build v9.5.0rc5 (linux64)
+Thread count: 48 physical cores, 48 logical processors, using up to 32 threads
+Optimize a model with 864 rows, 2039 columns and 4834 nonzeros
+Model fingerprint: 0xf51c52b5
+Coefficient statistics:
+  Matrix range     [5e-02, 1e+00]
+  Objective range  [0e+00, 0e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [7e-03, 1e+00]
+Presolve removed 302 rows and 341 columns
+Presolve time: 0.00s
+Presolved: 562 rows, 1698 columns, 3894 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   3.289700e+00   0.000000e+00      0s
+
+Solved in 255 iterations and 0.01 seconds (0.01 work units)
+Infeasible model
+LP solving took 0.01 s.
+
+Number of states satisfying multi(R{"working"}>=0.56249999595 [ S ], R{"success"}>=0.7200000091800001 [ S ], R{"failure"}>=0.007200001748700001 [ S ]): 0
+
+Property satisfied in 0 of 1 initial states.
+
+Time for model checking: 0.298 seconds.
+
+Result: false (property not satisfied in the initial state)	</pre>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">STDERR</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g	</pre>
+</div>
+</body>
+</html>

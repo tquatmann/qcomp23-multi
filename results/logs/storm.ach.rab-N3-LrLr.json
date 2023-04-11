@@ -1,0 +1,19 @@
+{
+	"id": "storm.ach.rab-N3-LrLr",
+	"benchmark-id": "rab-N3-LrLr",
+	"tool": "storm",
+	"configuration-id": "ach",
+	"invocation-note": "Storm. check achievability objectives using sound value iteration",
+	"commands": [
+		"~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab3.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab-N3-LrLrachievability.props --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "storm.ach.rab-N3-LrLr.log",
+	"wallclock-time": 0.9349155426025391,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	]
+}

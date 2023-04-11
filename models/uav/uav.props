@@ -1,0 +1,6 @@
+"Br11": Pmax=? [ F{"time"}<=B "mission"];
+"Pf": Pmax=? [ F !"timeExceeded" & "mission" ];
+
+"BrBr12": multi(Pmax=? [ F{"time"}<=B "mission" ], R{"ROZ"}min=? [ C{"time"}<=B]);
+"PfRt": multi(Pmax=? [F !"timeExceeded" & "mission" ], R{"ROZ"}min=? [ C ]);
+

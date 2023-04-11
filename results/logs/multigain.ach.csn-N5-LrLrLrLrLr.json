@@ -1,0 +1,19 @@
+{
+	"id": "multigain.ach.csn-N5-LrLrLrLrLr",
+	"benchmark-id": "csn-N5-LrLrLrLrLr",
+	"tool": "multigain",
+	"configuration-id": "ach",
+	"invocation-note": "MultiGain default settings.. Achievability queries",
+	"commands": [
+		"~/multigain/bin/prism  /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/csn/csn5.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/csn/csn-N5-LrLrLrLrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-19",
+	"log": "multigain.ach.csn-N5-LrLrLrLrLr.log",
+	"wallclock-time": 2.4964241981506348,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	]
+}

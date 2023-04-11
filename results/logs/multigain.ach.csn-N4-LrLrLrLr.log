@@ -1,0 +1,82 @@
+Command:	~/multigain/bin/prism  /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/csn/csn4.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/csn/csn-N4-LrLrLrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute
+Wallclock time:	2.4154820442199707
+Return code:	0
+Output:
+MultiGain1.0.2
+Date: Mon Dec 19 09:39:58 GMT+01:00 2022
+Hostname: nihm017.hpc.itc.rwth-aachen.de
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/csn/csn4.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/csn/csn-N4-LrLrLrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/csn/csn4.prism"...
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/csn/csn-N4-LrLrLrLrachievability.props"...
+
+1 property:
+(1) "LrLrLrLr": multi(R{"grants1"}>=0.26999995040999997 [ S ], R{"grants2"}>=0.26999995040999997 [ S ], R{"grants3"}>=0.26999995040999997 [ S ], R{"grants4"}>=0.26999995040999997 [ S ])
+
+Type:        MDP
+Modules:     server client1 client2 client3 client4 
+Variables:   s i j c1 c2 c3 c4 
+
+---------------------------------------------------------------------
+
+Model checking: "LrLrLrLr": multi(R{"grants1"}>=0.26999995040999997 [ S ], R{"grants2"}>=0.26999995040999997 [ S ], R{"grants3"}>=0.26999995040999997 [ S ], R{"grants4"}>=0.26999995040999997 [ S ])
+
+Building model...
+
+Computing reachable states... 960Computing end components.
+Finished computing end components.
+ states
+Reachable states exploration and model construction done in 0.084 secs.
+Sorting reachable states list...
+
+Time for model construction: 0.148 seconds.
+
+Warning: Deadlocks detected and fixed in 1 states
+
+Type:        MDP
+States:      960 (1 initial)
+Transitions: 3521
+Choices:     2785
+Max/avg:     5/2.90
+Set parameter TSPort to value 50039
+Set parameter TokenServer to value "license6.itc.rwth-aachen.de"
+Set parameter IntFeasTol to value 1e-08
+Set parameter DualReductions to value 0
+Set parameter Method to value 1
+LP problem construction finished in 0.185 s.
+Gurobi Optimizer version 9.5.0 build v9.5.0rc5 (linux64)
+Thread count: 48 physical cores, 48 logical processors, using up to 32 threads
+Optimize a model with 1497 rows, 4623 columns and 10707 nonzeros
+Model fingerprint: 0x6aff07ec
+Coefficient statistics:
+  Matrix range     [1e-01, 1e+00]
+  Objective range  [0e+00, 0e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [3e-01, 1e+00]
+Presolve removed 80 rows and 216 columns
+Presolve time: 0.00s
+
+Solved in 0 iterations and 0.00 seconds (0.00 work units)
+Infeasible model
+LP solving took 0.004 s.
+
+Number of states satisfying multi(R{"grants1"}>=0.26999995040999997 [ S ], R{"grants2"}>=0.26999995040999997 [ S ], R{"grants3"}>=0.26999995040999997 [ S ], R{"grants4"}>=0.26999995040999997 [ S ]): 0
+
+Property satisfied in 0 of 1 initial states.
+
+Time for model checking: 0.262 seconds.
+
+Result: false (property not satisfied in the initial state)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+
+
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+
+
+############################## Notes ##############################
+MultiGain default settings.. Achievability queries

@@ -1,0 +1,1 @@
+"BrBr12": multi(Pmax=? [ F{"time"}<=B "mission" ], R{"ROZ"}min=? [ C{"time"}<=B]);

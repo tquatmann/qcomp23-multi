@@ -1,0 +1,91 @@
+Command:	java -jar ~/ePMC/epmc-standard.jar  check --model-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/tea/tea5.prism --property-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/tea/tea-N5-PfRtachievability.props --graphsolver-iterative-stop-criterion absolute --graphsolver-iterative-tolerance 1e-6
+Wallclock time:	40.60935139656067
+Return code:	1
+Output:
+Running EPMC revision b1ba8abf9f52c05f23421efb1abd1be7618f426d
+Assertions are disabled. In case of incorrect results or otherwise strange behaviour, please run the JVM with "-ea" parameter.
+Starting to parse PRISM model...
+Done parsing PRISM model
+Starting model checking...
+Analysing property PfRt
+Starting to compute JANI explorer...
+Starting to build initial states of JANI explorer...
+Done building initial states of JANI explorer
+Done building JANI explorer
+Starting to build model...
+Current number of states: 14,315; states/second: 14,314
+Current number of states: 38,449; states/second: 24,135
+Current number of states: 61,093; states/second: 22,644
+Current number of states: 87,487; states/second: 26,394
+Current number of states: 107,441; states/second: 19,954
+Current number of states: 133,308; states/second: 25,867
+Current number of states: 159,629; states/second: 26,320
+Current number of states: 184,896; states/second: 25,267
+Current number of states: 200,056; states/second: 15,160
+Current number of states: 225,650; states/second: 25,594
+Current number of states: 252,124; states/second: 26,474
+Current number of states: 278,897; states/second: 26,773
+Current number of states: 304,597; states/second: 25,700
+Current number of states: 330,807; states/second: 26,209
+Current number of states: 356,659; states/second: 25,853
+Current number of states: 382,848; states/second: 26,189
+Current number of states: 399,721; states/second: 16,873
+Current number of states: 413,454; states/second: 13,733
+Current number of states: 439,288; states/second: 25,833
+Current number of states: 465,190; states/second: 25,903
+Current number of states: 491,181; states/second: 25,991
+Current number of states: 516,875; states/second: 25,694
+Current number of states: 543,405; states/second: 26,529
+Current number of states: 570,595; states/second: 27,191
+Current number of states: 597,261; states/second: 26,666
+Current number of states: 624,252; states/second: 26,989
+Current number of states: 650,341; states/second: 26,090
+Current number of states: 677,274; states/second: 26,933
+Current number of states: 705,212; states/second: 27,938
+Current number of states: 732,740; states/second: 27,527
+Current number of states: 760,840; states/second: 28,101
+Current number of states: 788,859; states/second: 28,018
+Current number of states: 817,031; states/second: 28,173
+Current number of states: 844,586; states/second: 27,554
+Current number of states: 871,817; states/second: 27,232
+Current number of states: 877,695; states/second: 5,878
+Current number of states: 881,212; states/second: 3,517
+Building model done. 907,993 states. Time for model exploration: 38 seconds.
+Starting multi-objective model checking for property multi(P>=0.9 [ F task1_completed ], R{"w_1_total"}>=2.6081632656 [ C ])...
+Starting to normalise formula...
+Done normalising formula.
+Starting to evaluate nested properties of multi-objective property...
+
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+Exception in thread "main" java.lang.NullPointerException: Cannot read the array length because "<local5>" is null
+	at epmc.expression.standard.evaluatorexplicit.UtilEvaluatorExplicit.newEvaluator(UtilEvaluatorExplicit.java:150)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutImplies.<init>(EvaluatorExplicitOperatorShortcutImplies.java:131)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutImplies$Builder.build(EvaluatorExplicitOperatorShortcutImplies.java:96)
+	at epmc.expression.standard.evaluatorexplicit.UtilEvaluatorExplicit.newEvaluator(UtilEvaluatorExplicit.java:169)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutAnd.<init>(EvaluatorExplicitOperatorShortcutAnd.java:128)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutAnd$Builder.build(EvaluatorExplicitOperatorShortcutAnd.java:95)
+	at epmc.expression.standard.evaluatorexplicit.UtilEvaluatorExplicit.newEvaluator(UtilEvaluatorExplicit.java:169)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutAnd.<init>(EvaluatorExplicitOperatorShortcutAnd.java:127)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutAnd$Builder.build(EvaluatorExplicitOperatorShortcutAnd.java:95)
+	at epmc.expression.standard.evaluatorexplicit.UtilEvaluatorExplicit.newEvaluator(UtilEvaluatorExplicit.java:169)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutAnd.<init>(EvaluatorExplicitOperatorShortcutAnd.java:127)
+	at epmc.expression.standard.evaluatorexplicit.EvaluatorExplicitOperatorShortcutAnd$Builder.build(EvaluatorExplicitOperatorShortcutAnd.java:95)
+	at epmc.expression.standard.evaluatorexplicit.UtilEvaluatorExplicit.newEvaluator(UtilEvaluatorExplicit.java:169)
+	at epmc.expression.standard.evaluatorexplicit.UtilEvaluatorExplicit.newEvaluator(UtilEvaluatorExplicit.java:114)
+	at epmc.propertysolver.PropertySolverExplicitPropositional.solve(PropertySolverExplicitPropositional.java:81)
+	at epmc.modelchecker.ModelChecker.check(ModelChecker.java:278)
+	at epmc.multiobjective.PropertySolverExplicitMultiObjective.prepareRequiredPropositionals(PropertySolverExplicitMultiObjective.java:225)
+	at epmc.multiobjective.PropertySolverExplicitMultiObjective.solve(PropertySolverExplicitMultiObjective.java:192)
+	at epmc.modelchecker.ModelChecker.check(ModelChecker.java:278)
+	at epmc.modelchecker.ModelChecker.checkProperty(ModelChecker.java:249)
+	at epmc.modelchecker.ModelChecker.check(ModelChecker.java:192)
+	at epmc.command.CommandTaskCheck.executeInServer(CommandTaskCheck.java:64)
+	at epmc.jani.interaction.Analyse.execute(Analyse.java:111)
+	at epmc.jani.interaction.commandline.StartInConsoleJaniInteractionNoJani.execute(StartInConsoleJaniInteractionNoJani.java:91)
+	at epmc.jani.interaction.commandline.StartInConsoleJaniInteractionNoJani.process(StartInConsoleJaniInteractionNoJani.java:68)
+	at epmc.main.EPMC.main(EPMC.java:52)
+
+
+############################## Notes ##############################
+EPMC default settings. Check achievability objectives.

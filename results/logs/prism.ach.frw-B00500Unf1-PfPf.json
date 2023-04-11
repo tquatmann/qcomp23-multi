@@ -1,0 +1,19 @@
+{
+	"id": "prism.ach.frw-B00500Unf1-PfPf",
+	"benchmark-id": "frw-B00500Unf1-PfPf",
+	"tool": "prism",
+	"configuration-id": "ach",
+	"invocation-note": "Prism.. Achievability queries. Gauss-Seidl VI.",
+	"commands": [
+		"~/prism/prism/bin/prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/frw/frw.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/frw/frw-B00500Unf1-PfPfachievability.props -const B=500,Unf=1,delay=36 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "prism.ach.frw-B00500Unf1-PfPf.log",
+	"wallclock-time": 55.17358040809631,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	]
+}

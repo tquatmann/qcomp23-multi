@@ -1,0 +1,50 @@
+Command:	~/multigain/bin/prism  /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir4.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir-N4-LrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute
+Wallclock time:	627.1938428878784
+Return code:	1
+Output:
+MultiGain1.0.2
+Date: Mon Dec 19 09:39:58 GMT+01:00 2022
+Hostname: nihm022.hpc.itc.rwth-aachen.de
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir4.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir-N4-LrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir4.prism"...
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir-N4-LrLrachievability.props"...
+
+1 property:
+(1) "LrLr": multi(R{"withvirus"}>=0.45 [ S ], R{"clean"}>=0.45 [ S ])
+
+Type:        MDP
+Modules:     n11 n21 n31 n41 n12 n22 n32 n42 n13 n23 n33 n43 n14 n24 n34 n44 
+Variables:   s11 s21 s31 s41 s12 s22 s32 s42 s13 s23 s33 s43 s14 s24 s34 s44 
+
+---------------------------------------------------------------------
+
+Model checking: "LrLr": multi(R{"withvirus"}>=0.45 [ S ], R{"clean"}>=0.45 [ S ])
+
+Building model...
+
+Computing reachable states... 85794 170702 253562 335548 414479 493346 565193 642250 711220 785103 856841 925797 1000478 1077548 1153314 1228776 1298996 1371818 1444744 1521555 1591738 1659477 1726307 1795357 1863069 1939669 2007648 2075074 2137794 2200271 2262498 2337780 2406590 2469609 2538787 2605715 2678657 2744778 2811663 2882407 2946950 3021988 3095858 3165444 3233660 3302805 3370478 3438444 3506160 3575233 3640813 3704523 3764782 3826801 3887360 3948555 4011772 4074556 4130641 4195055 4268963 4335721 4405124 4469166 4534011 4601234 4666462 4736142 4797459 4862164 4932478 5003603 5071978 5135768 5193873 5259385 5314607 5373368 5432052 5495263 5559612 5622632 5689561 5757143 5819569 5877777 5934655 5994588 6054954 6112730 6172996 6230019 6291744 6351438 6413355 6443850 6512997 6571754 6578963 6642387 6661013 6721962 6722428 6748959 6784662 6809778 6824844 6839207 6849780 6860817 6870502 6875955 6880129 6883652 6884838 6885473 6886124 6886751 6887355 6887909 6888473 6889091 6889696 6890295 6891473 6892759 6893405 6894030 6894623 6895315
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.ArrayList.grow(ArrayList.java:239)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:244)
+	at java.base/java.util.ArrayList.add(ArrayList.java:454)
+	at java.base/java.util.ArrayList.add(ArrayList.java:467)
+	at simulator.ChoiceListFlexi.add(ChoiceListFlexi.java:101)
+	at simulator.Updater.processUpdatesAndCreateNewChoice(Updater.java:340)
+	at simulator.Updater.calculateTransitions(Updater.java:173)
+	at simulator.SimulatorEngine.getTransitionList(SimulatorEngine.java:903)
+	at simulator.SimulatorEngine.getNumChoices(SimulatorEngine.java:914)
+	at explicit.ConstructModel.constructModel(ConstructModel.java:214)
+	at explicit.ConstructModel.constructModel(ConstructModel.java:109)
+	at prism.Prism.doBuildModel(Prism.java:1867)
+	at prism.Prism.buildModelIfRequired(Prism.java:1828)
+	at prism.Prism.modelCheck(Prism.java:2745)
+	at prism.PrismCL.run(PrismCL.java:334)
+	at prism.PrismCL.main(PrismCL.java:2321)
+
+
+############################## Notes ##############################
+MultiGain default settings.. Achievability queries

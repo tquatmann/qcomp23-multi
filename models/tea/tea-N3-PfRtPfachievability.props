@@ -1,0 +1,1 @@
+"PfRtPf": multi(P>=0.9 [ F task1_completed ], R{"w_1_total"}>=2.0938775508000003 [ C ], P>=0.9 [ F task2_completed ]);

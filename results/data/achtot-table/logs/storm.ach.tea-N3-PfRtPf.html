@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>storm.ach - tea-N3-PfRtPf</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>storm.ach</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>id:</td><td>tea-N3-PfRtPf (MDP)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ach)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/tea/tea3.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/tea/tea-N3-PfRtPfachievability.props --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute</pre>
+	Storm. check achievability objectives using sound value iteration
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">0.2778489589691162s</td></tr>
+		<tr><td>Model Checking Walltime:</td><td style="tt">0.105s</td></tr>
+		<tr><td>Return code:</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Storm. check achievability objectives using sound value iteration</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.7.1 (dev)
+
+Date: Sun Dec 18 09:08:45 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/tea/tea3.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/tea/tea-N3-PfRtPfachievability.props --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.012s.
+
+Time for model construction: 0.090s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	12475
+Transitions: 	15228
+Choices: 	14935
+Reward Models:  w_1_total
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((((status = 5) & ((t2_r1 = 1) => ((((m1_t2 = 1) & (1 = 1)) | ((m2_t2 = 1) & (2 = 1))) | ((m3_t2 = 1) & (3 = 1))))) & ((t2_r2 = 1) => ((((m1_t2 = 1) & (1 = 2)) | ((m2_t2 = 1) & (2 = 2))) | ((m3_t2 = 1) & (3 = 2))))) & ((t2_r3 = 1) => ((((m1_t2 = 1) & (1 = 3)) | ((m2_t2 = 1) & (2 = 3))) | ((m3_t2 = 1) & (3 = 3))))) -> 546 item(s)
+   * ((((status = 5) & ((t1_r1 = 1) => ((((m1_t1 = 1) & (1 = 1)) | ((m2_t1 = 1) & (2 = 1))) | ((m3_t1 = 1) & (3 = 1))))) & ((t1_r2 = 1) => ((((m1_t1 = 1) & (1 = 2)) | ((m2_t1 = 1) & (2 = 2))) | ((m3_t1 = 1) & (3 = 2))))) & ((t1_r3 = 1) => ((((m1_t1 = 1) & (1 = 3)) | ((m2_t1 = 1) & (2 = 3))) | ((m3_t1 = 1) & (3 = 3))))) -> 546 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "PfRtPf": multi(P>=9/10 [F ((((status = 5) & ((t1_r1 = 1) => ((((m1_t1 = 1) & (1 = 1)) | ((m2_t1 = 1) & (2 = 1))) | ((m3_t1 = 1) & (3 = 1))))) & ((t1_r2 = 1) => ((((m1_t1 = 1) & (1 = 2)) | ((m2_t1 = 1) & (2 = 2))) | ((m3_t1 = 1) & (3 = 2))))) & ((t1_r3 = 1) => ((((m1_t1 = 1) & (1 = 3)) | ((m2_t1 = 1) & (2 = 3))) | ((m3_t1 = 1) & (3 = 3)))))], R[exp]{"w_1_total"}>=20938775508000003/10000000000000000 [C], P>=9/10 [F ((((status = 5) & ((t2_r1 = 1) => ((((m1_t2 = 1) & (1 = 1)) | ((m2_t2 = 1) & (2 = 1))) | ((m3_t2 = 1) & (3 = 1))))) & ((t2_r2 = 1) => ((((m1_t2 = 1) & (1 = 2)) | ((m2_t2 = 1) & (2 = 2))) | ((m3_t2 = 1) & (3 = 2))))) & ((t2_r3 = 1) => ((((m1_t2 = 1) & (1 = 3)) | ((m2_t2 = 1) & (2 = 3))) | ((m3_t2 = 1) & (3 = 3)))))]) ...
+Preprocessing done in 0.014s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(P>=9/10 [F ((((status = 5) & ((t1_r1 = 1) => ((((m1_t1 = 1) & (1 = 1)) | ((m2_t1 = 1) & (2 = 1))) | ((m3_t1 = 1) & (3 = 1))))) & ((t1_r2 = 1) => ((((m1_t1 = 1) & (1 = 2)) | ((m2_t1 = 1) & (2 = 2))) | ((m3_t1 = 1) & (3 = 2))))) & ((t1_r3 = 1) => ((((m1_t1 = 1) & (1 = 3)) | ((m2_t1 = 1) & (2 = 3))) | ((m3_t1 = 1) & (3 = 3)))))], R[exp]{"w_1_total"}>=20938775508000003/10000000000000000 [C], P>=9/10 [F ((((status = 5) & ((t2_r1 = 1) => ((((m1_t2 = 1) & (1 = 1)) | ((m2_t2 = 1) & (2 = 1))) | ((m3_t2 = 1) & (3 = 1))))) & ((t2_r2 = 1) => ((((m1_t2 = 1) & (1 = 2)) | ((m2_t2 = 1) & (2 = 2))) | ((m3_t2 = 1) & (3 = 2))))) & ((t2_r3 = 1) => ((((m1_t2 = 1) & (1 = 3)) | ((m2_t2 = 1) & (2 = 3))) | ((m3_t2 = 1) & (3 = 3)))))])
+
+The query considers 3 objectives:
+--------------------------------------------------------------
+Original: P>=9/10 [F ((((status = 5) & ((t1_r1 = 1) => ((((m1_t1 = 1) & (1 = 1)) | ((m2_t1 = 1) & (2 = 1))) | ((m3_t1 = 1) & (3 = 1))))) & ((t1_r2 = 1) => ((((m1_t1 = 1) & (1 = 2)) | ((m2_t1 = 1) & (2 = 2))) | ((m3_t1 = 1) & (3 = 2))))) & ((t1_r3 = 1) => ((((m1_t1 = 1) & (1 = 3)) | ((m2_t1 = 1) & (2 = 3))) | ((m3_t1 = 1) & (3 = 3)))))] 	Preprocessed: R[exp]{"obj1"}max>=9/10 [C] 	result bounds: [0, 1]
+Original: R[exp]{"w_1_total"}>=20938775508000003/10000000000000000 [C] 	Preprocessed: R[exp]{"w_1_total"}max>=20938775508000003/10000000000000000 [C] 	result bounds: >=0
+Original: P>=9/10 [F ((((status = 5) & ((t2_r1 = 1) => ((((m1_t2 = 1) & (1 = 1)) | ((m2_t2 = 1) & (2 = 1))) | ((m3_t2 = 1) & (3 = 1))))) & ((t2_r2 = 1) => ((((m1_t2 = 1) & (1 = 2)) | ((m2_t2 = 1) & (2 = 2))) | ((m3_t2 = 1) & (3 = 2))))) & ((t2_r3 = 1) => ((((m1_t2 = 1) & (1 = 3)) | ((m2_t2 = 1) & (2 = 3))) | ((m3_t2 = 1) & (3 = 3)))))] 	Preprocessed: R[exp]{"obj3"}max>=9/10 [C] 	result bounds: [0, 1]
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 3.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	12475
+Transitions: 	15228
+Choices: 	14935
+Reward Models:  w_1_total
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((((status = 5) & ((t2_r1 = 1) => ((((m1_t2 = 1) & (1 = 1)) | ((m2_t2 = 1) & (2 = 1))) | ((m3_t2 = 1) & (3 = 1))))) & ((t2_r2 = 1) => ((((m1_t2 = 1) & (1 = 2)) | ((m2_t2 = 1) & (2 = 2))) | ((m3_t2 = 1) & (3 = 2))))) & ((t2_r3 = 1) => ((((m1_t2 = 1) & (1 = 3)) | ((m2_t2 = 1) & (2 = 3))) | ((m3_t2 = 1) & (3 = 3))))) -> 546 item(s)
+   * ((((status = 5) & ((t1_r1 = 1) => ((((m1_t1 = 1) & (1 = 1)) | ((m2_t1 = 1) & (2 = 1))) | ((m3_t1 = 1) & (3 = 1))))) & ((t1_r2 = 1) => ((((m1_t1 = 1) & (1 = 2)) | ((m2_t1 = 1) & (2 = 2))) | ((m3_t1 = 1) & (3 = 2))))) & ((t1_r3 = 1) => ((((m1_t1 = 1) & (1 = 3)) | ((m2_t1 = 1) & (2 = 3))) | ((m3_t1 = 1) & (3 = 3))))) -> 546 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	7861
+Transitions: 	9966
+Choices: 	9673
+Reward Models:  obj3, obj1, w_1_total
+State Labels: 	5 labels
+   * deadl -> 2106 item(s)
+   * ((((status = 5) & ((t1_r1 = 1) => ((((m1_t1 = 1) & (1 = 1)) | ((m2_t1 = 1) & (2 = 1))) | ((m3_t1 = 1) & (3 = 1))))) & ((t1_r2 = 1) => ((((m1_t1 = 1) & (1 = 2)) | ((m2_t1 = 1) & (2 = 2))) | ((m3_t1 = 1) & (3 = 2))))) & ((t1_r3 = 1) => ((((m1_t1 = 1) & (1 = 3)) | ((m2_t1 = 1) & (2 = 3))) | ((m3_t1 = 1) & (3 = 3))))) -> 546 item(s)
+   * ((((status = 5) & ((t2_r1 = 1) => ((((m1_t2 = 1) & (1 = 1)) | ((m2_t2 = 1) & (2 = 1))) | ((m3_t2 = 1) & (3 = 1))))) & ((t2_r2 = 1) => ((((m1_t2 = 1) & (1 = 2)) | ((m2_t2 = 1) & (2 = 2))) | ((m3_t2 = 1) & (3 = 2))))) & ((t2_r3 = 1) => ((((m1_t2 = 1) & (1 = 3)) | ((m2_t2 = 1) & (2 = 3))) | ((m3_t2 = 1) & (3 = 3))))) -> 546 item(s)
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Weight Vector Checker Statistics:
+Final preprocessed model has 5756 states.
+Final preprocessed model has 7568 actions.
+
+Pareto Curve Approximation Algorithm terminated after 4 refinement steps.
+Solving multi-objective query took 0.105s seconds (consisting of 0.014s seconds for preprocessing and 0.091s seconds for analyzing the preprocessed model).
+Result (for initial states): false
+
+Time for model checking: 0.105s.
+
+Performance statistics:
+  * peak memory usage: 53MB
+  * CPU time: 0.233s
+  * wallclock time: 0.218s	</pre>
+</div>
+</body>
+</html>

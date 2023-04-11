@@ -1,0 +1,4 @@
+"qual1": multi(R{"withvirus"}>=3.2 [S], R{"clean"}>=0.15 [S]);
+"qual2": multi(R{"withvirus"}>=3.3 [S], R{"clean"}>=0.15 [S]);
+"quant": multi(R{"withvirus"}max=? [S], R{"clean"}>=0.15 [S]);
+"LrLr": multi(R{"withvirus"}max=? [S], R{"clean"}max=? [S]);

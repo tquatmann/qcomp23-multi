@@ -1,0 +1,1 @@
+"Qp33": quantile(max GOLD, max GEM, Pmax>0.95 [F{"rew_gold"}>=GOLD,{"rew_gem"}>=GEM,steps<=AVSTEPS true]);

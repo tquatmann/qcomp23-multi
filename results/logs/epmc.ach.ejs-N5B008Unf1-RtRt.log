@@ -1,0 +1,50 @@
+Command:	java -jar ~/ePMC/epmc-standard.jar  check --model-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs5.prism --property-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N5B008Unf1-RtRtachievability.props --const B=8,Unf=1 --graphsolver-iterative-stop-criterion absolute --graphsolver-iterative-tolerance 1e-6
+Wallclock time:	283.0362277030945
+Return code:	1
+Output:
+Running EPMC revision b1ba8abf9f52c05f23421efb1abd1be7618f426d
+Assertions are disabled. In case of incorrect results or otherwise strange behaviour, please run the JVM with "-ea" parameter.
+Starting to parse PRISM model...
+Done parsing PRISM model
+Starting model checking...
+Analysing property RtRt
+
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.ArrayList.iterator(ArrayList.java:947)
+	at epmc.expression.standard.ExpressionOperator.<init>(ExpressionOperator.java:98)
+	at epmc.expression.standard.ExpressionOperator$Builder.build(ExpressionOperator.java:75)
+	at epmc.expression.standard.ExpressionOperator.replaceChildren(ExpressionOperator.java:138)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:939)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:885)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:937)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:885)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:937)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:885)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:937)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:885)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:937)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:885)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:937)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:885)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:937)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:885)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:937)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:885)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:937)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:885)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:937)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:885)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:937)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:885)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:937)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:885)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:937)
+	at epmc.prism.model.convert.PRISM2JANIConverter.prism2jani(PRISM2JANIConverter.java:885)
+	at epmc.prism.model.convert.PRISM2JANIConverter.moduleToAutomaton(PRISM2JANIConverter.java:862)
+	at epmc.prism.model.convert.PRISM2JANIConverter.computeAutomata(PRISM2JANIConverter.java:662)
+
+
+############################## Notes ##############################
+EPMC default settings. Check achievability objectives.

@@ -1,0 +1,117 @@
+Command:	~/prism/prism/bin/prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B005CAP1M1Unf1-PfPfachievability.props -const B=5,CAP=1,M=1,Unf=1 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+Wallclock time:	2.0236756801605225
+Return code:	0
+Output:
+java -Xmx30g -Xss1g -Djava.awt.headless=true -Djava.library.path=/home/tq429871/prism/prism/lib -classpath /home/tq429871/prism/prism/lib/prism.jar:/home/tq429871/prism/prism/classes:/home/tq429871/prism/prism:/home/tq429871/prism/prism/lib/pepa.zip:/home/tq429871/prism/prism/lib/* prism.PrismCL /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B005CAP1M1Unf1-PfPfachievability.props -const B=5,CAP=1,M=1,Unf=1 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+PRISM
+=====
+
+Version: 4.7.dev
+Date: Sat Dec 17 19:00:37 GMT+01:00 2022
+Hostname: nihm020.hpc.itc.rwth-aachen.de
+Memory limits: cudd=4g, java(heap)=30g
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B005CAP1M1Unf1-PfPfachievability.props -const 'B=5,CAP=1,M=1,Unf=1' -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res.prism"...
+
+Type:        MDP
+Modules:     robot goldtile gemtile goldcounter gemcounter stepcounter 
+Variables:   gold gem attacked x y av_gold t_gold av_gem t_gem cgold cgem csteps 
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/res/res-B005CAP1M1Unf1-PfPfachievability.props"...
+
+1 property:
+(1) "PfPf": multi(P>=0.8918410554 [ F (csteps>=0&cgold=0) ], P>=0.9 [ F (csteps>=0&cgem=0) ])
+
+---------------------------------------------------------------------
+
+Model checking: "PfPf": multi(P>=0.8918410554 [ F (csteps>=0&cgold=0) ], P>=0.9 [ F (csteps>=0&cgem=0) ])
+Model constants: B=5,CAP=1,M=1,Unf=1
+
+Building model...
+Model constants: B=5,CAP=1,M=1,Unf=1
+
+Warning: Guard for command 4 of module "goldtile" is never satisfied.
+
+Warning: Guard for command 2 of module "gemtile" is never satisfied.
+
+Computing reachable states...
+
+Reachability (BFS): 67 iterations in 0.07 seconds (average 0.001000, setup 0.00)
+
+Time for model construction: 0.097 seconds.
+
+Type:        MDP
+States:      46467 (1 initial)
+Transitions: 162086
+Choices:     149800
+
+Transition matrix: 3942 nodes (4 terminal), 162086 minterms, vars: 25r/25c/4nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.03 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 71 iterations in 0.10 seconds (average 0.001479, setup 0.00)
+States:      46843 (1 initial)
+Transitions: 163390
+Choices:     151008
+
+Transition matrix: 5867 nodes (4 terminal), 163390 minterms, vars: 26r/26c/4nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 73 iterations in 0.15 seconds (average 0.002110, setup 0.00)
+States:      47501 (1 initial)
+Transitions: 165672
+Choices:     153122
+
+Transition matrix: 9278 nodes (4 terminal), 165672 minterms, vars: 27r/27c/4nd
+Total time for product construction: 0.347 seconds.
+
+States:      47501 (1 initial)
+Transitions: 165672
+Choices:     153122
+
+Transition matrix: 9278 nodes (4 terminal), 165672 minterms, vars: 27r/27c/4nd
+
+Finding accepting end components for F (csteps>=0&cgold=0)...
+Time for end component identification: 0.0 seconds.
+
+Finding accepting end components for F (csteps>=0&cgem=0)...
+Time for end component identification: 0.001 seconds.
+
+Prob0A: 57 iterations in 0.31 seconds (average 0.005421, setup 0.00)
+
+yes = 1034, no = 19619, maybe = 26848
+
+Computing remaining probabilities...
+Engine: Sparse
+Iterative method: 33 iterations in 0.08 seconds (average 0.002303, setup 0.00)
+The value iteration(s) took 0.121 seconds altogether.
+Number of weight vectors used: 1
+Multi-objective value iterations took 0.121 s.
+
+Property satisfied in 0 of 1 initial states.
+
+Time for model checking: 1.227 seconds.
+
+Result: false
+
+---------------------------------------------------------------------
+
+Note: There were 2 warnings during computation.
+
+
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+
+
+############################## Notes ##############################
+Prism.. Achievability queries. Gauss-Seidl VI.

@@ -1,0 +1,104 @@
+Command:	~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov-B0010Unf2-PfPfachievability.props -const B=10,Unf=2 --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute
+Wallclock time:	2.3358333110809326
+Return code:	0
+Output:
+Storm 1.7.1 (dev)
+
+Date: Sat Dec 17 21:32:13 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rov/rov-B0010Unf2-PfPfachievability.props -const 'B=10,Unf=2' --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.005s.
+
+Time for model construction: 0.856s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	161410
+Transitions: 	302642
+Choices: 	201762
+Reward Models:  none
+State Labels: 	6 labels
+   * init -> 1 item(s)
+   * valueCollected -> 6770 item(s)
+   * exceedTime -> 7762 item(s)
+   * deadlock -> 0 item(s)
+   * exceedEnergy -> 4818 item(s)
+   * done -> 10089 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "PfPf": multi(P>=9/10 [F "valueCollected"], P>=9/10 [F (((!"exceedTime") & (!"exceedEnergy")) & (done))]) ...
+Preprocessing done in 0.314s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(P>=9/10 [F "valueCollected"], P>=9/10 [F (((!"exceedTime") & (!"exceedEnergy")) & (done))])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: P>=9/10 [F "valueCollected"] 	Preprocessed: R[exp]{"obj1"}max>=9/10 [C] 	result bounds: [0, 1]
+Original: P>=9/10 [F (((!"exceedTime") & (!"exceedEnergy")) & (done))] 	Preprocessed: R[exp]{"obj2"}max>=9/10 [C] 	result bounds: [0, 1]
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 2.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	161410
+Transitions: 	302642
+Choices: 	201762
+Reward Models:  none
+State Labels: 	6 labels
+   * init -> 1 item(s)
+   * valueCollected -> 6770 item(s)
+   * exceedTime -> 7762 item(s)
+   * deadlock -> 0 item(s)
+   * exceedEnergy -> 4818 item(s)
+   * done -> 10089 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	160944
+Transitions: 	301742
+Choices: 	201172
+Reward Models:  obj2, obj1
+State Labels: 	7 labels
+   * deadl -> 11247 item(s)
+   * deadlock -> 0 item(s)
+   * exceedEnergy -> 4652 item(s)
+   * done -> 10057 item(s)
+   * exceedTime -> 7461 item(s)
+   * valueCollected -> 6304 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Weight Vector Checker Statistics:
+Final preprocessed model has 149698 states.
+Final preprocessed model has 189926 actions.
+
+Pareto Curve Approximation Algorithm terminated after 3 refinement steps.
+Solving multi-objective query took 1.384s seconds (consisting of 0.314s seconds for preprocessing and 1.068s seconds for analyzing the preprocessed model).
+Result (for initial states): false
+
+Time for model checking: 1.385s.
+
+Performance statistics:
+  * peak memory usage: 116MB
+  * CPU time: 2.237s
+  * wallclock time: 2.254s
+
+
+############################## Notes ##############################
+Storm. check achievability objectives using sound value iteration

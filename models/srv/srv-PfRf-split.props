@@ -1,0 +1,2 @@
+Pmax=? [F !"timeExceeded" & taskdone];
+multi(R{"interaction"}max=? [F "timeExceeded"]); // put inside multi to ensure correct reach rew semantics w.r.t. path that do not reach a goal

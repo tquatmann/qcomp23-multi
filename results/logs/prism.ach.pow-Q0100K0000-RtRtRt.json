@@ -1,0 +1,19 @@
+{
+	"id": "prism.ach.pow-Q0100K0000-RtRtRt",
+	"benchmark-id": "pow-Q0100K0000-RtRtRt",
+	"tool": "prism",
+	"configuration-id": "ach",
+	"invocation-note": "Prism.. Achievability queries. Gauss-Seidl VI.",
+	"commands": [
+		"~/prism/prism/bin/prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/pow/pow.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/pow/pow-Q0100K0000-RtRtRtachievability.props -const Q=100,K=0 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "prism.ach.pow-Q0100K0000-RtRtRt.log",
+	"wallclock-time": 203.1517038345337,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	]
+}

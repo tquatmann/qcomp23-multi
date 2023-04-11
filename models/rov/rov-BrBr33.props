@@ -1,0 +1,1 @@
+"BrBr33": multi(Pmax=? [F{"value"}>=BndVal true], Pmax=? [F{"time"}<=BndTime,{"energy"}<=BndEn done]);

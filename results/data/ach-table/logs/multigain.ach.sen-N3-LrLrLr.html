@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>multigain.ach - sen-N3-LrLrLr</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>multigain.ach</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>id:</td><td>sen-N3-LrLrLr (MDP)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ach)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">~/multigain/bin/prism  /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen3.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N3-LrLrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute</pre>
+	MultiGain default settings.. Achievability queries
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">767.1098802089691s</td></tr>
+		<tr><td>Model Checking Walltime:</td><td style="tt">763.713s</td></tr>
+		<tr><td>Return code:</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>MultiGain default settings.. Achievability queries</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">MultiGain1.0.2
+Date: Mon Dec 19 09:39:58 GMT+01:00 2022
+Hostname: nihm020.hpc.itc.rwth-aachen.de
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen3.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N3-LrLrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen3.prism"...
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N3-LrLrLrachievability.props"...
+
+1 property:
+(1) "LrLrLr": multi(R{"working"}>=0.56249999604 [ S ], R{"success"}>=0.89280000855 [ S ], R{"failure"}>=0.043488008757000006 [ S ])
+
+Type:        MDP
+Modules:     sensor1 sensor2 sensor3 channel proc 
+Variables:   y1 msg1 y2 msg2 y3 msg3 c who what cb1 cb2 cbs x count 
+
+---------------------------------------------------------------------
+
+Model checking: "LrLrLr": multi(R{"working"}>=0.56249999604 [ S ], R{"success"}>=0.89280000855 [ S ], R{"failure"}>=0.043488008757000006 [ S ])
+
+Building model...
+
+Computing reachable states... 77766Computing end components.
+Finished computing end components.
+ states
+Reachable states exploration and model construction done in 0.969 secs.
+Sorting reachable states list...
+
+Time for model construction: 1.211 seconds.
+
+Type:        MDP
+States:      77766 (1 initial)
+Transitions: 304869
+Choices:     283911
+Max/avg:     8/3.65
+Set parameter TSPort to value 50039
+Set parameter TokenServer to value "license6.itc.rwth-aachen.de"
+Set parameter IntFeasTol to value 1e-08
+Set parameter DualReductions to value 0
+Set parameter Method to value 1
+LP problem construction finished in 5.385 s.
+Gurobi Optimizer version 9.5.0 build v9.5.0rc5 (linux64)
+Thread count: 48 physical cores, 48 logical processors, using up to 32 threads
+Optimize a model with 124187 rows, 439343 columns and 847704 nonzeros
+Model fingerprint: 0xfb7d57f2
+Coefficient statistics:
+  Matrix range     [5e-02, 1e+00]
+  Objective range  [0e+00, 0e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [4e-02, 1e+00]
+Presolve removed 44545 rows and 61375 columns
+Presolve time: 1.08s
+Presolved: 79642 rows, 377968 columns, 727649 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   2.280038e+00   0.000000e+00      1s
+    5600    3.0621449e-06   4.748240e+00   0.000000e+00      6s
+    6950    7.3108132e-06   2.384441e+00   0.000000e+00     10s
+    8380    2.2024908e-05   1.745422e+00   0.000000e+00     15s
+    9970    3.1406027e-05   3.800436e+00   0.000000e+00     20s
+   11380    3.5170086e-05   4.250127e+00   0.000000e+00     25s
+   13180    3.8154337e-05   2.120356e+01   0.000000e+00     30s
+   15430    4.2131018e-05   1.382416e+00   0.000000e+00     35s
+   17370    4.4158470e-05   1.789955e+00   0.000000e+00     40s
+   19440    4.6530539e-05   3.188821e+00   0.000000e+00     45s
+   21210    4.9006809e-05   1.402401e+00   0.000000e+00     50s
+   23020    5.1542578e-05   1.180264e+00   0.000000e+00     55s
+   25000    5.3830481e-05   3.509170e+00   0.000000e+00     60s
+   27100    5.6276663e-05   2.186308e+00   0.000000e+00     65s
+   28990    5.8621590e-05   2.939343e+01   0.000000e+00     70s
+   30520    6.0521645e-05   4.598130e+00   0.000000e+00     75s
+   32250    6.2921373e-05   1.848533e+00   0.000000e+00     80s
+   33910    6.5557129e-05   1.763033e+00   0.000000e+00     85s
+   35690    6.8744491e-05   7.835734e+00   0.000000e+00     90s
+   37100    7.1244446e-05   1.903531e+01   0.000000e+00     95s
+   38620    7.3939405e-05   3.570444e+01   0.000000e+00    100s
+   40130    7.7184118e-05   6.794252e+00   0.000000e+00    105s
+   41620    8.0809119e-05   1.028593e+01   0.000000e+00    110s
+   43140    8.5780617e-05   6.592427e+00   0.000000e+00    115s
+   44870    9.2945668e-05   1.653208e+01   0.000000e+00    120s
+   46330    1.0217579e-04   2.356539e+01   0.000000e+00    125s
+   47890    1.4826513e-04   1.184119e+01   0.000000e+00    130s
+
+Solved in 48629 iterations and 132.41 seconds (179.32 work units)
+Infeasible model
+LP solving took 132.54 s.
+
+Number of states satisfying multi(R{"working"}>=0.56249999604 [ S ], R{"success"}>=0.89280000855 [ S ], R{"failure"}>=0.043488008757000006 [ S ]): 0
+
+Property satisfied in 0 of 1 initial states.
+
+Time for model checking: 763.713 seconds.
+
+Result: false (property not satisfied in the initial state)	</pre>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">STDERR</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g	</pre>
+</div>
+</body>
+</html>

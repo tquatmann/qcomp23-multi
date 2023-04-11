@@ -1,0 +1,19 @@
+{
+	"id": "storm.ach.sen-N3-LrLrLr",
+	"benchmark-id": "sen-N3-LrLrLr",
+	"tool": "storm",
+	"configuration-id": "ach",
+	"invocation-note": "Storm. check achievability objectives using sound value iteration",
+	"commands": [
+		"~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen3.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N3-LrLrLrachievability.props --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "storm.ach.sen-N3-LrLrLr.log",
+	"wallclock-time": 27.325005292892456,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	]
+}

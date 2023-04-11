@@ -1,0 +1,136 @@
+mdp
+
+const int WIDTH = 5;
+const int HEIGHT = 5;
+const int XINIT = 3;
+const int YINIT = 1;
+
+const int B; // Bounds
+const int CAP; // Capacity of agent (how much gold+gem can be carried) 
+const int M; // Steps it takes for new gold/gem to appear after it was collected
+const int Unf; // 0: don't unfold the bound, 1: Unfold the bound
+const double pAttack = 1/10;
+const int REQGOLD = B;
+const int REQGEM = ceil(B/2);
+const int AVSTEPS = B * 11;
+
+ 
+formula left_of_gold = x=2 & y=5;
+formula right_of_gold = x=4 & y=5;
+formula below_of_gold = (x=3 & y=4);
+formula above_of_gold = false;
+formula left_of_gem = (x=4 & y=4);
+formula right_of_gem = false;
+formula below_of_gem = (x=5 & y=3);
+formula above_of_gem = (x=5 & y=5);
+formula left_of_home = x=2 & y=1;
+formula right_of_home = x=4 & y=1;
+formula above_of_home = x=3 & y=2;
+formula below_of_home = false;
+formula left_of_enemy = (x=3 & y=5) | (x=2 & y=4);
+formula right_of_enemy = (x=5 & y=5) | (x=4 & y=4);
+formula above_of_enemy = x=3 & y=5;
+formula below_of_enemy = (x=3 & y=3) | (x=4 & y=4);
+
+formula can_carry_gold = (gold < CAP);
+formula can_carry_gem = (gem< CAP);
+
+module robot
+
+	gold : [0..CAP] init 0;
+	gem : [0..CAP] init 0;
+	attacked : bool init false;
+
+	x : [1..WIDTH] init XINIT;
+	y : [1..HEIGHT] init YINIT;
+
+	[right] !left_of_enemy & x<WIDTH ->  (attacked'=false) & (x'=x+1) & (gold' = left_of_home ? 0 : (gold + (left_of_gold & can_carry_gold ? av_gold : 0)))     &  (gem' = left_of_home ? 0 : (gem + (left_of_gem & can_carry_gem ? av_gem : 0)));
+	[left] !right_of_enemy & x>1 ->      (attacked'=false) & (x'=x-1) & (gold' = right_of_home ? 0 : (gold + (right_of_gold & can_carry_gold ? av_gold : 0)))   &  (gem' = right_of_home ? 0 : (gem + (right_of_gem & can_carry_gem ? av_gem : 0)));
+	[top] !below_of_enemy & y<HEIGHT ->  (attacked'=false) & (y'=y+1) & (gold' = below_of_home ? 0 : (gold + (below_of_gold & can_carry_gold ? av_gold : 0)))   &  (gem' = below_of_home ? 0 : (gem + (below_of_gem & can_carry_gem ? av_gem : 0)));
+	[down] !above_of_enemy & y>1 ->      (attacked'=false) & (y'=y-1) & (gold' = above_of_home ? 0 : (gold + (above_of_gold & can_carry_gold ? av_gold : 0)))   &  (gem' = above_of_home ? 0 : (gem + (above_of_gem & can_carry_gem ? av_gem : 0)));
+
+	// The following assumes that enemy tiles are not also gold/gem or home tiles
+	[right] left_of_enemy & x<WIDTH -> pAttack : (attacked'=true) & (x'=XINIT) & (y'=YINIT) & (gold'=0) & (gem'=0) + (1-pAttack) : (attacked'=false) & (x'=x+1);
+	[left] right_of_enemy & x>1 	-> pAttack : (attacked'=true) & (x'=XINIT) & (y'=YINIT) & (gold'=0) & (gem'=0) + (1-pAttack) : (attacked'=false) & (x'=x-1);
+	[top] below_of_enemy & y<HEIGHT -> pAttack : (attacked'=true) & (x'=XINIT) & (y'=YINIT) & (gold'=0) & (gem'=0) + (1-pAttack) : (attacked'=false) & (y'=y+1);
+	[down] above_of_enemy & y>1		-> pAttack : (attacked'=true) & (x'=XINIT) & (y'=YINIT) & (gold'=0) & (gem'=0) + (1-pAttack) : (attacked'=false) & (y'=y-1);
+endmodule
+
+module goldtile
+	av_gold : [0..1] init 1; // amount of gold available at x=3,y=5
+	t_gold : [0..M] init 0; // Time for gold to reappear
+	// Collect gold
+	[right] left_of_gold & av_gold > 0 -> (av_gold' = 0) & (t_gold' = M);
+	[left]  right_of_gold & av_gold > 0 -> (av_gold' = 0) & (t_gold' = M);
+	[top]   below_of_gold & av_gold > 0 -> (av_gold' = 0) & (t_gold' = M);
+	[down]  above_of_gold & av_gold > 0 -> (av_gold' = 0) & (t_gold' = M);
+	
+	// Do not collect gold
+	[right] !left_of_gold | av_gold = 0 -> (av_gold' = (t_gold<=1 ? 1 : 0)) & (t_gold' = max(t_gold-1,0));
+	[left]  !right_of_gold | av_gold = 0 -> (av_gold' = (t_gold<=1 ? 1 : 0)) & (t_gold' = max(t_gold-1,0));
+	[top]   !below_of_gold | av_gold = 0 -> (av_gold' = (t_gold<=1 ? 1 : 0)) & (t_gold' = max(t_gold-1,0));
+	[down]  !above_of_gold | av_gold = 0 -> (av_gold' = (t_gold<=1 ? 1 : 0)) & (t_gold' = max(t_gold-1,0));
+endmodule
+
+
+module gemtile
+	av_gem : [0..1] init 1; // amount of gem available at x=5,y=4
+	t_gem : [0..M] init 0; // Time for gem to reappear
+	// Collect gem
+	[right] left_of_gem & av_gem > 0 -> (av_gem' = 0) & (t_gem' = M);
+	[left]  right_of_gem & av_gem > 0 -> (av_gem' = 0) & (t_gem' = M);
+	[top]   below_of_gem & av_gem > 0 -> (av_gem' = 0) & (t_gem' = M);
+	[down]  above_of_gem & av_gem > 0 -> (av_gem' = 0) & (t_gem' = M);
+	
+	// Do not collect gem
+	[right] !left_of_gem | av_gem = 0 -> (av_gem' = (t_gem<=1 ? 1 : 0)) & (t_gem' = max(t_gem-1,0));
+	[left]  !right_of_gem | av_gem = 0 -> (av_gem' = (t_gem<=1 ? 1 : 0)) & (t_gem' = max(t_gem-1,0));
+	[top]   !below_of_gem | av_gem = 0 -> (av_gem' = (t_gem<=1 ? 1 : 0)) & (t_gem' = max(t_gem-1,0));
+	[down]  !above_of_gem | av_gem = 0 -> (av_gem' = (t_gem<=1 ? 1 : 0)) & (t_gem' = max(t_gem-1,0));
+endmodule
+
+
+rewards "attacks"
+	attacked : 1;
+endrewards
+
+rewards "rew_gold"
+	[right] left_of_home : gold;
+	[left] right_of_home : gold;
+	[top] below_of_home : gold;
+	[down] above_of_home : gold;
+endrewards
+
+rewards "rew_gem"
+	[right] left_of_home : gem;
+	[left] right_of_home : gem;
+	[top] below_of_home : gem;
+	[down] above_of_home : gem;
+endrewards
+
+const int UNFGOLD = REQGOLD * Unf;
+module goldcounter
+	cgold : [0..UNFGOLD + 1] init UNFGOLD; // add +1 so the range has multiple values. PRISM apparently doesn't like ranges like [0..0]
+	[right] true -> (cgold' = max(0, cgold - (left_of_home ? gold : 0)));
+	[left] true -> (cgold' = max(0, cgold - (right_of_home ? gold : 0)));
+	[top] true -> (cgold' = max(0, cgold - (below_of_home ? gold : 0)));
+	[down] true -> (cgold' = max(0, cgold - (above_of_home ? gold : 0)));
+endmodule
+
+const int UNFGEM = REQGEM * Unf;
+module gemcounter
+	cgem : [0..UNFGEM + 1] init UNFGEM; // add +1 so the range has multiple values. PRISM apparently doesn't like ranges like [0..0]
+	[right] true -> (cgem' = max(0, cgem - (left_of_home ? gem : 0)));
+	[left] true -> (cgem' = max(0, cgem - (right_of_home ? gem : 0)));
+	[top] true -> (cgem' = max(0, cgem - (below_of_home ? gem : 0)));
+	[down] true -> (cgem' = max(0, cgem - (above_of_home ? gem : 0)));
+endmodule
+
+const int UNFSTEPS = Unf = 0 ? -1 : AVSTEPS;
+module stepcounter
+	csteps : [-1..UNFSTEPS + 1] init UNFSTEPS; // add +1 so the range has multiple values. PRISM apparently doesn't like ranges like [0..0]
+	[right] true -> (csteps' = max(-1, csteps - 1));
+	[left] true -> (csteps' = max(-1, csteps - 1));
+	[top] true -> (csteps' = max(-1, csteps - 1));
+	[down] true -> (csteps' = max(-1, csteps - 1));
+endmodule

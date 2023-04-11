@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>storm.ach - sen-N5-LrLrLr</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>storm.ach</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>id:</td><td>sen-N5-LrLrLr (MDP)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ach)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen5.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N5-LrLrLrachievability.props --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute</pre>
+	Storm. check achievability objectives using sound value iteration
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="color: red;">&gt 7200s (Timeout)</td></tr>
+		<tr><td>Note(s):</td><td>Storm. check achievability objectives using sound value iteration</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.7.1 (dev)
+
+Date: Sun Dec 18 06:06:41 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen5.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N5-LrLrLrachievability.props --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.007s.
+
+Time for model construction: 47.635s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	3565990
+Transitions: 	19736435
+Choices: 	18757530
+Reward Models:  working, success, failure
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "LrLrLr": multi(R[exp]{"working"}>=9/20 [LRA], R[exp]{"success"}>=9/20 [LRA], R[exp]{"failure"}>=9/20 [LRA]) ...
+Preprocessing done in 13.158s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"working"}>=9/20 [LRA], R[exp]{"success"}>=9/20 [LRA], R[exp]{"failure"}>=9/20 [LRA])
+
+The query considers 3 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"working"}>=9/20 [LRA] 	Preprocessed: R[exp]{"working"}max>=9/20 [LRA] 	result bounds: >=0
+Original: R[exp]{"success"}>=9/20 [LRA] 	Preprocessed: R[exp]{"success"}max>=9/20 [LRA] 	result bounds: >=0
+Original: R[exp]{"failure"}>=9/20 [LRA] 	Preprocessed: R[exp]{"failure"}max>=9/20 [LRA] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 3.
+Number of Total Reward Objectives (after preprocessing): 0.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	3565990
+Transitions: 	19736435
+Choices: 	18757530
+Reward Models:  working, success, failure
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	3565990
+Transitions: 	19736375
+Choices: 	18757470
+Reward Models:  working, success, failure
+State Labels: 	3 labels
+   * deadl -> 15 item(s)
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------	</pre>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">STDERR</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">ERROR: The program received signal 15 and will be aborted in 3s.
+Received signal 14
+
+
+----------
+Computation aborted after 7203.023970127106 seconds since the total time limit of 7200 seconds was exceeded.	</pre>
+</div>
+</body>
+</html>

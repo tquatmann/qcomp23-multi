@@ -1,0 +1,19 @@
+{
+	"id": "storm.ach.uav-B0750Unf1-PfRt",
+	"benchmark-id": "uav-B0750Unf1-PfRt",
+	"tool": "storm",
+	"configuration-id": "ach",
+	"invocation-note": "Storm. check achievability objectives using sound value iteration",
+	"commands": [
+		"~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav-B0750Unf1-PfRtachievability.props -const B=750,Unf=1,COUNTER=0 --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "storm.ach.uav-B0750Unf1-PfRt.log",
+	"wallclock-time": 2.5499649047851562,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	]
+}

@@ -1,0 +1,1 @@
+"BrBr22": multi(Pmin=?[F{"time"}<=BndTime "done"], Pmin=? [F{"rounds"}<=BndRnds "done"]);

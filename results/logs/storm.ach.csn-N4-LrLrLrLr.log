@@ -1,0 +1,96 @@
+Command:	~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/csn/csn4.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/csn/csn-N4-LrLrLrLrachievability.props --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute
+Wallclock time:	0.23815393447875977
+Return code:	0
+Output:
+Storm 1.7.1 (dev)
+
+Date: Sat Dec 17 02:58:50 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/csn/csn4.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/csn/csn-N4-LrLrLrLrachievability.props --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.004s.
+
+Time for model construction: 0.030s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	960
+Transitions: 	3521
+Choices: 	2785
+Reward Models:  grants4, grants3, grants2, grants1
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "LrLrLrLr": multi(R[exp]{"grants1"}>=26999995040999997/100000000000000000 [LRA], R[exp]{"grants2"}>=26999995040999997/100000000000000000 [LRA], R[exp]{"grants3"}>=26999995040999997/100000000000000000 [LRA], R[exp]{"grants4"}>=26999995040999997/100000000000000000 [LRA]) ...
+Preprocessing done in 0.002s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"grants1"}>=26999995040999997/100000000000000000 [LRA], R[exp]{"grants2"}>=26999995040999997/100000000000000000 [LRA], R[exp]{"grants3"}>=26999995040999997/100000000000000000 [LRA], R[exp]{"grants4"}>=26999995040999997/100000000000000000 [LRA])
+
+The query considers 4 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"grants1"}>=26999995040999997/100000000000000000 [LRA] 	Preprocessed: R[exp]{"grants1"}max>=26999995040999997/100000000000000000 [LRA] 	result bounds: >=0
+Original: R[exp]{"grants2"}>=26999995040999997/100000000000000000 [LRA] 	Preprocessed: R[exp]{"grants2"}max>=26999995040999997/100000000000000000 [LRA] 	result bounds: >=0
+Original: R[exp]{"grants3"}>=26999995040999997/100000000000000000 [LRA] 	Preprocessed: R[exp]{"grants3"}max>=26999995040999997/100000000000000000 [LRA] 	result bounds: >=0
+Original: R[exp]{"grants4"}>=26999995040999997/100000000000000000 [LRA] 	Preprocessed: R[exp]{"grants4"}max>=26999995040999997/100000000000000000 [LRA] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 4.
+Number of Total Reward Objectives (after preprocessing): 0.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	960
+Transitions: 	3521
+Choices: 	2785
+Reward Models:  grants4, grants3, grants2, grants1
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	959
+Transitions: 	3503
+Choices: 	2767
+Reward Models:  grants4, grants3, grants2, grants1
+State Labels: 	3 labels
+   * deadl -> 15 item(s)
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Weight Vector Checker Statistics:
+Final preprocessed model has 945 states.
+Final preprocessed model has 2753 actions.
+Found 176 end components that are relevant for LRA-analysis.
+880 states lie on such an end component.
+
+Pareto Curve Approximation Algorithm terminated after 5 refinement steps.
+Solving multi-objective query took 0.120s seconds (consisting of 0.002s seconds for preprocessing and 0.118s seconds for analyzing the preprocessed model).
+Result (for initial states): false
+
+Time for model checking: 0.120s.
+
+Performance statistics:
+  * peak memory usage: 51MB
+  * CPU time: 0.169s
+  * wallclock time: 0.164s
+
+
+############################## Notes ##############################
+Storm. check achievability objectives using sound value iteration

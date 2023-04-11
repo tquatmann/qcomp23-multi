@@ -1,0 +1,80 @@
+Command:	~/multigain/bin/prism  /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen2.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N2-LrLrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute
+Wallclock time:	5.9680702686309814
+Return code:	0
+Output:
+MultiGain1.0.2
+Date: Mon Dec 19 09:39:58 GMT+01:00 2022
+Hostname: nihm020.hpc.itc.rwth-aachen.de
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen2.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N2-LrLrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen2.prism"...
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/sen/sen-N2-LrLrLrachievability.props"...
+
+1 property:
+(1) "LrLrLr": multi(R{"working"}>=0.56249999604 [ S ], R{"success"}>=0.86400000837 [ S ], R{"failure"}>=0.03744000963 [ S ])
+
+Type:        MDP
+Modules:     sensor1 sensor2 channel proc 
+Variables:   y1 msg1 y2 msg2 c who what cb1 cb2 cbs x count 
+
+---------------------------------------------------------------------
+
+Model checking: "LrLrLr": multi(R{"working"}>=0.56249999604 [ S ], R{"success"}>=0.86400000837 [ S ], R{"failure"}>=0.03744000963 [ S ])
+
+Building model...
+
+Computing reachable states... 7860Computing end components.
+Finished computing end components.
+ states
+Reachable states exploration and model construction done in 0.197 secs.
+Sorting reachable states list...
+
+Time for model construction: 0.308 seconds.
+
+Type:        MDP
+States:      7860 (1 initial)
+Transitions: 26082
+Choices:     24042
+Max/avg:     6/3.06
+Set parameter TSPort to value 50039
+Set parameter TokenServer to value "license6.itc.rwth-aachen.de"
+Set parameter IntFeasTol to value 1e-08
+Set parameter DualReductions to value 0
+Set parameter Method to value 1
+LP problem construction finished in 0.289 s.
+Gurobi Optimizer version 9.5.0 build v9.5.0rc5 (linux64)
+Thread count: 48 physical cores, 48 logical processors, using up to 32 threads
+Optimize a model with 13628 rows, 40503 columns and 84364 nonzeros
+Model fingerprint: 0x9feecff6
+Coefficient statistics:
+  Matrix range     [5e-02, 1e+00]
+  Objective range  [0e+00, 0e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [4e-02, 1e+00]
+Presolve removed 5010 rows and 6112 columns
+Presolve time: 0.06s
+Presolved: 8618 rows, 34391 columns, 70159 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   2.588940e+00   0.000000e+00      0s
+
+Solved in 5789 iterations and 1.56 seconds (1.65 work units)
+Infeasible model
+LP solving took 1.575 s.
+
+Number of states satisfying multi(R{"working"}>=0.56249999604 [ S ], R{"success"}>=0.86400000837 [ S ], R{"failure"}>=0.03744000963 [ S ]): 0
+
+Property satisfied in 0 of 1 initial states.
+
+Time for model checking: 3.497 seconds.
+
+Result: false (property not satisfied in the initial state)
+
+
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+
+
+############################## Notes ##############################
+MultiGain default settings.. Achievability queries

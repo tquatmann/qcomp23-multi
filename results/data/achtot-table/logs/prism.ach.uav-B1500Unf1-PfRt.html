@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>prism.ach - uav-B1500Unf1-PfRt</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>prism.ach</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>id:</td><td>uav-B1500Unf1-PfRt (MDP)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ach)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">~/prism/prism/bin/prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav-B1500Unf1-PfRtachievability.props -const B=1500,Unf=1,COUNTER=0 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute</pre>
+	Prism.. Achievability queries. Gauss-Seidl VI.
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">463.246386051178s</td></tr>
+		<tr><td>Model Checking Walltime:</td><td style="tt">458.976s</td></tr>
+		<tr><td>Return code:</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Prism.. Achievability queries. Gauss-Seidl VI.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">java -Xmx30g -Xss1g -Djava.awt.headless=true -Djava.library.path=/home/tq429871/prism/prism/lib -classpath /home/tq429871/prism/prism/lib/prism.jar:/home/tq429871/prism/prism/classes:/home/tq429871/prism/prism:/home/tq429871/prism/prism/lib/pepa.zip:/home/tq429871/prism/prism/lib/* prism.PrismCL /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav-B1500Unf1-PfRtachievability.props -const B=1500,Unf=1,COUNTER=0 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+PRISM
+=====
+
+Version: 4.7.dev
+Date: Sun Dec 18 14:01:54 GMT+01:00 2022
+Hostname: nihm021.hpc.itc.rwth-aachen.de
+Memory limits: cudd=4g, java(heap)=30g
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav-B1500Unf1-PfRtachievability.props -const 'B=1500,Unf=1,COUNTER=0' -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav.prism"...
+
+Type:        MDP
+Modules:     operator UAV timemodule 
+Variables:   stop k t s c w a r send in w1 w2 w3 w4 w5 w6 time_counter 
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav-B1500Unf1-PfRtachievability.props"...
+
+1 property:
+(1) "PfRt": multi(P>=0.8999999964900001 [ F !"timeExceeded"&"mission" ], R{"ROZ"}<=1.0 [ C ])
+
+---------------------------------------------------------------------
+
+Model checking: "PfRt": multi(P>=0.8999999964900001 [ F !"timeExceeded"&"mission" ], R{"ROZ"}<=1.0 [ C ])
+Model constants: COUNTER=0,Unf=1,B=1500
+
+Building model...
+Model constants: COUNTER=0,Unf=1,B=1500
+
+Computing reachable states...
+
+Reachability (BFS): 92 iterations in 0.81 seconds (average 0.008761, setup 0.00)
+
+Time for model construction: 1.234 seconds.
+
+Warning: Deadlocks detected and fixed in 10244 states
+
+Type:        MDP
+States:      874100 (1 initial)
+Transitions: 5092664
+Choices:     1657491
+
+Transition matrix: 19112 nodes (16 terminal), 5092664 minterms, vars: 44r/44c/8nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.03 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 92 iterations in 1.11 seconds (average 0.012054, setup 0.00)
+States:      874100 (1 initial)
+Transitions: 5092664
+Choices:     1657491
+
+Transition matrix: 22345 nodes (16 terminal), 5092664 minterms, vars: 45r/45c/8nd
+Total time for product construction: 1.213 seconds.
+
+States:      874100 (1 initial)
+Transitions: 5092664
+Choices:     1657491
+
+Transition matrix: 22345 nodes (16 terminal), 5092664 minterms, vars: 45r/45c/8nd
+
+Finding accepting end components for F !"timeExceeded"&"mission"...
+Time for end component identification: 6.385 seconds.
+
+Prob0A: 19 iterations in 0.07 seconds (average 0.003526, setup 0.00)
+
+yes = 276465, no = 0, maybe = 597635
+
+Computing remaining probabilities...
+Engine: Sparse
+Iterative method: 96 iterations in 6.22 seconds (average 0.064698, setup 0.01)
+Iterative method: 64 iterations in 4.08 seconds (average 0.063656, setup 0.01)
+The value iteration(s) took 12.541 seconds altogether.
+Number of weight vectors used: 2
+Multi-objective value iterations took 12.542 s.
+
+Property satisfied in 1 of 1 initial states.
+
+Time for model checking: 458.976 seconds.
+
+Result: true
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.	</pre>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">STDERR</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g	</pre>
+</div>
+</body>
+</html>

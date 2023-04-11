@@ -1,0 +1,6 @@
+"RtRt": multi(R{"time"}min=? [C], R{"interaction"}max=? [C]);
+
+"Br11": Pmax=? [F{"time"}<=B taskdone];
+"BrBr12": multi(Pmax=? [F{"time"}<=B taskdone], R{"interaction"}max=? [C{"time"}<=B]);
+"Pf": Pmax=? [F !"timeExceeded" & taskdone];
+"PfRf": multi(Pmax=? [F !"timeExceeded" & taskdone], R{"interaction"}max=? [F "timeExceeded"]);

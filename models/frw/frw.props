@@ -1,0 +1,6 @@
+
+"Br22": Pmin=?[F{"time"}<=BndTime,{"rounds"}<=BndRnds "done"];
+"BrBr22": multi(Pmin=?[F{"time"}<=BndTime "done"], Pmin=? [F{"rounds"}<=BndRnds "done"]);
+"Pf": Pmin=?[F !"timeExceeded" & !"rndsExceeded" & "done"];
+"PfPf": multi(Pmin=?[F !"timeExceeded" & "done"], Pmin=? [F !"rndsExceeded" & "done"]);
+"Qp22": quantile(min TIME, min ROUNDS, Pmax>0.95 [F{"time"}<=TIME,{"rounds"}<=ROUNDS "done"]);

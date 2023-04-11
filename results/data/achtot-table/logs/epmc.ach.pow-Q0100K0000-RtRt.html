@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>epmc.ach - pow-Q0100K0000-RtRt</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>epmc.ach</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>id:</td><td>pow-Q0100K0000-RtRt (MDP)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ach)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">java -jar ~/ePMC/epmc-standard.jar  check --model-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/pow/pow.prism --property-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/pow/pow-Q0100K0000-RtRtachievability.props --const Q=100,K=0 --graphsolver-iterative-stop-criterion absolute --graphsolver-iterative-tolerance 1e-6</pre>
+	EPMC default settings. Check achievability objectives.
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">12.268322706222534s</td></tr>
+		<tr><td>Model Checking Walltime:</td><td style="tt">11.0s</td></tr>
+		<tr><td>Return code:</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>EPMC default settings. Check achievability objectives.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Running EPMC revision b1ba8abf9f52c05f23421efb1abd1be7618f426d
+Assertions are disabled. In case of incorrect results or otherwise strange behaviour, please run the JVM with "-ea" parameter.
+Starting to parse PRISM model...
+Done parsing PRISM model
+Starting model checking...
+Analysing property RtRt
+Starting to compute JANI explorer...
+Starting to build initial states of JANI explorer...
+Done building initial states of JANI explorer
+Done building JANI explorer
+Starting to build model...
+Current number of states: 11,913; states/second: 11,913
+Current number of states: 27,227; states/second: 15,314
+Current number of states: 42,399; states/second: 15,172
+Building model done. 42,824 states. Time for model exploration: 3 seconds.
+Starting multi-objective model checking for property multi(R{"power"}<=110.00010967000001 [ C ], R{"lost"}<=1.0427134886300002 [ C ])...
+Starting to normalise formula...
+Done normalising formula.
+Starting to evaluate nested properties of multi-objective property...
+Done evaluating nested properties of multi-objective property.
+Starting to build product of model and properties automata...
+Computing Büchi automaton for original property...
+Done computing Büchi automaton, is deterministic and has 1 labels and 1 states.
+Computing Büchi automaton for original property...
+Done computing Büchi automaton, is deterministic and has 1 labels and 1 states.
+Done building product of model and properties automata.
+Starting main loop of multi-objective solver...
+Property is qualitative.
+Starting main loop iteration number 1...
+Starting iteration...
+Done. Did 14,643 iterations in 5 seconds.
+Starting iteration...
+Done. Did 6 iterations in 0 seconds.
+Starting iteration...
+Done. Did 6 iterations in 0 seconds.
+Done main loop iteration number 1.
+Starting main loop iteration number 2...
+Done main loop iteration number 2.
+Done main loop of multi-objective solver.
+Done multi-objective model checking for property multi(R{"power"}<=110.00010967000001 [ C ], R{"lost"}<=1.0427134886300002 [ C ]).
+Finished model checking. Time required: 11 seconds
+RtRt: true	</pre>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">STDERR</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g	</pre>
+</div>
+</body>
+</html>

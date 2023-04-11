@@ -1,0 +1,1 @@
+"BrBr34": multi(Pmax=? [F{"rew_gold"}>=REQGOLD,steps<=AVSTEPS true],  Pmax=? [F{"rew_gem"}>=REQGEM,steps<=AVSTEPS true]);

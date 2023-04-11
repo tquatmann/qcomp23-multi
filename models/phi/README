@@ -1,0 +1,8 @@
+Randomised Dining Philosophers (without Fairness Assumptions)
+
+Sources: 
+ * MultiGain Website: http://qav.cs.ox.ac.uk/multigain/
+ * Prism Website: http://www.prismmodelchecker.org/casestudies/phil.php
+
+Notes:
+ * Larger versions were created using the create_phil.py script, e.g., `python create_phil.py 6`

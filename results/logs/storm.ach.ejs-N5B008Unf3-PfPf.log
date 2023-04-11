@@ -1,0 +1,16 @@
+Command:	~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs5.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N5B008Unf3-PfPfachievability.props -const B=8,Unf=3 --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute
+Wallclock time:	3114.245900630951
+Return code:	-9
+Output:
+Storm 1.7.1 (dev)
+
+Date: Sat Dec 17 07:30:27 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs5.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N5B008Unf3-PfPfachievability.props -const 'B=8,Unf=3' --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.011s.
+
+
+
+############################## Notes ##############################
+Storm. check achievability objectives using sound value iteration

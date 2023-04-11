@@ -1,0 +1,1 @@
+"Qp22": quantile(min TIME, min ROUNDS, Pmax>0.95 [F{"time"}<=TIME,{"rounds"}<=ROUNDS "done"]);

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>storm.ach - vir-N3-LrLr</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>storm.ach</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>id:</td><td>vir-N3-LrLr (MDP)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ach)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir3.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir-N3-LrLrachievability.props --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute</pre>
+	Storm. check achievability objectives using sound value iteration
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">1.1503474712371826s</td></tr>
+		<tr><td>Model Checking Walltime:</td><td style="tt">0.687s</td></tr>
+		<tr><td>Return code:</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Storm. check achievability objectives using sound value iteration</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.7.1 (dev)
+
+Date: Sun Dec 18 14:25:33 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir3.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/vir/vir-N3-LrLrachievability.props --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.005s.
+
+Time for model construction: 0.377s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	19682
+Transitions: 	282106
+Choices: 	170578
+Reward Models:  withvirus, clean
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "LrLr": multi(R[exp]{"withvirus"}>=7353658334700001/1000000000000000 [LRA], R[exp]{"clean"}>=15365848761/100000000000 [LRA]) ...
+Preprocessing done in 0.119s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"withvirus"}>=7353658334700001/1000000000000000 [LRA], R[exp]{"clean"}>=15365848761/100000000000 [LRA])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"withvirus"}>=7353658334700001/1000000000000000 [LRA] 	Preprocessed: R[exp]{"withvirus"}max>=7353658334700001/1000000000000000 [LRA] 	result bounds: >=0
+Original: R[exp]{"clean"}>=15365848761/100000000000 [LRA] 	Preprocessed: R[exp]{"clean"}max>=15365848761/100000000000 [LRA] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 2.
+Number of Total Reward Objectives (after preprocessing): 0.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	19682
+Transitions: 	282106
+Choices: 	170578
+Reward Models:  withvirus, clean
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	19682
+Transitions: 	282106
+Choices: 	170578
+Reward Models:  withvirus, clean
+State Labels: 	3 labels
+   * deadl -> 1 item(s)
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Weight Vector Checker Statistics:
+Final preprocessed model has 19682 states.
+Final preprocessed model has 170578 actions.
+Found 2 end components that are relevant for LRA-analysis.
+19172 states lie on such an end component.
+
+Pareto Curve Approximation Algorithm terminated after 1 refinement steps.
+Solving multi-objective query took 0.685s seconds (consisting of 0.119s seconds for preprocessing and 0.564s seconds for analyzing the preprocessed model).
+Result (for initial states): true
+
+Time for model checking: 0.687s.
+
+Performance statistics:
+  * peak memory usage: 87MB
+  * CPU time: 1.086s
+  * wallclock time: 1.080s	</pre>
+</div>
+</body>
+</html>

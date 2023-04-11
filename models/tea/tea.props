@@ -1,0 +1,6 @@
+
+// Pareto: maximise probability of completing task 1 and expected W1 (size of successful team)
+"PfRt": multi(Pmax=? [ F task1_completed ], R{"w_1_total"}max=? [ C ]);
+
+// Pareto (3-objective): maximise probability of completing tasks 1/2 and expected W1 (size of successful team)
+"PfRtPf": multi(Pmax=? [ F task1_completed ], R{"w_1_total"}max=? [ C ], Pmax=? [ F task2_completed ]);

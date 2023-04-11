@@ -1,0 +1,100 @@
+Command:	java -jar ~/ePMC/epmc-standard.jar  check --model-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs3.prism --property-input-files /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/ejs/ejs-N3B005Unf1-RtRtachievability.props --const B=5,Unf=1 --graphsolver-iterative-stop-criterion absolute --graphsolver-iterative-tolerance 1e-6
+Wallclock time:	71.07661819458008
+Return code:	0
+Output:
+Running EPMC revision b1ba8abf9f52c05f23421efb1abd1be7618f426d
+Assertions are disabled. In case of incorrect results or otherwise strange behaviour, please run the JVM with "-ea" parameter.
+Starting to parse PRISM model...
+Done parsing PRISM model
+Starting model checking...
+Analysing property RtRt
+Starting to compute JANI explorer...
+Starting to build initial states of JANI explorer...
+Done building initial states of JANI explorer
+Done building JANI explorer
+Starting to build model...
+Current number of states: 362; states/second: 362
+Current number of states: 760; states/second: 398
+Current number of states: 1,159; states/second: 399
+Current number of states: 1,556; states/second: 397
+Current number of states: 1,955; states/second: 399
+Current number of states: 2,353; states/second: 398
+Current number of states: 2,753; states/second: 400
+Current number of states: 3,151; states/second: 398
+Current number of states: 3,547; states/second: 396
+Current number of states: 3,945; states/second: 398
+Current number of states: 4,344; states/second: 399
+Current number of states: 4,743; states/second: 399
+Current number of states: 5,141; states/second: 398
+Current number of states: 5,539; states/second: 398
+Current number of states: 5,938; states/second: 399
+Current number of states: 6,337; states/second: 399
+Current number of states: 6,737; states/second: 400
+Current number of states: 7,138; states/second: 401
+Current number of states: 7,540; states/second: 402
+Current number of states: 7,941; states/second: 401
+Current number of states: 8,341; states/second: 400
+Current number of states: 8,742; states/second: 401
+Current number of states: 9,144; states/second: 402
+Current number of states: 9,548; states/second: 404
+Current number of states: 9,950; states/second: 402
+Current number of states: 10,353; states/second: 403
+Current number of states: 10,755; states/second: 402
+Current number of states: 11,157; states/second: 402
+Current number of states: 11,557; states/second: 400
+Current number of states: 11,960; states/second: 403
+Current number of states: 12,362; states/second: 402
+Current number of states: 12,766; states/second: 404
+Current number of states: 13,167; states/second: 401
+Current number of states: 13,570; states/second: 403
+Current number of states: 13,968; states/second: 398
+Current number of states: 14,367; states/second: 399
+Current number of states: 14,766; states/second: 399
+Current number of states: 15,167; states/second: 401
+Current number of states: 15,569; states/second: 402
+Current number of states: 15,971; states/second: 402
+Current number of states: 16,373; states/second: 402
+Current number of states: 16,778; states/second: 405
+Current number of states: 17,185; states/second: 407
+Current number of states: 17,588; states/second: 402
+Current number of states: 17,994; states/second: 407
+Current number of states: 18,402; states/second: 408
+Current number of states: 18,812; states/second: 410
+Current number of states: 19,214; states/second: 402
+Current number of states: 19,615; states/second: 401
+Current number of states: 20,018; states/second: 403
+Building model done. 20,052 states. Time for model exploration: 50 seconds.
+Starting multi-objective model checking for property multi(R{"energyGlobal"}<=294.06528228 [C], R{"ticks"}<=30.145576714 [C])...
+Starting to normalise formula...
+Done normalising formula.
+Starting to evaluate nested properties of multi-objective property...
+Done evaluating nested properties of multi-objective property.
+Starting to build product of model and properties automata...
+Computing Büchi automaton for original property...
+Done computing Büchi automaton, is deterministic and has 1 labels and 1 states.
+Computing Büchi automaton for original property...
+Done computing Büchi automaton, is deterministic and has 1 labels and 1 states.
+Done building product of model and properties automata.
+Starting main loop of multi-objective solver...
+Property is qualitative.
+Starting main loop iteration number 1...
+Starting iteration...
+Done. Did 38 iterations in 0 seconds.
+Starting iteration...
+Done. Did 21 iterations in 0 seconds.
+Starting iteration...
+Done. Did 21 iterations in 0 seconds.
+Done main loop iteration number 1.
+Starting main loop iteration number 2...
+Done main loop iteration number 2.
+Done main loop of multi-objective solver.
+Done multi-objective model checking for property multi(R{"energyGlobal"}<=294.06528228 [C], R{"ticks"}<=30.145576714 [C]).
+Finished model checking. Time required: 70 seconds
+RtRt: true
+
+##############################Output to stderr##############################
+Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g
+
+
+############################## Notes ##############################
+EPMC default settings. Check achievability objectives.

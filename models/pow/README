@@ -1,0 +1,14 @@
+Dynamic Power Management - IBM Disk Drive
+
+Original Model from:
+L. Benini, A. Bogliolo, G. Paleologo and G. De Micheli. Policy optimization for dynamic power management. IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems, 2000
+
+Original Multi-objective variant from:
+"Quantitative Multi-Objective Verification for Probabilistic Systems" by V. Forejt, M. Kwiatkowska, G. Norman, D. Parker and H. Qu. 
+
+We added a parameter "K" that serves as a step-bound if non-zero.
+
+See also
+http://www.prismmodelchecker.org/casestudies/power_dtmc.php
+Gethin Norman, David Parker, Marta Kwiatkowska, Sandeep Shukla and Rajeev Gupta. Using Probabilistic Model Checking for Dynamic Power Management. Formal Aspects of Computing, 17(2), pages 160-176, Springer-Verlag. August 2005.
+http://www.prismmodelchecker.org/files/tacas11/

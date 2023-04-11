@@ -1,0 +1,19 @@
+{
+	"id": "multigain.ach.rab-N5-LrLr",
+	"benchmark-id": "rab-N5-LrLr",
+	"tool": "multigain",
+	"configuration-id": "ach",
+	"invocation-note": "MultiGain default settings.. Achievability queries",
+	"commands": [
+		"~/multigain/bin/prism  /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab5.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/rab/rab-N5-LrLrachievability.props -paretoepsilon 0.0001 -ex -gurobi -absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-19",
+	"log": "multigain.ach.rab-N5-LrLr.log",
+	"wallclock-time": 277.95762038230896,
+	"timeout": false,
+	"execution-error": true,
+	"return-codes": [
+		137
+	]
+}

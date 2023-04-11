@@ -1,0 +1,9 @@
+"RtRt": multi(R{"time"}min=? [C], R{"energy"}min=? [C]);
+
+"Br33": Pmax=? [F{"value"}>=BndVal,{"time"}<=BndTime,{"energy"}<=BndEn true];
+"BrBr33": multi(Pmax=? [F{"value"}>=BndVal true], Pmax=? [F{"time"}<=BndTime,{"energy"}<=BndEn done]);
+
+"Pf": Pmax=? [F "valueCollected" & !"exceedTime" & !"exceedEnergy"];
+"PfPf": multi(Pmax=? [F "valueCollected"], Pmax=? [F !"exceedTime" & !"exceedEnergy" & done]);
+
+"Qp33": quantile(min TIME, min ENERGY, Pmax>0.95 [F{"value"}>=BndVal,{"time"}<=TIME,{"energy"}<=ENERGY true]);

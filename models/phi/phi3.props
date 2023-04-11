@@ -1,0 +1,4 @@
+"qual1": multi(R{"think"}>=2.11 [S], R{"eat"}>=0.3 [S]);
+"qual2": multi(R{"think"}>=2.12 [S], R{"eat"}>=0.3 [S]);
+"quant": multi(R{"think"}max=? [S], R{"eat"}>=0.3 [S]);
+"LrLr": multi(R{"think"}max=? [S], R{"eat"}max=? [S]);

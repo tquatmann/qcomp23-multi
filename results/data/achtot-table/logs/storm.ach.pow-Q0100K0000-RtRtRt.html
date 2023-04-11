@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>storm.ach - pow-Q0100K0000-RtRtRt</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>storm.ach</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>id:</td><td>pow-Q0100K0000-RtRtRt (MDP)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ach)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/pow/pow.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/pow/pow-Q0100K0000-RtRtRtachievability.props -const Q=100,K=0 --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute</pre>
+	Storm. check achievability objectives using sound value iteration
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">25.27376127243042s</td></tr>
+		<tr><td>Model Checking Walltime:</td><td style="tt">24.865s</td></tr>
+		<tr><td>Return code:</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Storm. check achievability objectives using sound value iteration</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.7.1 (dev)
+
+Date: Sat Dec 17 16:10:44 2022
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/pow/pow.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/pow/pow-Q0100K0000-RtRtRtachievability.props -const 'Q=100,K=0' --timemem --statistics --sound '--topological:minmax' svi '--native:method' svi '--topological:relevant-values' --absolute
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/scripts
+
+Time for model input parsing: 0.004s.
+
+Time for model construction: 0.312s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	42824
+Transitions: 	193112
+Choices: 	135542
+Reward Models:  queue, power, lost
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "RtRtRt": multi(R[exp]{"power"}<=11000010967000001/100000000000000 [C], R[exp]{"lost"}<=5213567443150001/5000000000000000 [C], R[exp]{"queue"}<=11373964959500001/500000000000 [C]) ...
+Preprocessing done in 0.079s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"power"}<=11000010967000001/100000000000000 [C], R[exp]{"lost"}<=5213567443150001/5000000000000000 [C], R[exp]{"queue"}<=11373964959500001/500000000000 [C])
+
+The query considers 3 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"power"}<=11000010967000001/100000000000000 [C] 	Preprocessed: R[exp]{"power"}min<=11000010967000001/100000000000000 [C] 	result bounds: >=0
+Original: R[exp]{"lost"}<=5213567443150001/5000000000000000 [C] 	Preprocessed: R[exp]{"lost"}min<=5213567443150001/5000000000000000 [C] 	result bounds: >=0
+Original: R[exp]{"queue"}<=11373964959500001/500000000000 [C] 	Preprocessed: R[exp]{"queue"}min<=11373964959500001/500000000000 [C] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 3.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	42824
+Transitions: 	193112
+Choices: 	135542
+Reward Models:  queue, power, lost
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	31714
+Transitions: 	130492
+Choices: 	72922
+Reward Models:  queue, power, lost
+State Labels: 	3 labels
+   * deadl -> 10302 item(s)
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Weight Vector Checker Statistics:
+Final preprocessed model has 21413 states.
+Final preprocessed model has 62621 actions.
+
+Pareto Curve Approximation Algorithm terminated after 3 refinement steps.
+Solving multi-objective query took 24.865s seconds (consisting of 0.079s seconds for preprocessing and 24.784s seconds for analyzing the preprocessed model).
+Result (for initial states): false
+
+Time for model checking: 24.865s.
+
+Performance statistics:
+  * peak memory usage: 82MB
+  * CPU time: 25.116s
+  * wallclock time: 25.191s	</pre>
+</div>
+</body>
+</html>

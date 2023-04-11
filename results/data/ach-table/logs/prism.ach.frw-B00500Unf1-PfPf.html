@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>prism.ach - frw-B00500Unf1-PfPf</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>prism.ach</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>id:</td><td>frw-B00500Unf1-PfPf (MDP)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ach)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">~/prism/prism/bin/prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/frw/frw.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/frw/frw-B00500Unf1-PfPfachievability.props -const B=500,Unf=1,delay=36 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute</pre>
+	Prism.. Achievability queries. Gauss-Seidl VI.
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">55.17358040809631s</td></tr>
+		<tr><td>Model Checking Walltime:</td><td style="tt">50.423s</td></tr>
+		<tr><td>Return code:</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Prism.. Achievability queries. Gauss-Seidl VI.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">java -Xmx30g -Xss1g -Djava.awt.headless=true -Djava.library.path=/home/tq429871/prism/prism/lib -classpath /home/tq429871/prism/prism/lib/prism.jar:/home/tq429871/prism/prism/classes:/home/tq429871/prism/prism:/home/tq429871/prism/prism/lib/pepa.zip:/home/tq429871/prism/prism/lib/* prism.PrismCL /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/frw/frw.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/frw/frw-B00500Unf1-PfPfachievability.props -const B=500,Unf=1,delay=36 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+PRISM
+=====
+
+Version: 4.7.dev
+Date: Sat Dec 17 07:44:14 GMT+01:00 2022
+Hostname: nihm021.hpc.itc.rwth-aachen.de
+Memory limits: cudd=4g, java(heap)=30g
+Command line: prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/frw/frw.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/frw/frw-B00500Unf1-PfPfachievability.props -const 'B=500,Unf=1,delay=36' -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute
+
+Parsing model file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/frw/frw.prism"...
+
+Type:        MDP
+Modules:     abstract_firewire timer rounds 
+Variables:   x s t round_counter 
+
+Parsing properties file "/rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/frw/frw-B00500Unf1-PfPfachievability.props"...
+
+1 property:
+(1) "PfPf": multi(P<=0.803125 [ F !"timeExceeded"&"done" ], P<=0.99912109375 [ F !"rndsExceeded"&"done" ])
+
+---------------------------------------------------------------------
+
+Model checking: "PfPf": multi(P<=0.803125 [ F !"timeExceeded"&"done" ], P<=0.99912109375 [ F !"rndsExceeded"&"done" ])
+Model constants: delay=36,Unf=1,B=500
+
+Building model...
+Model constants: delay=36,Unf=1,B=500
+
+Computing reachable states...
+
+Reachability (BFS): 960 iterations in 3.65 seconds (average 0.003799, setup 0.00)
+
+Time for model construction: 3.816 seconds.
+
+Type:        MDP
+States:      666557 (1 initial)
+Transitions: 1202470
+Choices:     998378
+
+Transition matrix: 25610 nodes (3 terminal), 1202470 minterms, vars: 25r/25c/3nd
+
+Building deterministic Rabin automaton (for !(F "L0"))...
+DRA has 3 states, 1 Rabin pairs.Time for Rabin translation: 0.2 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 960 iterations in 4.38 seconds (average 0.004560, setup 0.00)
+States:      666557 (1 initial)
+Transitions: 1202470
+Choices:     998378
+
+Transition matrix: 26001 nodes (3 terminal), 1202470 minterms, vars: 27r/27c/3nd
+
+Building deterministic Rabin automaton (for !(F "L0"))...
+DRA has 3 states, 1 Rabin pairs.Time for Rabin translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 960 iterations in 4.34 seconds (average 0.004524, setup 0.00)
+States:      666557 (1 initial)
+Transitions: 1202470
+Choices:     998378
+
+Transition matrix: 26206 nodes (3 terminal), 1202470 minterms, vars: 29r/29c/3nd
+Total time for product construction: 9.055 seconds.
+
+States:      666557 (1 initial)
+Transitions: 1202470
+Choices:     998378
+
+Transition matrix: 26206 nodes (3 terminal), 1202470 minterms, vars: 29r/29c/3nd
+
+Finding accepting end components for F !"timeExceeded"&"done"...
+Time for end component identification: 0.0 seconds.
+
+Finding accepting end components for F !"rndsExceeded"&"done"...
+Time for end component identification: 0.0 seconds.
+
+Prob0A: 512 iterations in 3.15 seconds (average 0.006145, setup 0.00)
+
+yes = 9, no = 175287, maybe = 491261
+
+Computing remaining probabilities...
+Engine: Sparse
+Iterative method: 1753 iterations in 34.99 seconds (average 0.019954, setup 0.01)
+The value iteration(s) took 35.415 seconds altogether.
+Number of weight vectors used: 1
+Multi-objective value iterations took 35.416 s.
+
+Property satisfied in 1 of 1 initial states.
+
+Time for model checking: 50.423 seconds.
+
+Result: true	</pre>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">STDERR</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Picked up JAVA_TOOL_OPTIONS: -Xmx30g -Xss1g	</pre>
+</div>
+</body>
+</html>

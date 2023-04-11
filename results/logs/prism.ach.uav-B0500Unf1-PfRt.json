@@ -1,0 +1,19 @@
+{
+	"id": "prism.ach.uav-B0500Unf1-PfRt",
+	"benchmark-id": "uav-B0500Unf1-PfRt",
+	"tool": "prism",
+	"configuration-id": "ach",
+	"invocation-note": "Prism.. Achievability queries. Gauss-Seidl VI.",
+	"commands": [
+		"~/prism/prism/bin/prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav.prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/uav/uav-B0500Unf1-PfRtachievability.props -const B=500,Unf=1,COUNTER=0 -sparse -cuddmaxmem 4g -gs -maxiters 1000000000 -multimaxpoints 1000000 -absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "prism.ach.uav-B0500Unf1-PfRt.log",
+	"wallclock-time": 12.93533992767334,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	]
+}

@@ -1,0 +1,1 @@
+"LrLr": multi(R{"rew_gold"}>=0.05625 [S], R{"rew_gem"}>=0.05625 [S]);

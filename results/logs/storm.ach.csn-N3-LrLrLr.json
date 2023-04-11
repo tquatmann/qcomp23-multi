@@ -1,0 +1,19 @@
+{
+	"id": "storm.ach.csn-N3-LrLrLr",
+	"benchmark-id": "csn-N3-LrLrLr",
+	"tool": "storm",
+	"configuration-id": "ach",
+	"invocation-note": "Storm. check achievability objectives using sound value iteration",
+	"commands": [
+		"~/storm/build/bin/storm --prism /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/csn/csn3.prism --prop /rwthfs/rz/cluster/home/tq429871/git/diss/benchmarking/models/csn/csn-N3-LrLrLrachievability.props --timemem --statistics --sound --topological:minmax svi --native:method svi --topological:relevant-values --absolute"
+	],
+	"time-limit": 7200,
+	"log-dir": "logs2022-12-16",
+	"log": "storm.ach.csn-N3-LrLrLr.log",
+	"wallclock-time": 0.1547999382019043,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	]
+}
